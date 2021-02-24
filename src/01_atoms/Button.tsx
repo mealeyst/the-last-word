@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
+import { backgroundColor, backgroundOpacity, BACKGROUND_OPACITY } from '../00_quarks/background';
 import {
   BORDER_STYLES,
   borderColor,
@@ -8,15 +9,20 @@ import {
   borderWidth
 } from '../00_quarks/border'
 import {
-  backgroundColor,
   color,
   COLORS
 } from '../00_quarks/colors'
 import {
   display,
   LAYOUT_DISPLAY,
+  LAYOUT_OVERFLOW,
   LAYOUT_POSITION,
-  position
+  LAYOUT_ZINDEX,
+  left,
+  overflow,
+  position,
+  top,
+  zIndex
 } from '../00_quarks/layout'
 import {
   height,
@@ -27,6 +33,8 @@ import { padding } from '../00_quarks/spacing'
 import {
   FontFamily,
   fontFamily,
+  LetterSpacing,
+  letterSpacing,
   textTransform,
   TextTransform
 } from '../00_quarks/typography'
@@ -40,20 +48,37 @@ export const Button = styled.button`
   ${borderStyle(BORDER_STYLES.SOLID)}
   ${borderWidth(SIZES.S0_5)}
   ${color(COLORS.GREY, 0)}
-  ${position(LAYOUT_POSITION.RELATIVE)}
   ${fontFamily(FontFamily.BODY)}
-  ${height(SIZES.S14)}
+  ${height(SIZES.S10)}
+  ${overflow(LAYOUT_OVERFLOW.HIDDEN)}
   ${padding(SIZES.S0, SIZES.S6)}
+  ${position(LAYOUT_POSITION.RELATIVE)}
   ${textTransform(TextTransform.UPPERCASE)}
+  transition: all 0.3s;
+  ${letterSpacing(LetterSpacing.WIDE)}
   &:after {
-    ${display(LAYOUT_DISPLAY.BLOCK)}
-    ${position(LAYOUT_POSITION.ABSOLUTE)}
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    content: '';
     ${backgroundColor(COLORS.GREY,0)}
+    ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_0)}
+    ${display(LAYOUT_DISPLAY.BLOCK)}
+    ${height(SIZES.TWO_HUNDRED)}
+    ${left(SIZES.HALF)}
+    ${position(LAYOUT_POSITION.ABSOLUTE)}
+    ${top(SIZES.HALF)}
+    ${width(SIZES.FULL)}
+    ${zIndex(LAYOUT_ZINDEX.ZNEG10)}
+    content: '';
+    transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(0);
+    transition: all 0.3s;
+  }
+  &:hover, &:focus{
+    ${color(COLORS.GREY, 9)}
+    :after {
+      ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_100)}
+      transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(1);
+    }
+  }
+  &:focus {
+    outline: none;
   }
 `
 

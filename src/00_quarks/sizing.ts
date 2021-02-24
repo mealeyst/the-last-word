@@ -70,7 +70,9 @@ export enum SIZES {
   NINE_TWELFTHS,
   TEN_TWELFTHS,
   ELEVEN_TWELTHS,
-  FULL
+  FULL,
+  TWO_HUNDRED,
+  TWO_HUNDRED_FIFTY
 }
 
 type SizeInterface = {
@@ -142,7 +144,9 @@ export const sizeValues: SizeInterface  = {
   [SIZES.NINE_TWELFTHS]: computePercent(9/12),
   [SIZES.TEN_TWELFTHS]: computePercent(10/12),
   [SIZES.ELEVEN_TWELTHS]: computePercent(11/12),
-  [SIZES.FULL]: computePercent(1)
+  [SIZES.FULL]: computePercent(1),
+  [SIZES.TWO_HUNDRED]: computePercent(2),
+  [SIZES.TWO_HUNDRED_FIFTY]: computePercent(2.5)
 }
 
 

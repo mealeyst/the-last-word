@@ -26,11 +26,12 @@ export const colors: Colors = {
     {hue: 210, saturation: '14%', lightness: '89%'}, // 2 hsl(210, 14%, 89%)
     {hue: 210, saturation: '14%', lightness: '83%'}, // 3 hsl(210, 14%, 83%)
     {hue: 210, saturation: '11%', lightness: '71%'}, // 4 hsl(210, 11%, 71%)
-    {hue: 208, saturation: '7%', lightness: '46%'}, // 5 hsl(208, 7%, 46%)
-    {hue: 210, saturation: '9%', lightness: '31%'}, // 6 hsl(210, 9%, 31%)
-    {hue: 210, saturation: '10%', lightness: '23%'}, // 7 hsl(210, 10%, 23%)
-    {hue: 210, saturation: '11%', lightness: '15%'}, // 8 hsl(210, 11%, 15%)
-    {hue: 210, saturation: '11%', lightness: '5%'} // 9 hsl(210, 11%, 5%)
+    {hue: 210, saturation: '11%', lightness: '63%'}, // 5 hsl(210, 11%, 63%)
+    {hue: 208, saturation: '7%', lightness: '46%'}, // 6 hsl(208, 7%, 46%)
+    {hue: 210, saturation: '9%', lightness: '31%'}, // 7 hsl(210, 9%, 31%)
+    {hue: 210, saturation: '10%', lightness: '23%'}, // 8 hsl(210, 10%, 23%)
+    {hue: 210, saturation: '11%', lightness: '15%'}, // 9 hsl(210, 11%, 15%)
+    {hue: 210, saturation: '11%', lightness: '5%'} // 10 hsl(210, 11%, 5%)
   ],
   [COLORS.ORANGE]: [
     {hue: 43, saturation: '100%', lightness: '50%'}, // 0 hsl(43, 100%, 50%)
@@ -61,9 +62,12 @@ export const buildColorStyle = (type: string) => (name: COLORS, shade?: number) 
 
 export const SiteBackground = createGlobalStyle`
   body {
-    background-color: ${buildHsl(colors[COLORS.GREY][9])};
+    background-color: ${buildHsl(colors[COLORS.GREY][10])};
+    * {
+      color: ${buildHsl(colors[COLORS.GREY][0])};
+    }
   }
 `
 
-export const backgroundColor = buildColorStyle('background-color')
+
 export const color = buildColorStyle('color')

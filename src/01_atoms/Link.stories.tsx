@@ -1,20 +1,21 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Link } from './Link';
 
 export default {
-  title: 'Atoms/Button',
-  component: Button,
+  title: 'Atoms/Link',
+  component: Link,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <Link {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  children: 'Button',
+  children: 'Link',
+  href: '#'
 };
 

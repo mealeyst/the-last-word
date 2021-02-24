@@ -1,5 +1,14 @@
 import { SIZES, getSize } from './sizing'
 
+export enum LAYOUT_BOX_SIZING {
+    BORDER_BOX,
+    CONTENT_BOX
+}
+
+type BoxSizing = {
+    [key in LAYOUT_BOX_SIZING]: string
+}
+
 export enum LAYOUT_CONTAINER {
     DEFAULT,
     SMALL,
@@ -11,15 +20,6 @@ export enum LAYOUT_CONTAINER {
 
 type Container = {
     [key in LAYOUT_CONTAINER]: string
-}
-
-export enum LAYOUT_BOX_SIZING {
-    BORDER_BOX,
-    CONTENT_BOX
-}
-
-type BoxSizing = {
-    [key in LAYOUT_BOX_SIZING]: string
 }
 
 export enum LAYOUT_DISPLAY {
@@ -69,6 +69,23 @@ type Clear = {
     [key in LAYOUT_CLEAR]: string
 }
 
+export enum LAYOUT_OVERFLOW {
+    AUTO,
+    HIDDEN,
+    SCROLL,
+    VISIBLE,
+    XAUTO,
+    XHIDDEN,
+    XSCROLL,
+    YAUTO,
+    YHIDDEN,
+    YSCROLL
+}
+
+type Overflow = {
+    [key in LAYOUT_OVERFLOW]: string
+}
+
 export enum LAYOUT_POSITION {
     ABSOLUTE,
     FIXED,
@@ -81,16 +98,37 @@ type Position = {
     [key in LAYOUT_POSITION]: string
 }
 
+export enum LAYOUT_ZINDEX {
+    ZNEG10,
+    Z0,
+    Z10,
+    Z20,
+    Z30,
+    Z40,
+    Z50,
+    ZAUTO
+  }
+
+  type Zindex = {
+    [key in LAYOUT_ZINDEX]: number | string
+  }
+
 interface Layout {
     container: Container,
     boxSizing: BoxSizing,
     display: Dispay,
     float: Float,
     clear: Clear,
-    position: Position
+    position: Position,
+    overflow: Overflow,
+    zIndex: Zindex
 }
 
 const layout: Layout = {
+    boxSizing: {
+        [LAYOUT_BOX_SIZING.BORDER_BOX]: 'border-box',
+        [LAYOUT_BOX_SIZING.CONTENT_BOX]: 'content-box'
+    },
     container: {
         [LAYOUT_CONTAINER.DEFAULT]: getSize(SIZES.FULL),
         [LAYOUT_CONTAINER.SMALL]: getSize(SIZES.C_SM),
@@ -98,10 +136,6 @@ const layout: Layout = {
         [LAYOUT_CONTAINER.LARGE]: getSize(SIZES.C_LG),
         [LAYOUT_CONTAINER.EXTRA_LARGE]: getSize(SIZES.C_XL),
         [LAYOUT_CONTAINER.EXTRA_LARGE_X2]: getSize(SIZES.C_2XL)
-    },
-    boxSizing: {
-        [LAYOUT_BOX_SIZING.BORDER_BOX]: 'border-box',
-        [LAYOUT_BOX_SIZING.CONTENT_BOX]: 'content-box'
     },
     display: {
         [LAYOUT_DISPLAY.BLOCK]: 'block',
@@ -141,6 +175,28 @@ const layout: Layout = {
         [LAYOUT_POSITION.RELATIVE]: 'relative',
         [LAYOUT_POSITION.STATIC]: 'static',
         [LAYOUT_POSITION.STICKY]: 'sticky'
+    },
+    overflow: {
+        [LAYOUT_OVERFLOW.AUTO]: 'overflow: auto;',
+        [LAYOUT_OVERFLOW.HIDDEN]: 'overflow: hidden;',
+        [LAYOUT_OVERFLOW.SCROLL]: 'overflow: scroll;',
+        [LAYOUT_OVERFLOW.VISIBLE]: 'overflow: visible;',
+        [LAYOUT_OVERFLOW.XAUTO]: 'overflow-x: auto;',
+        [LAYOUT_OVERFLOW.XHIDDEN]: 'overflow-x: hidden;',
+        [LAYOUT_OVERFLOW.XSCROLL]: 'overflow-x: scroll;',
+        [LAYOUT_OVERFLOW.YAUTO]: 'overflow-y: auto;',
+        [LAYOUT_OVERFLOW.YHIDDEN]: 'overflow-y: hidden;',
+        [LAYOUT_OVERFLOW.YSCROLL]: 'overflow-y: scroll;'
+    },
+    zIndex: {
+        [LAYOUT_ZINDEX.ZNEG10]: -10,
+        [LAYOUT_ZINDEX.Z0]: 0,
+        [LAYOUT_ZINDEX.Z10]: 10,
+        [LAYOUT_ZINDEX.Z20]: 20,
+        [LAYOUT_ZINDEX.Z30]: 30,
+        [LAYOUT_ZINDEX.Z40]: 40,
+        [LAYOUT_ZINDEX.Z50]: 50,
+        [LAYOUT_ZINDEX.ZAUTO]: 'auto'
     }
 }
 
@@ -152,6 +208,10 @@ export const container = (containerType: LAYOUT_CONTAINER): string => {
     return `max-width: ${size};`
 }
 
+const buildPositioning = (type: string) => (value: SIZES) => {
+    return `${type}: ${getSize(value)};`
+}
+
 export const boxSizing = (sizingType: LAYOUT_BOX_SIZING): string => `box-sizing: ${layout.boxSizing[sizingType]};`
 
 export const display = (displayType: LAYOUT_DISPLAY): string => `display: ${layout.display[displayType]};`
@@ -161,3 +221,15 @@ export const float = (floatType: LAYOUT_FLOAT): string => `float: ${layout.float
 export const clear = (clearType: LAYOUT_CLEAR): string => `clear: ${layout.clear[clearType]};`
 
 export const position = (positionType: LAYOUT_POSITION): string => `position: ${layout.position[positionType]};`
+
+export const top = buildPositioning('top')
+
+export const bottom = buildPositioning('bottom')
+
+export const right = buildPositioning('right')
+
+export const left = buildPositioning('left')
+
+export const overflow = (overflowType: LAYOUT_OVERFLOW): string => layout.overflow[overflowType]
+
+export const zIndex = (key: LAYOUT_ZINDEX): string => `z-index: ${layout.zIndex[key]};`
