@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { getEnumKeys } from '../utils/enumKeys'
 
 export enum COLORS {
   GREY,
@@ -54,8 +55,11 @@ export const buildHsl = ({hue, saturation, lightness}): string => {
 
 export const buildColorStyle = (type: string) => (name: COLORS, shade?: number) => {
   const color = colors[name]
-  if (typeof color == 'object' && typeof shade == 'number') {
+  if (typeof color == 'object' && typeof shade == 'number' && shade < color.length) {
     return `${type}: ${buildHsl(color[shade])};`
+  } else if (typeof color == 'object' && typeof shade == 'number' && shade >= color.length) {
+    console.warn(`Looks like you are trying to access a shade in the color ${getEnumKeys(COLORS)[name]} that doesn't exist.`)
+    return `${type}: ${buildHsl(color[color.length -1])};`
   }
   return `${type}: ${color};`
 }

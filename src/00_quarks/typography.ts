@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components'
 
-export enum FontFamily {
+export enum FONT_FAMILY {
   HEADER,
   BODY
 }
 
-export enum FontSize {
+export enum FONT_SIZE {
   XS,
   SM,
   BASE,
@@ -18,12 +18,12 @@ export enum FontSize {
   XL6
 }
 
-export enum FontWeight {
+export enum FONT_WEIGHT {
   NORMAL,
   BOLD
 }
 
-export enum LetterSpacing {
+export enum LETTER_SPACING {
   TIGHTER,
   TIGHT,
   NORMAL,
@@ -32,7 +32,7 @@ export enum LetterSpacing {
   WIDEST
 }
 
-export enum LineHeight {
+export enum LINE_HEIGHT {
   LEADING3,
   LEADING4,
   LEADING5,
@@ -49,33 +49,33 @@ export enum LineHeight {
   LOOSE
 }
 
-export enum ListStyleType {
+export enum LIST_STYLE_TYPE {
   NONE,
   DISC,
   DECIMAL
 }
 
-export enum TextAlign {
+export enum TEXT_ALIGN {
   LEFT,
   CENTER,
   RIGHT,
   JUSTIFY
 }
 
-export enum TextDecoration {
+export enum TEXT_DECORATION {
   UNDERLINE,
   LINE_THROUGH,
   NO_UNDERLINE
 }
 
-export enum TextTransform {
+export enum TEXT_TRANSFORM {
   UPPERCASE,
   LOWERCASE,
   CAPITALIZE,
   NORMAL_CASE
 }
 
-export enum VerticalAlign {
+export enum VERTICAL_ALIGN {
   BASELINE,
   TOP,
   MIDDLE,
@@ -84,7 +84,7 @@ export enum VerticalAlign {
   TEXT_BOTTOM
 }
 
-export enum Whitespace {
+export enum WHITESPACE {
   NORMAL,
   NO_WRAP,
   PRE,
@@ -92,158 +92,158 @@ export enum Whitespace {
   PRE_WRAP
 }
 
-export enum WordBreak {
+export enum WORD_BREAK {
   NORMAL,
   WORDS,
   ALL,
   TRUNCATE
 }
 
-export const fontFamilyValues: {[key in FontFamily]: string} = {
-  [FontFamily.HEADER]: '\'Old Standard TT\', serif',
-  [FontFamily.BODY]: '\'PT Serif\', serif'
+export const fontFamilyValues: {[key in FONT_FAMILY]: string} = {
+  [FONT_FAMILY.HEADER]: '\'Old Standard TT\', serif',
+  [FONT_FAMILY.BODY]: '\'PT Serif\', serif'
 }
 
-export const fontSizeValues: {[key in FontSize]: string} = {
-  [FontSize.XS]: '0.75rem',
-  [FontSize.SM]: '0.875rem',
-  [FontSize.BASE]: '1rem',
-  [FontSize.LG]: '1.125rem',
-  [FontSize.XL]: '1.25rem',
-  [FontSize.XL2]: '1.5rem',
-  [FontSize.XL3]: '1.875rem',
-  [FontSize.XL4]: '2.25rem',
-  [FontSize.XL5]: '3rem',
-  [FontSize.XL6]: '4rem'
+export const fontSizeValues: {[key in FONT_SIZE]: string} = {
+  [FONT_SIZE.XS]: '0.75rem',
+  [FONT_SIZE.SM]: '0.875rem',
+  [FONT_SIZE.BASE]: '1rem',
+  [FONT_SIZE.LG]: '1.125rem',
+  [FONT_SIZE.XL]: '1.25rem',
+  [FONT_SIZE.XL2]: '1.5rem',
+  [FONT_SIZE.XL3]: '1.875rem',
+  [FONT_SIZE.XL4]: '2.25rem',
+  [FONT_SIZE.XL5]: '3rem',
+  [FONT_SIZE.XL6]: '4rem'
 }
 
-export const fontWeightValues: {[key in FontWeight]: number} = {
-  [FontWeight.NORMAL]: 400,
-  [FontWeight.BOLD]: 700
+export const fontWeightValues: {[key in FONT_WEIGHT]: number} = {
+  [FONT_WEIGHT.NORMAL]: 400,
+  [FONT_WEIGHT.BOLD]: 700
 }
 
-export const letterSpacingValues: {[key in LetterSpacing]: string} = {
-  [LetterSpacing.TIGHTER]: '-0.05rem',
-  [LetterSpacing.TIGHT]: '-0.025rem',
-  [LetterSpacing.NORMAL]: '0',
-  [LetterSpacing.WIDE]: '0.025rem',
-  [LetterSpacing.WIDER]: '0.05rem',
-  [LetterSpacing.WIDEST]: '0.1rem'
+export const letterSpacingValues: {[key in LETTER_SPACING]: string} = {
+  [LETTER_SPACING.TIGHTER]: '-0.05rem',
+  [LETTER_SPACING.TIGHT]: '-0.025rem',
+  [LETTER_SPACING.NORMAL]: '0',
+  [LETTER_SPACING.WIDE]: '0.025rem',
+  [LETTER_SPACING.WIDER]: '0.05rem',
+  [LETTER_SPACING.WIDEST]: '0.1rem'
 }
 
-export const lineHeightValues: {[key in LineHeight]: string} = {
-  [LineHeight.LEADING3]: '.75rem',
-  [LineHeight.LEADING4]: '1rem',
-  [LineHeight.LEADING5]: '1.25rem',
-  [LineHeight.LEADING6]: '1.5rem',
-  [LineHeight.LEADING7]: '1.75rem',
-  [LineHeight.LEADING8]: '2rem',
-  [LineHeight.LEADING9]: '2.25rem',
-  [LineHeight.LEADING10]: '2.5rem',
-  [LineHeight.NONE]: '1',
-  [LineHeight.TIGHT]: '1.25',
-  [LineHeight.SNUG]: '1.375',
-  [LineHeight.NORMAL]: '1.5',
-  [LineHeight.RELAXED]: '1.625',
-  [LineHeight.LOOSE]: '2'
+export const lineHeightValues: {[key in LINE_HEIGHT]: string} = {
+  [LINE_HEIGHT.LEADING3]: '.75rem',
+  [LINE_HEIGHT.LEADING4]: '1rem',
+  [LINE_HEIGHT.LEADING5]: '1.25rem',
+  [LINE_HEIGHT.LEADING6]: '1.5rem',
+  [LINE_HEIGHT.LEADING7]: '1.75rem',
+  [LINE_HEIGHT.LEADING8]: '2rem',
+  [LINE_HEIGHT.LEADING9]: '2.25rem',
+  [LINE_HEIGHT.LEADING10]: '2.5rem',
+  [LINE_HEIGHT.NONE]: '1',
+  [LINE_HEIGHT.TIGHT]: '1.25',
+  [LINE_HEIGHT.SNUG]: '1.375',
+  [LINE_HEIGHT.NORMAL]: '1.5',
+  [LINE_HEIGHT.RELAXED]: '1.625',
+  [LINE_HEIGHT.LOOSE]: '2'
 }
 
-export const listStyleTypeValues: {[key in ListStyleType]: string} = {
-  [ListStyleType.NONE]: 'none',
-  [ListStyleType.DISC]: 'disc',
-  [ListStyleType.DECIMAL]: 'decimal'
+export const listStyleTypeValues: {[key in LIST_STYLE_TYPE]: string} = {
+  [LIST_STYLE_TYPE.NONE]: 'none',
+  [LIST_STYLE_TYPE.DISC]: 'disc',
+  [LIST_STYLE_TYPE.DECIMAL]: 'decimal'
 }
 
-export const textAlignValues: {[key in TextAlign]: string} = {
-  [TextAlign.CENTER]: 'center',
-  [TextAlign.JUSTIFY]: 'justify',
-  [TextAlign.LEFT]: 'left',
-  [TextAlign.RIGHT]: 'right'
+export const textAlignValues: {[key in TEXT_ALIGN]: string} = {
+  [TEXT_ALIGN.CENTER]: 'center',
+  [TEXT_ALIGN.JUSTIFY]: 'justify',
+  [TEXT_ALIGN.LEFT]: 'left',
+  [TEXT_ALIGN.RIGHT]: 'right'
 }
 
-export const textDecorationValues: {[key in TextDecoration]: string} = {
-  [TextDecoration.LINE_THROUGH]: 'line-through',
-  [TextDecoration.NO_UNDERLINE]: 'none',
-  [TextDecoration.UNDERLINE]: 'underline'
+export const textDecorationValues: {[key in TEXT_DECORATION]: string} = {
+  [TEXT_DECORATION.LINE_THROUGH]: 'line-through',
+  [TEXT_DECORATION.NO_UNDERLINE]: 'none',
+  [TEXT_DECORATION.UNDERLINE]: 'underline'
 }
 
-export const textTransformValues: {[key in TextTransform]: string} = {
-  [TextTransform.CAPITALIZE]: 'capitalize',
-  [TextTransform.LOWERCASE]: 'lowercase',
-  [TextTransform.NORMAL_CASE]: 'none',
-  [TextTransform.UPPERCASE]: 'uppercase'
+export const textTransformValues: {[key in TEXT_TRANSFORM]: string} = {
+  [TEXT_TRANSFORM.CAPITALIZE]: 'capitalize',
+  [TEXT_TRANSFORM.LOWERCASE]: 'lowercase',
+  [TEXT_TRANSFORM.NORMAL_CASE]: 'none',
+  [TEXT_TRANSFORM.UPPERCASE]: 'uppercase'
 }
 
-export const verticalAlignValues: {[key in VerticalAlign]: string} = {
-  [VerticalAlign.BASELINE]: 'baseline',
-  [VerticalAlign.BOTTOM]: 'bottom',
-  [VerticalAlign.MIDDLE]: 'middle',
-  [VerticalAlign.TEXT_BOTTOM]: 'text-bottom',
-  [VerticalAlign.TEXT_TOP]: 'text-top',
-  [VerticalAlign.TOP]: 'top'
+export const verticalAlignValues: {[key in VERTICAL_ALIGN]: string} = {
+  [VERTICAL_ALIGN.BASELINE]: 'baseline',
+  [VERTICAL_ALIGN.BOTTOM]: 'bottom',
+  [VERTICAL_ALIGN.MIDDLE]: 'middle',
+  [VERTICAL_ALIGN.TEXT_BOTTOM]: 'text-bottom',
+  [VERTICAL_ALIGN.TEXT_TOP]: 'text-top',
+  [VERTICAL_ALIGN.TOP]: 'top'
 }
 
-export const whitespaceValues: {[key in Whitespace]: string} = {
-  [Whitespace.NORMAL]: 'normal',
-  [Whitespace.NO_WRAP]: 'no-wrap',
-  [Whitespace.PRE]: 'pre',
-  [Whitespace.PRE_LINE]: 'pre-line',
-  [Whitespace.PRE_WRAP]: 'pre-wrap'
+export const whitespaceValues: {[key in WHITESPACE]: string} = {
+  [WHITESPACE.NORMAL]: 'normal',
+  [WHITESPACE.NO_WRAP]: 'no-wrap',
+  [WHITESPACE.PRE]: 'pre',
+  [WHITESPACE.PRE_LINE]: 'pre-line',
+  [WHITESPACE.PRE_WRAP]: 'pre-wrap'
 }
 
-export const wordBreakValues: {[key in WordBreak]: string} = {
-  [WordBreak.ALL]: 'word-break: break-all;',
-  [WordBreak.NORMAL]: 'overflow-wrap: normal; word-break: normal;',
-  [WordBreak.TRUNCATE]: 'overflow: hidden; text-overflow: ellipsis; white-space: nowrap;',
-  [WordBreak.WORDS]: 'overflow-wrap: break-word;'
+export const wordBreakValues: {[key in WORD_BREAK]: string} = {
+  [WORD_BREAK.ALL]: 'word-break: break-all;',
+  [WORD_BREAK.NORMAL]: 'overflow-wrap: normal; word-break: normal;',
+  [WORD_BREAK.TRUNCATE]: 'overflow: hidden; text-overflow: ellipsis; white-space: nowrap;',
+  [WORD_BREAK.WORDS]: 'overflow-wrap: break-word;'
 
 }
 
-export const fontSize = (size: FontSize) => {
+export const fontSize = (size: FONT_SIZE) => {
   return `font-size: ${fontSizeValues[size]};`
 }
 
-export const fontFamily = (family: FontFamily) => {
+export const fontFamily = (family: FONT_FAMILY) => {
   return `font-family: ${fontFamilyValues[family]};`
 }
 
-export const fontWeight = (weight: FontWeight) => {
+export const fontWeight = (weight: FONT_WEIGHT) => {
   return `font-weight: ${fontWeightValues[weight]};`
 }
 
-export const letterSpacing = (spacing: LetterSpacing) => {
+export const letterSpacing = (spacing: LETTER_SPACING) => {
   return `letter-spacing: ${letterSpacingValues[spacing]};`
 }
 
-export const lineHeight = (height: LineHeight) => {
+export const lineHeight = (height: LINE_HEIGHT) => {
   return `line-height: ${lineHeightValues[height]};`
 }
 
-export const listStyle = (type: ListStyleType) => {
+export const listStyle = (type: LIST_STYLE_TYPE) => {
   return `list-style-type: ${listStyleTypeValues[type]};`
 }
 
-export const textAlign = (align: TextAlign) => {
+export const textAlign = (align: TEXT_ALIGN) => {
   return `text-align: ${textAlignValues[align]};`
 }
 
-export const textDecoration = (decoration: TextDecoration) => {
+export const textDecoration = (decoration: TEXT_DECORATION) => {
   return `text-decoration: ${textDecorationValues[decoration]};`
 }
 
-export const textTransform = (transform: TextTransform) => {
+export const textTransform = (transform: TEXT_TRANSFORM) => {
   return `text-transform: ${textTransformValues[transform]};`
 }
 
-export const verticalAlign = (align: VerticalAlign) => {
+export const verticalAlign = (align: VERTICAL_ALIGN) => {
   return `vertical-align: ${verticalAlignValues[align]};`
 }
 
-export const whitespace = (spacing: Whitespace) => {
+export const whitespace = (spacing: WHITESPACE) => {
   return `white-space: ${whitespaceValues[spacing]};`
 }
 
-export const wordBreak = (type: WordBreak) => {
+export const wordBreak = (type: WORD_BREAK) => {
   return wordBreakValues[type]
 }
 
@@ -251,6 +251,6 @@ export const ImportFonts = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 body {
-  ${fontFamily(FontFamily.BODY)}
+  ${fontFamily(FONT_FAMILY.BODY)}
 }
 `

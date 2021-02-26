@@ -31,12 +31,12 @@ import {
 } from '../00_quarks/sizing'
 import { padding } from '../00_quarks/spacing'
 import {
-  FontFamily,
+  FONT_FAMILY,
   fontFamily,
-  LetterSpacing,
+  LETTER_SPACING,
   letterSpacing,
   textTransform,
-  TextTransform
+  TEXT_TRANSFORM
 } from '../00_quarks/typography'
 
 /**
@@ -48,14 +48,14 @@ export const Button = styled.button`
   ${borderStyle(BORDER_STYLES.SOLID)}
   ${borderWidth(SIZES.S0_5)}
   ${color(COLORS.GREY, 0)}
-  ${fontFamily(FontFamily.BODY)}
+  ${fontFamily(FONT_FAMILY.BODY)}
   ${height(SIZES.S10)}
   ${overflow(LAYOUT_OVERFLOW.HIDDEN)}
   ${padding(SIZES.S0, SIZES.S6)}
   ${position(LAYOUT_POSITION.RELATIVE)}
-  ${textTransform(TextTransform.UPPERCASE)}
+  ${textTransform(TEXT_TRANSFORM.UPPERCASE)}
   transition: all 0.3s;
-  ${letterSpacing(LetterSpacing.WIDE)}
+  ${letterSpacing(LETTER_SPACING.WIDE)}
   &:after {
     ${backgroundColor(COLORS.GREY,0)}
     ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_0)}

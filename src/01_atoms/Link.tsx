@@ -4,12 +4,13 @@ import { backgroundColor } from '../00_quarks/background';
 import { color, COLORS } from '../00_quarks/colors';
 import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right } from '../00_quarks/layout';
 import { height, SIZES, width } from '../00_quarks/sizing';
-import { TextTransform, textTransform } from '../00_quarks/typography';
+import { TEXT_DECORATION, textDecoration, TEXT_TRANSFORM, textTransform } from '../00_quarks/typography';
 
 export const Link = styled.a`
   ${color(COLORS.GREY, 1)}
-  ${textTransform(TextTransform.UPPERCASE)}
+  ${textTransform(TEXT_TRANSFORM.UPPERCASE)}
   ${position(LAYOUT_POSITION.RELATIVE)}
+  ${textDecoration(TEXT_DECORATION.NO_UNDERLINE)}
   &:before, &:after {
     ${position(LAYOUT_POSITION.ABSOLUTE)}
     ${display(LAYOUT_DISPLAY.BLOCK)}

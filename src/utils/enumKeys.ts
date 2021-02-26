@@ -1,0 +1,1 @@
+export const getEnumKeys = (value) => Object.keys(value).filter((key) => isNaN(parseInt(key)))

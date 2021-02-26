@@ -4,17 +4,13 @@ import { Link } from './Link';
 
 export default {
   title: 'Atoms/Link',
-  component: Link,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  component: Link
 };
 
 const Template = (args) => <Link {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  primary: true,
+export const Default = Template.bind({});
+Default.args = {
   children: 'Link',
   href: '#'
 };
