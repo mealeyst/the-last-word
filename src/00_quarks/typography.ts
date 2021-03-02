@@ -23,6 +23,11 @@ export enum FONT_WEIGHT {
   BOLD
 }
 
+export  enum FONT_STYLE {
+  NORMAL,
+  ITALIC
+}
+
 export enum LETTER_SPACING {
   TIGHTER,
   TIGHT,
@@ -117,6 +122,11 @@ export const fontSizeValues: {[key in FONT_SIZE]: string} = {
   [FONT_SIZE.XL6]: '4rem'
 }
 
+const fontStyleValues: {[key in FONT_STYLE]: string} = {
+  [FONT_STYLE.ITALIC]: 'italic',
+  [FONT_STYLE.NORMAL]: 'normal'
+}
+
 export const fontWeightValues: {[key in FONT_WEIGHT]: number} = {
   [FONT_WEIGHT.NORMAL]: 400,
   [FONT_WEIGHT.BOLD]: 700
@@ -199,51 +209,55 @@ export const wordBreakValues: {[key in WORD_BREAK]: string} = {
 
 }
 
-export const fontSize = (size: FONT_SIZE) => {
+export const fontSize = (size: FONT_SIZE): string => {
   return `font-size: ${fontSizeValues[size]};`
 }
 
-export const fontFamily = (family: FONT_FAMILY) => {
+export const fontFamily = (family: FONT_FAMILY): string => {
   return `font-family: ${fontFamilyValues[family]};`
 }
 
-export const fontWeight = (weight: FONT_WEIGHT) => {
+export const fontStyle = (style: FONT_STYLE): string => {
+  return `font-style: ${fontStyleValues[style]};`
+}
+
+export const fontWeight = (weight: FONT_WEIGHT): string => {
   return `font-weight: ${fontWeightValues[weight]};`
 }
 
-export const letterSpacing = (spacing: LETTER_SPACING) => {
+export const letterSpacing = (spacing: LETTER_SPACING): string => {
   return `letter-spacing: ${letterSpacingValues[spacing]};`
 }
 
-export const lineHeight = (height: LINE_HEIGHT) => {
+export const lineHeight = (height: LINE_HEIGHT): string => {
   return `line-height: ${lineHeightValues[height]};`
 }
 
-export const listStyle = (type: LIST_STYLE_TYPE) => {
+export const listStyle = (type: LIST_STYLE_TYPE): string => {
   return `list-style-type: ${listStyleTypeValues[type]};`
 }
 
-export const textAlign = (align: TEXT_ALIGN) => {
+export const textAlign = (align: TEXT_ALIGN): string => {
   return `text-align: ${textAlignValues[align]};`
 }
 
-export const textDecoration = (decoration: TEXT_DECORATION) => {
+export const textDecoration = (decoration: TEXT_DECORATION): string => {
   return `text-decoration: ${textDecorationValues[decoration]};`
 }
 
-export const textTransform = (transform: TEXT_TRANSFORM) => {
+export const textTransform = (transform: TEXT_TRANSFORM): string => {
   return `text-transform: ${textTransformValues[transform]};`
 }
 
-export const verticalAlign = (align: VERTICAL_ALIGN) => {
+export const verticalAlign = (align: VERTICAL_ALIGN): string => {
   return `vertical-align: ${verticalAlignValues[align]};`
 }
 
-export const whitespace = (spacing: WHITESPACE) => {
+export const whitespace = (spacing: WHITESPACE): string => {
   return `white-space: ${whitespaceValues[spacing]};`
 }
 
-export const wordBreak = (type: WORD_BREAK) => {
+export const wordBreak = (type: WORD_BREAK): string => {
   return wordBreakValues[type]
 }
 
