@@ -49,13 +49,19 @@ export const colors: Colors = {
   ]
 }
 
-export const buildHsl = ({hue, saturation, lightness}): string => {
-  return `hsl(${hue}, ${saturation}, ${lightness})`
-}
+export const buildHsl = ({hue, saturation, lightness}: HSL): string => (
+  `hsl(${hue}, ${saturation}, ${lightness})`
+)
 
-export const buildColorStyle = (type: string) => (name: COLORS, shade?: number) => {
+export const buildHsla = ({hue, saturation, lightness}: HSL, alpha: number) => (
+  `hsla(${hue}, ${saturation}, ${lightness}, ${alpha})`
+)
+
+export const buildColorStyle = (type: string) => (name: COLORS, shade?: number, alpha?: number) => {
   const color = colors[name]
-  if (typeof color == 'object' && typeof shade == 'number' && shade < color.length) {
+  if (alpha && typeof color == 'object' && typeof shade == 'number' && shade < color.length) {
+    return `${type}: ${buildHsla(color[shade], alpha)};`
+  } else if (typeof color == 'object' && typeof shade == 'number' && shade < color.length) {
     return `${type}: ${buildHsl(color[shade])};`
   } else if (typeof color == 'object' && typeof shade == 'number' && shade >= color.length) {
     console.warn(`Looks like you are trying to access a shade in the color ${getEnumKeys(COLORS)[name]} that doesn't exist.`)
