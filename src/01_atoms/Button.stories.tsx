@@ -10,7 +10,12 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
+type ArgTypes = {
+  primary: boolean,
+  children: string
+}
+
+const Template = (args: ArgTypes) => <Button {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {

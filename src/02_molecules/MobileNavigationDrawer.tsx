@@ -30,9 +30,10 @@ export default styled(MobileNavigationDrawer)`
   ${display(LAYOUT_DISPLAY.FLEX)}
   ${flexboxDirection(FLEXBOX_DIRECTION.FLEX_COL)}
   ${backgroundColor(COLORS.GREY, 0, 0.9)}
+  ${height(SIZES.SCREEN_HEIGHT)}
   ul {
     ${listStyle(LIST_STYLE_TYPE.NONE)}
-    ${padding(SIZES.S0, SIZES.S4)}
+    ${padding(SIZES.S10, SIZES.S0)}
     ${margin(SIZES.S0)}
   }
   li {
