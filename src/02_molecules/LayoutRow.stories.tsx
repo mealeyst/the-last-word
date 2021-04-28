@@ -1,30 +1,27 @@
 import React from 'react';
 import { Link } from '../01_atoms/Link'
-import MobileNavigationDrawer from './MobileNavigationDrawer';
+import LayoutRow from './LayoutRow';
 
 export default {
-  title: 'Molecules/MobileNavigationDrawer',
-  component: MobileNavigationDrawer
+  title: 'Molecules/LayoutRow',
+  component: LayoutRow
 };
 
-type ArgTypes = {
-  closed: boolean,
-}
 
+const 
 
-const Template = (args: ArgTypes) => {
+const Template = () => {
   return(
-    <MobileNavigationDrawer absolute={false} closed={args.closed}>
+    <LayoutRow>
       <Link href="#" light={false}>Home</Link>
       <Link href="#" light={false}>Menus</Link>
       <Link href="#" light={false}>Gallery</Link>
       <Link href="#" light={false}>Press</Link>
       <Link href="#" light={false}>Contact</Link>
-    </MobileNavigationDrawer>
+    </LayoutRow>
   )
 }
 
 export const Primary = Template.bind({});
 Primary.args = {
-  closed: false
 };

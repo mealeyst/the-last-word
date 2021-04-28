@@ -9,23 +9,22 @@ export default {
 
 
 type ArgTypes = {
-  open: boolean,
+  closed: boolean,
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
 const Template = (args: ArgTypes) => {
-  console.log(args)
-  const [open, setOpen] = useState(args.open)
+  const [closed, setClosed] = useState(args.closed)
   const handleClick = (event: any) => {
-    setOpen(!open)
+    setClosed(!closed)
     args.onClick(event)
   }
   return(
-    <HamburgerButton open={open} onClick={handleClick} />
+    <HamburgerButton closed={closed} onClick={handleClick} absolute={false} />
   )
 }
 
 export const Primary = Template.bind({});
 Primary.args = {
-  open: false
+  closed: false
 };

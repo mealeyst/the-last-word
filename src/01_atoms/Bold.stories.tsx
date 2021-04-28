@@ -11,7 +11,6 @@ const Template = (args) => <Bold {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: 'Aliquam viverra dolor eu metus vestibulum',
-  href: '#'
+  children: 'Aliquam viverra dolor eu metus vestibulum'
 };
 
