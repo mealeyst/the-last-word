@@ -3,7 +3,7 @@ import React from 'react';
 import { COLORS } from '../00_quarks/colors';
 import { FONT_WEIGHT } from '../00_quarks/typography';
 import { getEnumKeys } from '../utils/enumKeys';
-import { H1 } from './H1';
+import H1 from './H1';
 
 const COLOR_NAMES = getEnumKeys(COLORS)
 const FONT_WEIGHT_NAMES = getEnumKeys(FONT_WEIGHT)

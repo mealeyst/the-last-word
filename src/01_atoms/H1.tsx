@@ -1,18 +1,14 @@
-import React from 'react'
 import styled from 'styled-components'
 import { color, COLORS } from '../00_quarks/colors'
 import { fontFamily, fontWeight, FONT_FAMILY, FONT_WEIGHT, textTransform, TEXT_TRANSFORM } from '../00_quarks/typography'
 
-type Props = {
-  className: string
-  children: any,
-  color:  COLORS,
-  shade: number
+type H1Props = {
+  color: COLORS,
+  shade: number,
+  weight: FONT_WEIGHT
 }
 
-export const H1 = styled(({className, children}) => {
-  return (<h1 className={className}>{children}</h1>)
-})`
+const H1 = styled.h1<H1Props>`
   ${props => {
     return color(props.color, props.shade)
   }}
@@ -26,3 +22,5 @@ H1.defaultProps = {
   shade: 0,
   weight: FONT_WEIGHT.NORMAL
 }
+
+export default H1

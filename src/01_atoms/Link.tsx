@@ -1,36 +1,38 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components'
 import { backgroundColor } from '../00_quarks/background';
-import { color, COLORS } from '../00_quarks/colors';
+import { color, COLORS, buildColorStyle } from '../00_quarks/colors';
 import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right } from '../00_quarks/layout';
 import { height, SIZES, width } from '../00_quarks/sizing';
+import { padding } from '../00_quarks/spacing';
 import { TEXT_DECORATION, textDecoration, TEXT_TRANSFORM, textTransform } from '../00_quarks/typography';
 
 type LinkProps = {
-  light?: boolean,
+  color?: COLORS
+  shade?: number
   children: ReactNode
   href: string
+  underline?: boolean
 }
 
+const animateUnderline = css`
+&:focus, &:hover {
+  &:before, &:after {
+    transform: scaleX(1);
+  }
+}
+`
+
 export const Link = styled('a')<LinkProps>`
-  ${props => props.light && `
-    ${color(COLORS.GREY, 1)}
-  `}
-  ${props => !props.light && `
-    ${color(COLORS.GREY, 9)}
-  `}
+  ${props => color(props.color, props.shade)}
   ${textTransform(TEXT_TRANSFORM.UPPERCASE)}
   ${position(LAYOUT_POSITION.RELATIVE)}
   ${textDecoration(TEXT_DECORATION.NO_UNDERLINE)}
+  ${padding(SIZES.S1)}
   &:before, &:after {
     ${position(LAYOUT_POSITION.ABSOLUTE)}
     ${display(LAYOUT_DISPLAY.BLOCK)}
-    ${props => props.light && `
-      ${backgroundColor(COLORS.GREY, 1)}
-    `}
-    ${props => !props.light && `
-      ${backgroundColor(COLORS.GREY, 9)}
-    `}
+    ${props => backgroundColor(props.color, props.shade)}
     content: '';
     ${height(SIZES.S0_1)}
     ${width(SIZES.HALF)}
@@ -46,16 +48,15 @@ export const Link = styled('a')<LinkProps>`
     ${left(SIZES.HALF)}
     transform-origin: left center;
   }
-  &:focus, &:hover {
-    &:before, &:after {
-      transform: scaleX(1);
-    }
-  }
+
   &:focus {
     outline: none;
   }
+  ${props => props.underline && animateUnderline}
 `
 
 Link.defaultProps = {
-  light: true
+  color: COLORS.GREY,
+  shade: 0,
+  underline: true
 }

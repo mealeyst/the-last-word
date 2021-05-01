@@ -1,4 +1,4 @@
-import react from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { color, COLORS } from '../00_quarks/colors'
 import { fontFamily, fontWeight, FONT_FAMILY, FONT_WEIGHT, textTransform, TEXT_TRANSFORM } from '../00_quarks/typography'

@@ -2,7 +2,7 @@ import React, { FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components'
 import { backgroundColor } from '../00_quarks/background';
 import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border';
-import { BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment';
+import { alignItem, BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment';
 import { COLORS } from '../00_quarks/colors';
 import { display, LAYOUT_DISPLAY } from '../00_quarks/layout';
 import { SIZES, width } from '../00_quarks/sizing';
@@ -44,5 +44,7 @@ export default styled(DesktopNavigation)`
   li {
     ${padding(SIZES.S0, SIZES.S4)}
     ${margin(SIZES.S0)}
+    ${display(LAYOUT_DISPLAY.FLEX)}
+    ${alignItem(BOX_ALIGNMENT.CENTER)}
   }
 `
