@@ -1,5 +1,5 @@
 import React, { Fragment, useState, MouseEventHandler } from 'react';
-import { Link } from '../01_atoms/Link'
+import Link, { LinkProps } from '../01_atoms/Link'
 import { MobileNavigation } from './MobileNavigation';
 
 export default {
@@ -13,6 +13,10 @@ type ArgTypes = {
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
+const DarkLink = (props: LinkProps) => (
+  <Link {...props} shade={10} />
+)
+
 const Template = (args: ArgTypes) => {
   const [closed, setClosed] = useState(args.closed)
   const clickHandler = (event: any) => {
@@ -22,11 +26,11 @@ const Template = (args: ArgTypes) => {
   return(
     <Fragment>
       <MobileNavigation closed={closed} clickHandler={clickHandler}>
-        <Link href="#" light={false}>Home</Link>
-        <Link href="#" light={false}>Menus</Link>
-        <Link href="#" light={false}>Gallery</Link>
-        <Link href="#" light={false}>Press</Link>
-        <Link href="#" light={false}>Contact</Link>
+        <DarkLink href="#">Home</DarkLink>
+        <DarkLink href="#">Menus</DarkLink>
+        <DarkLink href="#">Gallery</DarkLink>
+        <DarkLink href="#">Press</DarkLink>
+        <DarkLink href="#">Contact</DarkLink>
       </MobileNavigation>
       <section style={{padding: '0 3rem'}}>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent volutpat odio ex, vel mollis ipsum porttitor sit amet. Nulla dignissim felis at nisi sodales sodales. Cras sed sem a est tincidunt tincidunt. Vivamus mi nunc, malesuada quis ullamcorper ut, volutpat quis est. Maecenas viverra viverra nisl, eu ullamcorper quam varius ut. Proin laoreet vestibulum purus, id hendrerit dui pharetra sit amet. Morbi ornare laoreet est, et dapibus turpis cursus eu. Mauris et leo eu turpis luctus commodo. In sapien dolor, lobortis eget tortor sit amet, ornare eleifend lacus. Pellentesque quis condimentum magna. Donec euismod egestas justo, non luctus dolor dapibus eu. Praesent id gravida dui. Maecenas aliquet justo sed suscipit dapibus. Cras rhoncus libero pretium, rutrum sem eu, accumsan dui.</p>

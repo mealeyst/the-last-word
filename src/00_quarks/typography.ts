@@ -105,8 +105,8 @@ export enum WORD_BREAK {
 }
 
 export const fontFamilyValues: {[key in FONT_FAMILY]: string} = {
-  [FONT_FAMILY.HEADER]: '\'Old Standard TT\', serif',
-  [FONT_FAMILY.BODY]: '\'PT Serif\', serif'
+  [FONT_FAMILY.HEADER]: '\'Bodoni Moda\', serif',
+  [FONT_FAMILY.BODY]: '\'Montserrat\', sans-serif'
 }
 
 export const fontSizeValues: {[key in FONT_SIZE]: string} = {
@@ -262,8 +262,7 @@ export const wordBreak = (type: WORD_BREAK): string => {
 }
 
 export const ImportFonts = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body {
   ${fontFamily(FONT_FAMILY.BODY)}
 }

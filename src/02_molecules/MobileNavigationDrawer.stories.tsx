@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from '../01_atoms/Link'
+import Link from '../01_atoms/Link'
 import MobileNavigationDrawer from './MobileNavigationDrawer';
+import { COLORS } from '../00_quarks/colors'
 
 export default {
   title: 'Molecules/MobileNavigationDrawer',
@@ -11,20 +12,25 @@ type ArgTypes = {
   closed: boolean,
 }
 
+const DarkLink = (props) => (
+  <Link {...props} shade={10} />
+)
 
 const Template = (args: ArgTypes) => {
   return(
-    <MobileNavigationDrawer absolute={false} closed={args.closed}>
-      <Link href="#" light={false}>Home</Link>
-      <Link href="#" light={false}>Menus</Link>
-      <Link href="#" light={false}>Gallery</Link>
-      <Link href="#" light={false}>Press</Link>
-      <Link href="#" light={false}>Contact</Link>
+    <MobileNavigationDrawer
+      absolute={false}
+      closed={args.closed}>
+      <DarkLink href="#" >Home</DarkLink>
+      <DarkLink href="#">Menus</DarkLink>
+      <DarkLink href="#">Gallery</DarkLink>
+      <DarkLink href="#">Press</DarkLink>
+      <DarkLink href="#">Contact</DarkLink>
     </MobileNavigationDrawer>
   )
 }
 
 export const Primary = Template.bind({});
 Primary.args = {
-  closed: false
+  closed: true
 };

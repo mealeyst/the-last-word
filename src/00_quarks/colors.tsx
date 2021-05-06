@@ -1,9 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
-import { getEnumKeys } from '../utils/enumKeys'
+import { getEnumKeys } from '../utils/enum'
 
 export enum COLORS {
   GREY,
-  ORANGE,
+  GOLD,
   TRANSPARENT
 }
 
@@ -16,7 +16,7 @@ type HSL  = {
 interface Colors {
   [COLORS.TRANSPARENT]: string
   [COLORS.GREY]: Array<HSL>,
-  [COLORS.ORANGE]: Array<HSL>
+  [COLORS.GOLD]: Array<HSL>
 }
 
 export const colors: Colors = {
@@ -34,7 +34,7 @@ export const colors: Colors = {
     {hue: 210, saturation: '11%', lightness: '15%'},  // 9 hsl(210, 11%, 15%)
     {hue: 210, saturation: '11%', lightness: '5%'}    // 10 hsl(210, 11%, 5%)
   ],
-  [COLORS.ORANGE]: [
+  [COLORS.GOLD]: [
     {hue: 49, saturation: '80%', lightness: '90%'},   // 0 hsl(49, 80%, 90%)
     {hue: 49, saturation: '100%', lightness: '85%'},  // 1 hsl(49, 65%, 85%)
     {hue: 49, saturation: '53%', lightness: '79%'},   // 2 hsl(49, 53%, 80%)

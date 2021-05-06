@@ -32,7 +32,7 @@ export default styled(DesktopNavigation)`
   ${borderWidth(SIZES.S1, SIZES.S0, SIZES.S1)}
   ${borderColor(COLORS.GREY, 0)}
   ${borderStyle(BORDER_STYLES.DOUBLE)}
-  ${padding(SIZES.S3, SIZES.S0, SIZES.S3)}
+  ${padding(SIZES.S2, SIZES.S0, SIZES.S2)}
   ul {
     ${display(LAYOUT_DISPLAY.FLEX)}
     ${listStyle(LIST_STYLE_TYPE.NONE)}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { COLORS } from '../00_quarks/colors';
-import { Link } from '../01_atoms/Link'
+import Link from '../01_atoms/Link'
 import TextLogo from '../01_atoms/TextLogo'
 import DesktopNavigation from './DesktopNavigation';
 

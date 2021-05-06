@@ -45,10 +45,11 @@ import {
 export const Button = styled.button`
   ${backgroundColor(COLORS.TRANSPARENT)}
   ${borderColor(COLORS.GREY,0)}
-  ${borderStyle(BORDER_STYLES.SOLID)}
-  ${borderWidth(SIZES.S0_5)}
+  ${borderWidth(SIZES.S1)}
+  ${borderColor(COLORS.GREY, 0)}
+  ${borderStyle(BORDER_STYLES.DOUBLE)}
   ${color(COLORS.GREY, 0)}
-  ${fontFamily(FONT_FAMILY.BODY)}
+  ${fontFamily(FONT_FAMILY.HEADER)}
   ${height(SIZES.S10)}
   ${overflow(LAYOUT_OVERFLOW.HIDDEN)}
   ${padding(SIZES.S0, SIZES.S6)}
@@ -61,20 +62,20 @@ export const Button = styled.button`
     ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_0)}
     ${display(LAYOUT_DISPLAY.BLOCK)}
     ${height(SIZES.TWO_HUNDRED)}
-    ${left(SIZES.HALF)}
+    ${left(SIZES.S0)}
     ${position(LAYOUT_POSITION.ABSOLUTE)}
-    ${top(SIZES.HALF)}
+    ${top(SIZES.S0)}
     ${width(SIZES.FULL)}
     ${zIndex(LAYOUT_ZINDEX.ZNEG10)}
     content: '';
-    transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(0);
+    transform: scaleX(0);
     transition: all 0.3s;
   }
   &:hover, &:focus{
     ${color(COLORS.GREY, 9)}
     :after {
       ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_100)}
-      transform: translateX(-50%) translateY(-50%) rotate(45deg) scaleX(1);
+      transform: scaleX(1);
     }
   }
   &:focus {

@@ -101,7 +101,7 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
   animation-fill-mode: forwards;
   ${display(LAYOUT_DISPLAY.FLEX)}
   ${flexboxDirection(FLEXBOX_DIRECTION.FLEX_COL)}
-  ${backgroundColor(COLORS.GREY, 0, 0.9)}
+  ${backgroundColor(COLORS.GREY, 0, 1)}
   ul {
     ${listStyle(LIST_STYLE_TYPE.NONE)}
     ${padding(SIZES.S10, SIZES.S0)}
