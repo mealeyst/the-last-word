@@ -45,9 +45,7 @@ const storyData = {
 
 const Template = (args: Typography) => {
   return (
-    <P>
-      This is an example where we would like to <Bold {...args}>bold</Bold> an element
-    </P>
+    <P>This is an example where we would like to <Bold {...args}>bold</Bold> an element</P>
   );
 }
 

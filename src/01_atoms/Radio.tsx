@@ -2,11 +2,20 @@ import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import { BACKGROUND_OPACITY, backgroundOpacity } from '../00_quarks/background'
 import { COLORS, buildColorStyle } from '../00_quarks/colors'
-import { LAYOUT_DISPLAY, LAYOUT_POSITION, display, position, top, left } from '../00_quarks/layout'
+import { LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, display, position, top, left, zIndex } from '../00_quarks/layout'
 import { margin } from '../00_quarks/spacing'
 import { SIZES, height, width } from '../00_quarks/sizing'
 
-const Radio = ({className, ...props}) => {
+interface RadioProps {
+  className?: string
+  colorName?: COLORS
+  name: string
+  shade?: number
+  size?: SIZES
+  value: string
+}
+
+const Radio = ({className, ...props}: RadioProps) => {
   return (
     <Fragment>
       <div className={className}>
@@ -21,7 +30,7 @@ const Radio = ({className, ...props}) => {
   )
 }
 
-export const StyledRadio = styled(Radio)`
+export const StyledRadio = styled(Radio)<RadioProps>`
   ${display(LAYOUT_DISPLAY.INLINE_BLOCK)}
   ${position(LAYOUT_POSITION.RELATIVE)}
   ${props => height(props.size)}
@@ -36,10 +45,10 @@ export const StyledRadio = styled(Radio)`
   input {
     ${margin(SIZES.S0)}
     ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_0)}
-    z-index: 1;
+    ${zIndex(LAYOUT_ZINDEX.Z10)}
   }
   svg {
-    z-index: 0;
+    ${zIndex(LAYOUT_ZINDEX.Z0)}
     .ring{
       ${buildColorStyle('fill')(COLORS.TRANSPARENT)}
       ${props => buildColorStyle('stroke')(props.colorName, props.shade)}
