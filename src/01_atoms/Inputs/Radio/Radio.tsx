@@ -1,13 +1,21 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, FunctionComponent, InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { BACKGROUND_OPACITY, backgroundOpacity } from '../00_quarks/background'
-import { COLORS, buildColorStyle } from '../00_quarks/colors'
-import { LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, display, position, top, left, zIndex } from '../00_quarks/layout'
-import { margin } from '../00_quarks/spacing'
-import { SIZES, height, width } from '../00_quarks/sizing'
+import { BACKGROUND_OPACITY, backgroundOpacity } from '../../../00_quarks/background'
+import { COLORS, buildColorStyle } from '../../../00_quarks/colors'
+import {
+  LAYOUT_DISPLAY,
+  LAYOUT_POSITION,
+  LAYOUT_ZINDEX,
+  display,
+  position,
+  top,
+  left,
+  zIndex
+} from '../../../00_quarks/layout'
+import { margin } from '../../../00_quarks/spacing'
+import { SIZES, height, width } from '../../../00_quarks/sizing'
 
-interface RadioProps {
-  className?: string
+interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   colorName?: COLORS
   name: string
   shade?: number
@@ -15,7 +23,7 @@ interface RadioProps {
   value: string
 }
 
-const Radio = ({className, ...props}: RadioProps) => {
+const Radio:FunctionComponent = ({className, ...props}: RadioProps) => {
   return (
     <Fragment>
       <div className={className}>
@@ -23,7 +31,7 @@ const Radio = ({className, ...props}: RadioProps) => {
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
           <circle className="ring outer" cx="12.5" cy="12.5" r="10"/>
           <circle className="ring" cx="12.5" cy="12.5" r="7.5"/>
-          <circle className="fill" cx="12.5" cy="12.5" r="7"/>
+          <circle className="fill" cx="12.5" cy="12.5" r="7.5"/>
         </svg>
       </div>
     </Fragment>

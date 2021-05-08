@@ -1,67 +1,67 @@
-import React from 'react';
+import React, { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-import { backgroundColor, backgroundOpacity, BACKGROUND_OPACITY } from '../00_quarks/background';
+import {
+  backgroundColor,
+  backgroundOpacity,
+  BACKGROUND_OPACITY
+} from '../../../00_quarks/background';
+
 import {
   BORDER_STYLES,
   borderColor,
   borderStyle,
   borderWidth
-} from '../00_quarks/border'
-import {
-  color,
-  COLORS
-} from '../00_quarks/colors'
+} from '../../../00_quarks/border'
+import { color, COLORS } from '../../../00_quarks/colors'
 import {
   display,
   LAYOUT_DISPLAY,
-  LAYOUT_OVERFLOW,
   LAYOUT_POSITION,
   LAYOUT_ZINDEX,
   left,
-  overflow,
   position,
   top,
   zIndex
-} from '../00_quarks/layout'
+} from '../../../00_quarks/layout'
+import {
+  FONT_FAMILY,
+  fontFamily,
+  fontSize,
+  FONT_SIZE,
+  LETTER_SPACING,
+  letterSpacing
+} from '../../../00_quarks/typography'
 import {
   height,
   SIZES,
   width
-} from '../00_quarks/sizing'
-import { padding } from '../00_quarks/spacing'
-import {
-  FONT_FAMILY,
-  fontFamily,
-  LETTER_SPACING,
-  letterSpacing,
-  textTransform,
-  TEXT_TRANSFORM
-} from '../00_quarks/typography'
+} from '../../../00_quarks/sizing'
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = styled.button`
+interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+  colorName?: COLORS
+  fontSize?: FONT_SIZE
+  shade?: number
+}
+
+export const Input = styled.input.attrs(props => ({type: 'text'}))<InputProps>`
+  ${props => color(props.colorName, props.shade) }
+  ${props => fontSize(props.fontSize)}
   ${backgroundColor(COLORS.TRANSPARENT)}
+  ${height(SIZES.S10)}
   ${borderColor(COLORS.GREY,0)}
   ${borderWidth(SIZES.S1)}
   ${borderColor(COLORS.GREY, 0)}
   ${borderStyle(BORDER_STYLES.DOUBLE)}
-  ${color(COLORS.GREY, 0)}
   ${fontFamily(FONT_FAMILY.HEADER)}
-  ${height(SIZES.S10)}
-  ${overflow(LAYOUT_OVERFLOW.HIDDEN)}
-  ${padding(SIZES.S0, SIZES.S6)}
-  ${position(LAYOUT_POSITION.RELATIVE)}
-  ${textTransform(TEXT_TRANSFORM.UPPERCASE)}
-  transition: all 0.3s;
   ${letterSpacing(LETTER_SPACING.WIDE)}
+  ${position(LAYOUT_POSITION.RELATIVE)}
+  transition: all 0.3s;
   &:after {
     ${backgroundColor(COLORS.GREY,0)}
     ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_0)}
     ${display(LAYOUT_DISPLAY.BLOCK)}
-    ${height(SIZES.TWO_HUNDRED)}
+    ${height(SIZES.FULL)}
     ${left(SIZES.S0)}
     ${position(LAYOUT_POSITION.ABSOLUTE)}
     ${top(SIZES.S0)}
@@ -73,6 +73,7 @@ export const Button = styled.button`
   }
   &:hover, &:focus{
     ${color(COLORS.GREY, 9)}
+    ${backgroundColor(COLORS.GREY,0)}
     :after {
       ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_100)}
       transform: scaleX(1);
@@ -83,4 +84,10 @@ export const Button = styled.button`
   }
 `
 
+Input.defaultProps = {
+  colorName: COLORS.GREY,
+  fontSize: FONT_SIZE.XL,
+  shade: 0
+}
 
+export default Input

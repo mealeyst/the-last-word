@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 
-import { COLORS } from '../00_quarks/colors'
-import { SIZES } from '../00_quarks/sizing';
-import { convertEnumToObject } from '../utils/enum'
-import Radio from './Radio';
+import { COLORS } from '../../../00_quarks/colors'
+import { SIZES } from '../../../00_quarks/sizing';
+import { convertEnumToObject } from '../../../utils/enum'
+import { FONT_SIZE  } from '../../../00_quarks/typography'
+import Input from './Input';
 
 const storyData = {
-  title: 'Atoms/Inputs/Radio',
-  component: Radio,
+  title: 'Atoms/Inputs/Input',
+  component: Input,
   argTypes: {
     colorName: {
       control: {
@@ -18,10 +19,10 @@ const storyData = {
     shade: {
       control: { type: 'range', min: 0, max: 10 }
     },
-    size: {
+    fontSize: {
       control: {
         type: 'inline-radio',
-        options: convertEnumToObject(SIZES)
+        options: convertEnumToObject(FONT_SIZE)
       }
     }
   }
@@ -36,9 +37,7 @@ type ArgsType = {
 const Template = (args: ArgsType) => {
   return (
     <Fragment>
-      <Radio name="example" value="1" {...args} />
-      <Radio name="example" value="2" {...args} />
-      <Radio name="example" value="3" {...args} />
+      <Input name="example" {...args} />
     </Fragment>
   )
 }
@@ -46,8 +45,8 @@ const Template = (args: ArgsType) => {
 export const Default = Template.bind({});
 Default.args = {
   colorName: COLORS.GREY,
+  fontSize: FONT_SIZE.XL,
   shade: 0,
-  size: SIZES.S6
 };
 
 export default storyData
