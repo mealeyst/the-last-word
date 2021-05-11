@@ -5,7 +5,7 @@ type FadeType = {
   className?: string,
   children: ReactNode | ReactNode[],
   duration?: number,
-  show?: boolean,
+show?: boolean,
 }
 
 const Fade = ({ className, children, show, }: FadeType) => {

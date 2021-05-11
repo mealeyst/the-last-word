@@ -1,12 +1,15 @@
-import React, { ReactNode } from 'react'
-import Fade from './Fade'
+import React, { ComponentType, ReactNode } from 'react'
+import {default as Fade} from './Fade'
+import {default as Shake} from './Shake'
 
 export enum ANIMATION_NAMES {
   FADE,
+  SHAKE
 }
 
 const Animations = {
-  [ANIMATION_NAMES.FADE]: Fade
+  [ANIMATION_NAMES.FADE]: Fade,
+  [ANIMATION_NAMES.SHAKE]: Shake
 }
 
 type AnimationProps = {
@@ -19,9 +22,7 @@ type AnimationProps = {
 
 const Animation = (props: AnimationProps) => {
   const { name } = props
-  console.log(props)
-  const RenderAnimation = Animations[name]
-  console.log("What we got!?", RenderAnimation)
+  const RenderAnimation: ComponentType = Animations[name]
   return (
     <RenderAnimation {...props} />
   )

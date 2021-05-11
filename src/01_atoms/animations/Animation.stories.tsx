@@ -1,13 +1,24 @@
 import React from 'react';
+// @ts-ignore
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+// @ts-ignore
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
+import { convertEnumToObject } from '../../utils/enum'
 import Animation, { ANIMATION_NAMES } from './Animation';
 
 
 export default {
   title: 'Atoms/Animations',
-  component: Animation
+  component: Animation,
+  argTypes: {
+    name: {
+      control: {
+        type: 'inline-radio',
+        options: convertEnumToObject(ANIMATION_NAMES)
+      }
+    }
+  }
 };
 
 const Template = (args: any) => {
@@ -24,4 +35,12 @@ Fade.args = {
   duration: 0.25,
   name: ANIMATION_NAMES.FADE
 };
+
+export const Shake = Template.bind({});
+Shake.args = {
+  show: true,
+  duration: 0.25,
+  name: ANIMATION_NAMES.SHAKE
+};
+
 

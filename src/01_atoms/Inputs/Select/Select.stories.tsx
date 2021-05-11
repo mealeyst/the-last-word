@@ -4,11 +4,11 @@ import { COLORS } from '../../../00_quarks/colors'
 import { SIZES } from '../../../00_quarks/sizing';
 import { convertEnumToObject } from '../../../utils/enum'
 import { FONT_SIZE  } from '../../../00_quarks/typography'
-import Input from './Input';
+import Select from './Select';
 
 const storyData = {
-  title: 'Atoms/Inputs/Input',
-  component: Input,
+  title: 'Atoms/Inputs/Select',
+  component: Select,
   argTypes: {
     colorName: {
       control: {
@@ -36,7 +36,15 @@ type ArgsType = {
 
 const Template = (args: ArgsType) => {
   return (
-    <Input name="example" {...args} />
+    <Select name="example" {...args}>
+      <option value="">--Please choose an option--</option>
+      <option value="dog">Dog</option>
+      <option value="cat">Cat</option>
+      <option value="hamster">Hamster</option>
+      <option value="parrot">Parrot</option>
+      <option value="spider">Spider</option>
+      <option value="goldfish">Goldfish</option>
+    </Select>
   )
 }
 

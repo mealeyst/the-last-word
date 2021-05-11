@@ -31,18 +31,20 @@ import {
 } from '../../../00_quarks/sizing'
 import { padding } from '../../../00_quarks/spacing';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+
+interface SelectProps extends InputHTMLAttributes<HTMLSelectElement>{
   colorName?: COLORS
   fontSize?: FONT_SIZE
   shade?: number
 }
 
-export const Input = styled.input.attrs(props => ({type: 'text'}))<InputProps>`
+export const Select = styled.select<SelectProps>`
+  ${position(LAYOUT_POSITION.RELATIVE)}
   ${props => color(props.colorName, props.shade) }
   ${props => fontSize(props.fontSize)}
   ${backgroundColor(COLORS.TRANSPARENT)}
   ${height(SIZES.S10)}
-  ${padding(SIZES.S0, SIZES.S2)}
+  ${padding(SIZES.S0, SIZES.S10, SIZES.S0, SIZES.S2)}
   ${borderColor(COLORS.GREY,0)}
   ${borderWidth(SIZES.S1)}
   ${borderColor(COLORS.GREY, 0)}
@@ -50,24 +52,33 @@ export const Input = styled.input.attrs(props => ({type: 'text'}))<InputProps>`
   ${fontFamily(FONT_FAMILY.HEADER)}
   ${letterSpacing(LETTER_SPACING.WIDE)}
   ${position(LAYOUT_POSITION.RELATIVE)}
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc
+  );
+  background-position:
+    calc(100% - 15px) calc(0.9rem),
+    calc(100% - 10px) calc(0.9rem),
+    calc(100% - 2rem) 0.3rem;
+  background-size: 5px 5px, 5px 5px, 1px 1.5rem;
+  background-repeat: no-repeat;
   transition: all 0.3s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   &:hover, &:focus{
     ${color(COLORS.GREY, 9)}
     ${backgroundColor(COLORS.GREY,0)}
-    :after {
-      ${backgroundOpacity(BACKGROUND_OPACITY.OPACITY_100)}
-      transform: scaleX(1);
-    }
   }
   &:focus {
     outline: none;
   }
 `
 
-Input.defaultProps = {
+Select.defaultProps = {
   colorName: COLORS.GREY,
   fontSize: FONT_SIZE.XL,
   shade: 0
 }
 
-export default Input
+export default Select

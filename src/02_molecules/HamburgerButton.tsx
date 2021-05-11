@@ -1,6 +1,8 @@
 import React, { FunctionComponent, MouseEventHandler } from 'react';
 import styled from 'styled-components'
+// @ts-ignore
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// @ts-ignore
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { backgroundColor } from '../00_quarks/background';
 import { color, COLORS } from '../00_quarks/colors';
