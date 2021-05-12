@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Link from '../01_atoms/Link'
 import MobileNavigationDrawer from './MobileNavigationDrawer';
 import { COLORS } from '../00_quarks/colors'
@@ -9,7 +9,7 @@ export default {
 };
 
 type ArgTypes = {
-  closed: boolean,
+  open: boolean,
 }
 
 const DarkLink = (props) => (
@@ -18,9 +18,7 @@ const DarkLink = (props) => (
 
 const Template = (args: ArgTypes) => {
   return(
-    <MobileNavigationDrawer
-      absolute={false}
-      closed={args.closed}>
+    <MobileNavigationDrawer open={args.open}  absolute={false}>
       <DarkLink href="#" >Home</DarkLink>
       <DarkLink href="#">Menus</DarkLink>
       <DarkLink href="#">Gallery</DarkLink>
@@ -32,5 +30,5 @@ const Template = (args: ArgTypes) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  closed: true
+  open: true
 };

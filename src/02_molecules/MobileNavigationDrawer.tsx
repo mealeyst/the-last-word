@@ -1,5 +1,12 @@
-import React, { FunctionComponent, ReactNode} from 'react'
+import React, {
+  Fragment,
+  FunctionComponent,
+  HTMLAttributes,
+  ReactNode,
+  useState
+} from 'react'
 import styled, { keyframes, css } from 'styled-components'
+
 import { backgroundColor } from '../00_quarks/background';
 import { alignItem, BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment';
 import { COLORS } from '../00_quarks/colors';
@@ -8,12 +15,14 @@ import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right
 import { height, SIZES, width } from '../00_quarks/sizing';
 import { margin, padding } from '../00_quarks/spacing';
 import { listStyle, LIST_STYLE_TYPE } from '../00_quarks/typography';
+import { useDelayUnmount } from '../utils/hooks/shouldRender'
 
-type MobileDrawerProps = {
+interface MobileDrawerProps extends HTMLAttributes<HTMLElement> {
   absolute?: boolean,
-  className?: string,
-  closed: boolean,
-  children: ReactNode[]
+  children: ReactNode[],
+  open?: boolean,
+  isMounted?: boolean,
+  delay?: number
 }
 
 const slideIn = keyframes`
@@ -62,7 +71,7 @@ const slideOut = keyframes`
   }
 `
 
-const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({className, children}) => {
+const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({className, children, unmountDelay}) => {
   return (
     <nav className={className}>
       <ul>
@@ -94,9 +103,9 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
     }
   }}
   ${props => (
-    props.closed ? css`animation-name: ${slideOut};` : css`animation-name: ${slideIn};`
+    props.open ? css`animation-name: ${slideIn};` : css`animation-name: ${slideOut};`
   )}
-  animation-duration: 750ms;
+  animation-duration: ${props => props.delay}ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   ${display(LAYOUT_DISPLAY.FLEX)}
@@ -119,9 +128,23 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
   }
 `
 
-StyledMobileDrawer.defaultProps = {
-  absolute: true,
-  closed: true
+const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
+  const { open, delay } = props
+  const [isUnmounted, setIsUnmounted] = useState(false);
+  setTimeout(setIsUnmounted, delay, true);
+  console.log('Are we closed?', closed)
+  console.log('should the drawer be rendered?', isUnmounted)
+  if(isUnmounted) {
+    return null
+  } else { 
+    return (<StyledMobileDrawer {...props} />)
+  }
 }
 
-export default StyledMobileDrawer
+StyledMobileDrawer.defaultProps = {
+  absolute: true,
+  delay: 5000,
+  open: true
+}
+
+export default MobileDrawerWrapper
