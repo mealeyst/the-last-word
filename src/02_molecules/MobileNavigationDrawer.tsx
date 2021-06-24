@@ -1,5 +1,4 @@
 import React, {
-  Fragment,
   FunctionComponent,
   HTMLAttributes,
   ReactNode,
@@ -15,63 +14,55 @@ import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right
 import { height, SIZES, width } from '../00_quarks/sizing';
 import { margin, padding } from '../00_quarks/spacing';
 import { listStyle, LIST_STYLE_TYPE } from '../00_quarks/typography';
-import { useDelayUnmount } from '../utils/hooks/shouldRender'
+import { useThrottledCallback } from '../utils/hooks/throttled-callback.hook'
 
 interface MobileDrawerProps extends HTMLAttributes<HTMLElement> {
   absolute?: boolean,
   children: ReactNode[],
   open?: boolean,
-  isMounted?: boolean,
+  slideOut?: boolean,
   delay?: number
 }
 
 const slideIn = keyframes`
   0%{
-    backdrop-filter: blur(0px);
     opacity: 0;
     translate: translateX(-100%);
   }
   1% {
-    backdrop-filter: blur(0px);
     opacity: 0;
     translate: translateX(0%);
   }
   75% {
-    backdrop-filter: blur(5px);
-    opacity: .9;
+    opacity: 1;
     translate: translateX(0%);
   }
   100% {
-    backdrop-filter: blur(5px);
-    opacity: .9;
+    opacity: 1;
     translate: translateX(0%);
   }
 `
 
 const slideOut = keyframes`
   0% {
-    backdrop-filter: blur(5px);
-    opacity: .9;
+    opacity: 1;
     translate: translateX(0%);
   }
   25% {
-    ackdrop-filter: blur(5px);
-    opacity: .9;
+    opacity: 1;
     translate: translateX(0%);
   }
   99% {
-    backdrop-filter: blur(0px);
     opacity: 0;
     translate: translateX(0%);
   }
   100% {
-    backdrop-filter: blur(0px);
     opacity: 0;
     translate: translateX(-100%);
   }
 `
 
-const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({className, children, unmountDelay}) => {
+const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({className, children}) => {
   return (
     <nav className={className}>
       <ul>
@@ -129,12 +120,11 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
 `
 
 const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
-  const { open, delay } = props
+  const { delay } = props
   const [isUnmounted, setIsUnmounted] = useState(false);
-  setTimeout(setIsUnmounted, delay, true);
-  console.log('Are we closed?', closed)
-  console.log('should the drawer be rendered?', isUnmounted)
+  useThrottledCallback(() => setIsUnmounted(true), delay)
   if(isUnmounted) {
+    console.log('Unmounted')
     return null
   } else { 
     return (<StyledMobileDrawer {...props} />)
@@ -143,7 +133,7 @@ const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
 
 StyledMobileDrawer.defaultProps = {
   absolute: true,
-  delay: 5000,
+  delay: 1000,
   open: true
 }
 

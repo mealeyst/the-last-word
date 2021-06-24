@@ -74,7 +74,8 @@ export enum SIZES {
   TWO_HUNDRED,
   TWO_HUNDRED_FIFTY,
   SCREEN_HEIGHT,
-  SCREEN_WIDTH
+  SCREEN_WIDTH,
+  AUTO
 }
 
 type SizeInterface = {
@@ -150,7 +151,8 @@ export const sizeValues: SizeInterface  = {
   [SIZES.TWO_HUNDRED]: computePercent(2),
   [SIZES.TWO_HUNDRED_FIFTY]: computePercent(2.5),
   [SIZES.SCREEN_HEIGHT]: '100vh',
-  [SIZES.SCREEN_WIDTH]: '100vw'
+  [SIZES.SCREEN_WIDTH]: '100vw',
+  [SIZES.AUTO]: 'auto'
 }
 
 

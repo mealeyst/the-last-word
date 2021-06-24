@@ -10,7 +10,7 @@ import {
 import { Typography } from './typeography'
 
 
-const P = styled.p<Typography>`
+export const P = styled.p<Typography>`
   ${props => color(props.colorName, props.shade)}
   ${props => fontFamily(props.font)}
   ${props => fontSize(props.size)}

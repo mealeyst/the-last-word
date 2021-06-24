@@ -11,7 +11,7 @@ import {
 
 import { Heading } from './typeography'
 
-const H1 = styled.h1<Heading>`
+export const H1 = styled.h1<Heading>`
   ${props => color(props.colorName, props.shade)}
   ${fontFamily(FONT_FAMILY.HEADER)}
   ${props => fontWeight(props.weight)}

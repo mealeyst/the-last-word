@@ -7,7 +7,7 @@ import { height, SIZES, width } from '../00_quarks/sizing';
 import { padding } from '../00_quarks/spacing';
 import { TEXT_DECORATION, textDecoration, TEXT_TRANSFORM, textTransform, FONT_STYLE, fontWeight, FONT_WEIGHT, fontSize, FONT_SIZE, fontFamily, FONT_FAMILY } from '../00_quarks/typography';
 
-interface LinkProps {
+export interface LinkProps {
   children: ReactNode
   colorName?: COLORS
   font?: FONT_FAMILY

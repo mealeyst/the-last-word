@@ -4,31 +4,31 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // @ts-ignore
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
-import { backgroundColor } from '../00_quarks/background';
-import { color, COLORS } from '../00_quarks/colors';
-import { height, SIZES, width } from '../00_quarks/sizing';
-import { borderWidth } from '../00_quarks/border';
-import { padding } from '../00_quarks/spacing';
-import { fontSize, FONT_SIZE } from '../00_quarks/typography';
-import { ScreenReaderText } from '../01_atoms/ScreenReaderText';
-import { LAYOUT_POSITION, left, position, top } from '../00_quarks/layout';
+import { backgroundColor } from '../../00_quarks/background';
+import { color, COLORS } from '../../00_quarks/colors';
+import { height, SIZES, width } from '../../00_quarks/sizing';
+import { borderWidth } from '../../00_quarks/border';
+import { padding } from '../../00_quarks/spacing';
+import { fontSize, FONT_SIZE } from '../../00_quarks/typography';
+import { ScreenReaderText } from '../../01_atoms/ScreenReaderText';
+import { LAYOUT_POSITION, left, position, top } from '../../00_quarks/layout';
 
-import Fade from '../01_atoms/animations/Fade'
+import Fade from '../../01_atoms/Animations/Fade'
 
 type HamburgerButtonProps = {
   absolute?: boolean,
   className?: string,
-  closed?: boolean,
+  open?: boolean,
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
-const HamburgerButton: FunctionComponent<HamburgerButtonProps> = ({className, closed, onClick}) => {
-  const srText = `${closed ? 'closed': 'Close'} menu`
+const HamburgerButton: FunctionComponent<HamburgerButtonProps> = ({className, open, onClick}) => {
+  const srText = `${!open ? 'Open': 'Close'} menu`
   return (
     <button className={className} onClick={onClick}>
       <ScreenReaderText>{srText}</ScreenReaderText>
-      <Fade show={closed}><FontAwesomeIcon className='menu' icon={faBars} aria-hidden="true" /></Fade>
-      <Fade show={!closed}><FontAwesomeIcon className='close' icon={faTimes} aria-hidden="true" /></Fade>
+      <Fade show={!open}><FontAwesomeIcon className='menu' icon={faBars} aria-hidden="true" /></Fade>
+      <Fade show={open}><FontAwesomeIcon className='close' icon={faTimes} aria-hidden="true" /></Fade>
     </button>
   );
 }
@@ -69,7 +69,7 @@ const StyledHamburgerButton: FunctionComponent<HamburgerButtonProps> = styled(Ha
 
 StyledHamburgerButton.defaultProps = {
   absolute: true,
-  closed: false
+  open: true
 }
 
 export default StyledHamburgerButton

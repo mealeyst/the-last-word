@@ -11,7 +11,7 @@ import {
 } from '../../00_quarks/typography';
 import { Typography } from './typeography'
 
-const Italic = styled.span<Typography>`
+export const Italic = styled.span<Typography>`
   ${props => color(props.colorName, props.shade)}
   ${fontFamily(FONT_FAMILY.BODY)}
   ${props => fontSize(props.size)}

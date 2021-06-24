@@ -12,7 +12,7 @@ import {
 import { Typography } from './typeography'
 
 
-const Bold = styled.span<Typography>`
+export const Bold = styled.span<Typography>`
   ${props => color(props.colorName, props.shade)}
   ${props => fontFamily(props.font)}
   ${props => fontSize(props.size)}

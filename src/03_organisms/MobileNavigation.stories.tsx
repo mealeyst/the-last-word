@@ -1,6 +1,6 @@
 import React, { Fragment, useState, MouseEventHandler } from 'react';
 import Link, { LinkProps } from '../01_atoms/Link'
-import { MobileNavigation } from './MobileNavigation';
+import MobileNavigation from './MobileNavigation';
 
 export default {
   title: 'Organisms/MobileNavigation',
@@ -9,7 +9,7 @@ export default {
 };
 
 type ArgTypes = {
-  closed: boolean,
+  open: boolean,
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
@@ -18,14 +18,14 @@ const DarkLink = (props: LinkProps) => (
 )
 
 const Template = (args: ArgTypes) => {
-  const [closed, setClosed] = useState(args.closed)
+  const [open, setClosed] = useState(args.open)
   const clickHandler = (event: any) => {
-    setClosed(!closed)
+    setClosed(!open)
     args.onClick(event)
   }
   return(
     <Fragment>
-      <MobileNavigation closed={closed} clickHandler={clickHandler}>
+      <MobileNavigation open={open} clickHandler={clickHandler}>
         <DarkLink href="#">Home</DarkLink>
         <DarkLink href="#">Menus</DarkLink>
         <DarkLink href="#">Gallery</DarkLink>
@@ -45,5 +45,5 @@ const Template = (args: ArgTypes) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  closed: true
+  open: true
 };
