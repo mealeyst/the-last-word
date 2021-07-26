@@ -1,17 +1,36 @@
 {
   "files": {
-    "main.js": "./main.4b55c1bccdf5ab8f43a1.bundle.js",
-    "main.js.map": "./main.4b55c1bccdf5ab8f43a1.bundle.js.map",
-    "runtime~main.js": "./runtime~main.4b55c1bccdf5ab8f43a1.bundle.js",
-    "runtime~main.js.map": "./runtime~main.4b55c1bccdf5ab8f43a1.bundle.js.map",
-    "vendors~main.js": "./vendors~main.4b55c1bccdf5ab8f43a1.bundle.js",
-    "vendors~main.js.map": "./vendors~main.4b55c1bccdf5ab8f43a1.bundle.js.map",
+    "0.d1b2796c.iframe.bundle.js": "./0.d1b2796c.iframe.bundle.js",
+    "main.css": "./static/css/main.0b660ce0.chunk.css",
+    "main.js": "./main.098f482e.iframe.bundle.js",
+    "main.css.map": "./static/css/main.0b660ce0.chunk.css.map",
+    "runtime~main.js": "./runtime~main.e8ddfe11.iframe.bundle.js",
+    "vendors~main.js": "./vendors~main.90e147be.iframe.bundle.js",
+    "vendors~main.js.map": "./vendors~main.90e147be.iframe.bundle.js.map",
+    "4.cc5373b0.iframe.bundle.js": "./4.cc5373b0.iframe.bundle.js",
+    "4.cc5373b0.iframe.bundle.js.map": "./4.cc5373b0.iframe.bundle.js.map",
+    "5.7d558305.iframe.bundle.js": "./5.7d558305.iframe.bundle.js",
+    "6.a9ee2a4c.iframe.bundle.js": "./6.a9ee2a4c.iframe.bundle.js",
+    "6.a9ee2a4c.iframe.bundle.js.map": "./6.a9ee2a4c.iframe.bundle.js.map",
+    "7.5ac86fc1.iframe.bundle.js": "./7.5ac86fc1.iframe.bundle.js",
+    "4.cc5373b0.iframe.bundle.js.LICENSE.txt": "./4.cc5373b0.iframe.bundle.js.LICENSE.txt",
+    "6.a9ee2a4c.iframe.bundle.js.LICENSE.txt": "./6.a9ee2a4c.iframe.bundle.js.LICENSE.txt",
     "iframe.html": "./iframe.html",
-    "vendors~main.4b55c1bccdf5ab8f43a1.bundle.js.LICENSE.txt": "./vendors~main.4b55c1bccdf5ab8f43a1.bundle.js.LICENSE.txt"
+    "static/media/code-brackets.2e1112d7.svg": "./static/media/code-brackets.2e1112d7.svg",
+    "static/media/colors.a4bd0486.svg": "./static/media/colors.a4bd0486.svg",
+    "static/media/comments.a3859089.svg": "./static/media/comments.a3859089.svg",
+    "static/media/direction.b770f9af.svg": "./static/media/direction.b770f9af.svg",
+    "static/media/flow.edad2ac1.svg": "./static/media/flow.edad2ac1.svg",
+    "static/media/plugin.d494b228.svg": "./static/media/plugin.d494b228.svg",
+    "static/media/repo.6d496322.svg": "./static/media/repo.6d496322.svg",
+    "static/media/stackalt.dba9fbb3.svg": "./static/media/stackalt.dba9fbb3.svg",
+    "static/media/the_last_word_render.987cf35d.jpeg": "./static/media/the_last_word_render.987cf35d.jpeg",
+    "vendors~main.90e147be.iframe.bundle.js.LICENSE.txt": "./vendors~main.90e147be.iframe.bundle.js.LICENSE.txt"
   },
   "entrypoints": [
-    "runtime~main.4b55c1bccdf5ab8f43a1.bundle.js",
-    "vendors~main.4b55c1bccdf5ab8f43a1.bundle.js",
-    "main.4b55c1bccdf5ab8f43a1.bundle.js"
+    "runtime~main.e8ddfe11.iframe.bundle.js",
+    "vendors~main.90e147be.iframe.bundle.js",
+    "static/css/main.0b660ce0.chunk.css",
+    "main.098f482e.iframe.bundle.js"
   ]
 }
