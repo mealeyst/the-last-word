@@ -4,14 +4,15 @@ import { backgroundColor } from '../00_quarks/background';
 import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border';
 import { alignItem, BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment';
 import { COLORS } from '../00_quarks/colors';
-import { display, LAYOUT_DISPLAY } from '../00_quarks/layout';
+import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, position} from '../00_quarks/layout';
 import { SIZES, width } from '../00_quarks/sizing';
 import { margin, padding } from '../00_quarks/spacing';
 import { listStyle, LIST_STYLE_TYPE } from '../00_quarks/typography';
 
 type DesktopNavProps = {
   className?: string,
-  children: ReactNode[]
+  children: ReactNode[],
+  position: LAYOUT_POSITION
 }
 
 const DesktopNavigation: FunctionComponent<DesktopNavProps> = ({className, children}) => {
@@ -26,13 +27,16 @@ const DesktopNavigation: FunctionComponent<DesktopNavProps> = ({className, child
   )
 }
 
-export default styled(DesktopNavigation)`
+const StyledDesktopNavigation: FunctionComponent<DesktopNavProps> = styled(DesktopNavigation)`
   ${display(LAYOUT_DISPLAY.FLEX)}
   ${backgroundColor(COLORS.GREY, 10)}
   ${borderWidth(SIZES.S1, SIZES.S0, SIZES.S1)}
   ${borderColor(COLORS.GREY, 0)}
   ${borderStyle(BORDER_STYLES.DOUBLE)}
   ${padding(SIZES.S2, SIZES.S0, SIZES.S2)}
+  ${props => position(props.position)}
+  top: 0;
+  box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, .5);
   ul {
     ${display(LAYOUT_DISPLAY.FLEX)}
     ${listStyle(LIST_STYLE_TYPE.NONE)}
@@ -48,3 +52,9 @@ export default styled(DesktopNavigation)`
     ${alignItem(BOX_ALIGNMENT.CENTER)}
   }
 `
+
+StyledDesktopNavigation.defaultProps = {
+  position: LAYOUT_POSITION.STICKY
+}
+
+export default StyledDesktopNavigation;

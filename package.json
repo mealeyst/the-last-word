@@ -8,7 +8,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@storybook/addon-a11y": "^6.1.21",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -35,6 +34,16 @@
     "extends": [
       "react-app",
       "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -50,12 +59,13 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^6.1.17",
-    "@storybook/addon-essentials": "^6.1.17",
-    "@storybook/addon-links": "^6.1.17",
-    "@storybook/node-logger": "^6.1.17",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.17",
+    "@storybook/addon-a11y": "^6.3.5",
+    "@storybook/addon-actions": "^6.3.5",
+    "@storybook/addon-essentials": "^6.3.5",
+    "@storybook/addon-links": "^6.3.5",
+    "@storybook/node-logger": "^6.3.5",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.5",
     "@types/react-fontawesome": "^1.6.4",
     "@types/styled-components": "^5.1.7",
     "babel-loader": "^8.1.0",
