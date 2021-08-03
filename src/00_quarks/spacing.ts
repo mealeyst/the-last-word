@@ -1,3 +1,4 @@
+import { createGlobalStyle } from 'styled-components'
 import { SIZES, getSize } from './sizing'
 
 
@@ -12,3 +13,9 @@ const spacing = (type: string) => (...args: SIZES[]) => {
 }
 export const margin = spacing('margin')
 export const padding = spacing('padding')
+
+export const BodySpacing = createGlobalStyle`
+  body {
+    ${padding(SIZES.S0)}
+  }
+`
