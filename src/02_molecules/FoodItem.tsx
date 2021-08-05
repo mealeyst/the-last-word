@@ -1,10 +1,12 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
+
 import { BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment'
-import { flexboxDirection, flexboxWrap, FLEXBOX_DIRECTION, FLEXBOX_WRAP } from '../00_quarks/flexbox'
+import { COLORS } from '../00_quarks/colors'
 import { display, LAYOUT_DISPLAY } from '../00_quarks/layout'
-import { SIZES, width } from '../00_quarks/sizing'
+import { flexboxWrap, FLEXBOX_WRAP } from '../00_quarks/flexbox'
 import { margin } from '../00_quarks/spacing'
+import { SIZES, width } from '../00_quarks/sizing'
 
 import { FONT_FAMILY } from '../00_quarks/typography'
 import P from '../01_atoms/Typography/P'
@@ -26,7 +28,7 @@ export const FoodItem: FunctionComponent<FoodItemProps> = ({
     <div className={className}>
       <P className='title' font={FONT_FAMILY.HEADER}>{title}</P>
       <P className='price' font={FONT_FAMILY.HEADER}>${price.toFixed(2)}</P>
-      <P className='description'>{description}</P>
+      <P className='description' colorName={COLORS.GOLD} shade={4}>{description}</P>
     </div>
   )
 }
