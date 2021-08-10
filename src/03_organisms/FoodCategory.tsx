@@ -5,11 +5,11 @@ import { backgroundColor } from '../00_quarks/background'
 import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border'
 import { COLORS } from '../00_quarks/colors'
 import { LAYOUT_POSITION, left, position, top } from '../00_quarks/layout'
-import { getSize, SIZES } from '../00_quarks/sizing'
+import { SIZES } from '../00_quarks/sizing'
 import { margin, padding } from '../00_quarks/spacing'
 import { FONT_FAMILY, FONT_SIZE } from '../00_quarks/typography'
 import P from '../01_atoms/Typography/P'
-import { StyledFoodItem, FoodItemProps } from '../02_molecules/FoodItem'
+import FoodItem, { FoodItemProps } from '../02_molecules/FoodItem'
 
 export type FoodCategoryProps = {
   className: string,
@@ -27,7 +27,7 @@ export const FoodCategory: FunctionComponent<FoodCategoryProps> = ({
       <P className='category-name' font={FONT_FAMILY.HEADER} size={FONT_SIZE.XL}>{categoryName}</P>
       {foodItems.map((foodItem) => {
         return (
-          <StyledFoodItem {...foodItem} />
+          <FoodItem {...foodItem} />
         )
       })}
     </div>
@@ -38,9 +38,9 @@ export const StyledFoodCategory = styled(FoodCategory)`
   ${borderWidth(SIZES.S1)}
   ${borderColor(COLORS.GREY, 0)}
   ${borderStyle(BORDER_STYLES.DOUBLE)}
-  ${padding(SIZES.S10, SIZES.S4, SIZES.S4, SIZES.S4)}
+  ${padding(SIZES.S10, SIZES.S4, SIZES.S4)}
   ${position(LAYOUT_POSITION.RELATIVE)}
-  ${margin(SIZES.S4)}
+  ${margin(SIZES.S10, SIZES.S4, SIZES.S4)}
   .category-name {
     ${borderWidth(SIZES.S1)}
     ${borderColor(COLORS.GREY, 0)}
@@ -51,7 +51,7 @@ export const StyledFoodCategory = styled(FoodCategory)`
     ${left(SIZES.S4)}
     ${margin(SIZES.S0)}
     ${backgroundColor(COLORS.GREY, 10)}
-    transform: translateY(calc(-50% + ${getSize(SIZES.S2)}));
+    transform: translateY(calc(-50%));
   }
 `
 

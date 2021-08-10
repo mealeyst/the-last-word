@@ -1,16 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState, FunctionComponent } from 'react'
 import { COLORS } from '../../00_quarks/colors';
 import { Grid } from '../../01_atoms/Layouts/Grid';
 import Link from '../../01_atoms/Link';
 import { Image } from '../../01_atoms/Image';
 import theLastWordSrc from '../../assets/the_last_word_render.jpeg';
 import TextLogo from '../../01_atoms/TextLogo';
-import DesktopNavigation from '../../02_molecules/DesktopNavigation';
+import DesktopNavigation from '../../02_molecules/DesktopNavigation'
+import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu';
 
-export default () => {
+export type PageProps = {
+  menu: FoodMenuProps
+}
+
+const Page: FunctionComponent<PageProps> = ({ menu: { categories } }) => {
   const [logoColor, setLogoColor] = useState({name: COLORS.GREY, shade: 0})
   const setGold = () => setLogoColor({name: COLORS.GOLD, shade:4 })
   const setWhite = () => setLogoColor({name: COLORS.GREY, shade: 0})
+  console.log(categories)
   return (
     <Grid>
       <DesktopNavigation>
@@ -30,6 +36,9 @@ export default () => {
         <Link href="#">Contact</Link>
       </DesktopNavigation>
       <Image src={theLastWordSrc} />
+      <FoodMenu categories={categories} />
     </Grid>
   )
 }
+
+export default Page

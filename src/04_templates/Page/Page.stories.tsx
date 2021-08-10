@@ -1,24 +1,22 @@
-import React, { Fragment, useState, MouseEventHandler } from 'react';
-import Page from './Page';
+import React, { Fragment, useState, MouseEventHandler, FunctionComponent } from 'react';
+import Page, { PageProps } from './Page';
+
+import { menu } from './data'
 
 export default {
   title: 'Templates/Page',
   component: Page
 };
 
-type ArgTypes = {
-  open: boolean,
-  onClick: MouseEventHandler<HTMLButtonElement>
-}
 
-
-const Template = (args: ArgTypes) => {
+const Template: FunctionComponent<PageProps> = (args) => {
   return(
-    <Page />
+    <Page {...args} />
   )
 }
 
 export const Primary = Template.bind({});
 Primary.args = {
-  open: true
+  open: true,
+  menu
 };

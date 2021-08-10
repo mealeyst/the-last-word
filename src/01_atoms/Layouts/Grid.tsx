@@ -4,10 +4,10 @@ import { display, LAYOUT_DISPLAY } from '../../00_quarks/layout';
 import { SIZES, getSize } from '../../00_quarks/sizing';
 
 interface GridProps extends HTMLAttributes<HTMLElement> {
-  gap: SIZES
-  templateAreas: string
-  templateColumns: string
-  templateRows: string
+  gap?: SIZES
+  templateAreas?: string
+  templateColumns?: string
+  templateRows?: string
 }
 
 export const Grid = styled.div<GridProps>`
@@ -17,3 +17,10 @@ export const Grid = styled.div<GridProps>`
   ${props => props.templateColumns && css`grid-template-columns: ${props.templateColumns};`}
   ${props => props.templateRows && css`grid-template-rows: ${props.templateRows};`}
 `
+
+Grid.defaultProps = {
+  gap: SIZES.S3,
+  templateColumns: '1fr',
+  templateRows: 'auto 1fr auto',
+  templateAreas: "'header''main''footer'"
+};

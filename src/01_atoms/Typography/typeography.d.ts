@@ -13,5 +13,5 @@ export interface Typography {
 }
 
 export interface Heading extends Typography {
-  weight: FONT_WEIGHT
+  weight?: FONT_WEIGHT
 }
