@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { COLORS } from '../00_quarks/colors';
-import Link from '../01_atoms/Link'
-import TextLogo from '../01_atoms/TextLogo'
+import { COLORS } from '../../00_quarks/colors';
+import Link from '../../01_atoms/Link/Link'
+import TextLogo from '../../01_atoms/TextLogo/TextLogo'
 import DesktopNavigation from './DesktopNavigation';
 
 export default {

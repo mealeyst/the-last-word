@@ -74,9 +74,9 @@ type FontProps = {
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  background: HSLAColorProps
-  border: BorderProps,
-  font: FontProps
+  background?: HSLAColorProps
+  border?: BorderProps,
+  font?: FontProps
 }
 
 /**

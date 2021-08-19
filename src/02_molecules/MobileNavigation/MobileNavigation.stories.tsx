@@ -1,9 +1,9 @@
 import React, { Fragment, useState, MouseEventHandler } from 'react';
-import Link, { LinkProps } from '../01_atoms/Link'
+import Link, { LinkProps } from '../../01_atoms/Link/Link'
 import MobileNavigation from './MobileNavigation';
 
 export default {
-  title: 'Organisms/MobileNavigation',
+  title: 'Molecules/MobileNavigation',
   component: MobileNavigation,
   argTypes: { onClick: { action: 'Toggled Menu' } },
 };

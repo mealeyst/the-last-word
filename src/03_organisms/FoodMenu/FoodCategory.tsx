@@ -1,15 +1,15 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { backgroundColor } from '../00_quarks/background'
+import { backgroundColor } from '../../00_quarks/background'
 
-import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border'
-import { COLORS } from '../00_quarks/colors'
-import { LAYOUT_POSITION, left, position, top } from '../00_quarks/layout'
-import { SIZES } from '../00_quarks/sizing'
-import { margin, padding } from '../00_quarks/spacing'
-import { FONT_FAMILY, FONT_SIZE } from '../00_quarks/typography'
-import P from '../01_atoms/Typography/P'
-import FoodItem, { FoodItemProps } from '../02_molecules/FoodItem'
+import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../../00_quarks/border'
+import { COLORS } from '../../00_quarks/colors'
+import { LAYOUT_POSITION, left, position, top } from '../../00_quarks/layout'
+import { SIZES } from '../../00_quarks/sizing'
+import { margin, padding } from '../../00_quarks/spacing'
+import { FONT_FAMILY, FONT_SIZE } from '../../00_quarks/typography'
+import P from '../../01_atoms/Typography/P'
+import FoodItem, { FoodItemProps } from '../../02_molecules/FoodItem/FoodItem'
 
 export type FoodCategoryProps = {
   className: string,

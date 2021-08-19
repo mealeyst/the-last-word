@@ -1,7 +1,6 @@
 import React from 'react';
-import Link from '../01_atoms/Link'
+import Link, { LinkProps } from '../../01_atoms/Link/Link'
 import MobileNavigationDrawer from './MobileNavigationDrawer';
-import { LinkProps } from '../01_atoms/Link'
 
 export default {
   title: 'Molecules/MobileNavigationDrawer',

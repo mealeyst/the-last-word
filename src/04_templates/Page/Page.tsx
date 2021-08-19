@@ -1,12 +1,12 @@
 import React, { useState, FunctionComponent } from 'react'
 import { COLORS } from '../../00_quarks/colors';
 import { Grid } from '../../01_atoms/Layouts/Grid';
-import Link from '../../01_atoms/Link';
-import { Image } from '../../01_atoms/Image';
+import Link from '../../01_atoms/Link/Link';
+import { Image } from '../../01_atoms/Image/Image';
 import theLastWordSrc from '../../assets/the_last_word_render.jpeg';
-import TextLogo from '../../01_atoms/TextLogo';
-import DesktopNavigation from '../../02_molecules/DesktopNavigation'
-import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu';
+import TextLogo from '../../01_atoms/TextLogo/TextLogo';
+import DesktopNavigation from '../../02_molecules/DesktopNavigation/DesktopNavigation'
+import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu/FoodMenu';
 
 export type PageProps = {
   menu: FoodMenuProps

@@ -1,16 +1,16 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border'
-import { BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment'
-import { COLORS } from '../00_quarks/colors'
-import { flexboxFlex, flexboxWrap, FLEXBOX_FLEX, FLEXBOX_WRAP } from '../00_quarks/flexbox'
+import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../../00_quarks/border'
+import { BOX_ALIGNMENT, justifyContent } from '../../00_quarks/boxalignment'
+import { COLORS } from '../../00_quarks/colors'
+import { flexboxFlex, flexboxWrap, FLEXBOX_FLEX, FLEXBOX_WRAP } from '../../00_quarks/flexbox'
 
-import { display, LAYOUT_DISPLAY } from '../00_quarks/layout'
-import { mediaQuery, QUERY_SIZES } from '../00_quarks/media-query'
-import { SIZES } from '../00_quarks/sizing'
-import H3 from '../01_atoms/Typography/H3'
+import { display, LAYOUT_DISPLAY } from '../../00_quarks/layout'
+import { mediaQuery, QUERY_SIZES } from '../../00_quarks/media-query'
+import { SIZES } from '../../00_quarks/sizing'
+import H3 from '../../01_atoms/Typography/H3'
 
-import FoodCategory, { FoodCategoryProps } from '../03_organisms/FoodCategory'
+import FoodCategory, { FoodCategoryProps } from './FoodCategory'
 
 export type FoodMenuProps = {
   className?: string,

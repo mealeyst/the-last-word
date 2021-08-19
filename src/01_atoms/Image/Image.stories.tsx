@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import { SIZES } from '../00_quarks/sizing'
-import { convertEnumToObject } from '../utils/enum';
+import { SIZES } from '../../00_quarks/sizing'
+import { convertEnumToObject } from '../../utils/enum';
 
 import Image from './Image';
 

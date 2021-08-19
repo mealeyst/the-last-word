@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components'
-import { buildColorStyle, COLORS } from '../00_quarks/colors'
-import { minWidth, SIZES } from '../00_quarks/sizing'
+import { buildColorStyle, COLORS } from '../../00_quarks/colors'
+import { minWidth, SIZES } from '../../00_quarks/sizing'
 
 type TextLogoProps = {
   className?: string,

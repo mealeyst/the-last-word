@@ -1,13 +1,13 @@
 import React, { FunctionComponent, ReactNode } from 'react';
 import styled from 'styled-components'
-import { backgroundColor } from '../00_quarks/background';
-import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../00_quarks/border';
-import { alignItem, BOX_ALIGNMENT, justifyContent } from '../00_quarks/boxalignment';
-import { COLORS } from '../00_quarks/colors';
-import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, position, zIndex} from '../00_quarks/layout';
-import { SIZES, width } from '../00_quarks/sizing';
-import { margin, padding } from '../00_quarks/spacing';
-import { listStyle, LIST_STYLE_TYPE } from '../00_quarks/typography';
+import { backgroundColor } from '../../00_quarks/background';
+import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../../00_quarks/border';
+import { alignItem, BOX_ALIGNMENT, justifyContent } from '../../00_quarks/boxalignment';
+import { COLORS } from '../../00_quarks/colors';
+import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, position, zIndex} from '../../00_quarks/layout';
+import { SIZES, width } from '../../00_quarks/sizing';
+import { margin, padding } from '../../00_quarks/spacing';
+import { listStyle, LIST_STYLE_TYPE } from '../../00_quarks/typography';
 
 type DesktopNavProps = {
   className?: string,

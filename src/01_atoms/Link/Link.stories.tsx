@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
-import { COLORS } from '../00_quarks/colors';
-import { FONT_WEIGHT, FONT_SIZE, TEXT_TRANSFORM, FONT_FAMILY } from '../00_quarks/typography';
-import { convertEnumToObject } from '../utils/enum';
+import { COLORS } from '../../00_quarks/colors';
+import { FONT_WEIGHT, FONT_SIZE, TEXT_TRANSFORM, FONT_FAMILY } from '../../00_quarks/typography';
+import { convertEnumToObject } from '../../utils/enum';
 
 import Link from './Link';
 

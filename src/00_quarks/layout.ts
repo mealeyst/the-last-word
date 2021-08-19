@@ -1,3 +1,4 @@
+import { createGlobalStyle } from 'styled-components'
 import { SIZES, getSize } from './sizing'
 
 export enum LAYOUT_BOX_SIZING {
@@ -233,3 +234,9 @@ export const left = buildPositioning('left')
 export const overflow = (overflowType: LAYOUT_OVERFLOW): string => layout.overflow[overflowType]
 
 export const zIndex = (key: LAYOUT_ZINDEX): string => `z-index: ${layout.zIndex[key]};`
+
+export const DefaultBoxSizing = createGlobalStyle`
+    body * {
+        ${boxSizing(LAYOUT_BOX_SIZING.BORDER_BOX)}
+    }
+`

@@ -28,4 +28,8 @@ const Animation = (props: AnimationProps) => {
   )
 }
 
+Animation.defaultProps = {
+  duration: 0.25
+}
+
 export default Animation

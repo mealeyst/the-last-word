@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
 import styled, { css } from 'styled-components'
-import { backgroundColor } from '../00_quarks/background';
-import { color, COLORS } from '../00_quarks/colors';
-import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right } from '../00_quarks/layout';
-import { height, SIZES, width } from '../00_quarks/sizing';
-import { padding } from '../00_quarks/spacing';
-import { TEXT_DECORATION, textDecoration, TEXT_TRANSFORM, textTransform, FONT_STYLE, fontWeight, FONT_WEIGHT, fontSize, FONT_SIZE, fontFamily, FONT_FAMILY } from '../00_quarks/typography';
+import { backgroundColor } from '../../00_quarks/background';
+import { color, COLORS } from '../../00_quarks/colors';
+import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right } from '../../00_quarks/layout';
+import { height, SIZES, width } from '../../00_quarks/sizing';
+import { padding } from '../../00_quarks/spacing';
+import { TEXT_DECORATION, textDecoration, TEXT_TRANSFORM, textTransform, FONT_STYLE, fontWeight, FONT_WEIGHT, fontSize, FONT_SIZE, fontFamily, FONT_FAMILY } from '../../00_quarks/typography';
 
 export interface LinkProps {
   children: ReactNode
