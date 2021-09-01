@@ -9,19 +9,18 @@ import DesktopNavigation from '../../02_molecules/DesktopNavigation/DesktopNavig
 import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu/FoodMenu';
 
 export type PageProps = {
-  menu: FoodMenuProps
+  menus: FoodMenuProps[]
 }
 
-const Page: FunctionComponent<PageProps> = ({ menu: { categories } }) => {
+const Page: FunctionComponent<PageProps> = ({ menus }) => {
   const [logoColor, setLogoColor] = useState({name: COLORS.GREY, shade: 0})
   const setGold = () => setLogoColor({name: COLORS.GOLD, shade:4 })
   const setWhite = () => setLogoColor({name: COLORS.GREY, shade: 0})
-  console.log(categories)
   return (
     <Grid>
       <DesktopNavigation>
-        <Link href="#">Menus</Link>
-        <Link href="#">Gallery</Link>
+        <Link href="#">Food</Link>
+        <Link href="#">Cocktails</Link>
         <Link
           href="#"
           underline={false}
@@ -32,11 +31,13 @@ const Page: FunctionComponent<PageProps> = ({ menu: { categories } }) => {
           >
           <TextLogo fill={logoColor.name} shade={logoColor.shade} />
         </Link>
-        <Link href="#">Press</Link>
+        <Link href="#">Gallery</Link>
         <Link href="#">Contact</Link>
       </DesktopNavigation>
       <Image src={theLastWordSrc} />
-      <FoodMenu categories={categories} />
+      {menus && menus.map(({title, categories}) => {
+        return <FoodMenu title={title} categories={categories} />
+      })}
     </Grid>
   )
 }

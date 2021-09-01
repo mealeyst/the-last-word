@@ -209,8 +209,8 @@ export const container = (containerType: LAYOUT_CONTAINER): string => {
     return `max-width: ${size};`
 }
 
-const buildPositioning = (type: string) => (value: SIZES) => {
-    return `${type}: ${getSize(value)};`
+const buildPositioning = (type: string) => (value: SIZES, neg = false) => {
+    return `${type}: ${neg ? '-' : ''}${getSize(value)};`
 }
 
 export const boxSizing = (sizingType: LAYOUT_BOX_SIZING): string => `box-sizing: ${layout.boxSizing[sizingType]};`

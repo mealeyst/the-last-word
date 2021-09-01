@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { BOX_ALIGNMENT, justifyContent } from '../../00_quarks/boxalignment'
 import { COLORS } from '../../00_quarks/colors'
 import { display, LAYOUT_DISPLAY } from '../../00_quarks/layout'
-import { flexboxWrap, FLEXBOX_WRAP } from '../../00_quarks/flexbox'
+import { flexboxWrap, FLEXBOX_DIRECTION, FLEXBOX_WRAP } from '../../00_quarks/flexbox'
 import { margin } from '../../00_quarks/spacing'
 import { SIZES, width } from '../../00_quarks/sizing'
 
@@ -13,8 +13,8 @@ import P from '../../01_atoms/Typography/P'
 
 export type FoodItemProps = {
   className: string,
-  description: string,
-  price: number,
+  description?: string,
+  price?: number,
   title: string
 }
 
@@ -26,18 +26,21 @@ export const FoodItem: FunctionComponent<FoodItemProps> = ({
 }) => {
   return (
     <div className={className}>
-      <P className='title' font={FONT_FAMILY.HEADER}>{title}</P>
-      <P className='price' font={FONT_FAMILY.HEADER}>${price.toFixed(2)}</P>
-      <P className='description' colorName={COLORS.GOLD} shade={4}>{description}</P>
+      <header className='food-item-header'>
+        <P className='title' font={FONT_FAMILY.HEADER}>{title}</P>
+        {price && <P className='price' font={FONT_FAMILY.HEADER}>${price.toFixed(2)}</P>}
+      </header>
+      {description && <P className='description' colorName={COLORS.GOLD} shade={4}>{description}</P>}
     </div>
   )
 }
 
 export const StyledFoodItem: FunctionComponent<FoodItemProps> = styled(FoodItem)`
-  ${display(LAYOUT_DISPLAY.FLEX)}
-  ${flexboxWrap(FLEXBOX_WRAP.WRAP)}
+  .food-item-header {
+    ${display(LAYOUT_DISPLAY.FLEX)}
+    ${justifyContent(BOX_ALIGNMENT.SPACE_BETWEEN)}
+  }
   .title, .price {
-    ${width(SIZES.HALF)}
     ${margin(SIZES.S4, SIZES.S0, SIZES.S0)}
 
   }

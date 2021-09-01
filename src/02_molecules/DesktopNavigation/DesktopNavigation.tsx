@@ -8,6 +8,7 @@ import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, position, zInd
 import { SIZES, width } from '../../00_quarks/sizing';
 import { margin, padding } from '../../00_quarks/spacing';
 import { listStyle, LIST_STYLE_TYPE } from '../../00_quarks/typography';
+import Grid from '../../01_atoms/Layouts/Grid'
 
 type DesktopNavProps = {
   className?: string,
@@ -18,11 +19,15 @@ type DesktopNavProps = {
 const DesktopNavigation: FunctionComponent<DesktopNavProps> = ({className, children}) => {
   return (
     <nav className={className}>
-      <ul>
+      <Grid
+        element='ul'
+        templateColumns='1fr 1fr 1fr 1fr 1fr'
+        templateRows='1fr'
+        templateAreas="'main'">
         {children.map((child) =>
             <li>{child}</li>
         )}
-      </ul>
+      </Grid>
     </nav>
   )
 }
@@ -39,7 +44,7 @@ const StyledDesktopNavigation: FunctionComponent<DesktopNavProps> = styled(Deskt
   top: 0;
   box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, .5);
   ul {
-    ${display(LAYOUT_DISPLAY.FLEX)}
+    ${display(LAYOUT_DISPLAY.GRID)}
     ${listStyle(LIST_STYLE_TYPE.NONE)}
     ${justifyContent(BOX_ALIGNMENT.CENTER)}
     ${width(SIZES.FULL)}
@@ -51,6 +56,8 @@ const StyledDesktopNavigation: FunctionComponent<DesktopNavProps> = styled(Deskt
     ${margin(SIZES.S0)}
     ${display(LAYOUT_DISPLAY.FLEX)}
     ${alignItem(BOX_ALIGNMENT.CENTER)}
+    ${justifyContent(BOX_ALIGNMENT.CENTER)}
+    ${display(LAYOUT_DISPLAY.FLEX)}
   }
 `
 

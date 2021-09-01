@@ -14,6 +14,8 @@ const spacing = (type: string) => (...args: SIZES[]) => {
 export const margin = spacing('margin')
 export const padding = spacing('padding')
 
+export const marginTop = (size: SIZES) => `margin-top: ${getSize(size)};`
+
 export const BodySpacing = createGlobalStyle`
   body {
     ${padding(SIZES.S0)}

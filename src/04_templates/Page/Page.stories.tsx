@@ -1,7 +1,7 @@
 import React, { Fragment, useState, MouseEventHandler, FunctionComponent } from 'react';
 import Page, { PageProps } from './Page';
 
-import { menu } from './data'
+import { menus } from './data'
 
 export default {
   title: 'Templates/Page',
@@ -18,5 +18,5 @@ const Template: FunctionComponent<PageProps> = (args) => {
 export const Primary = Template.bind({});
 Primary.args = {
   open: true,
-  menu
+  menus
 };
