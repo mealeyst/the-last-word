@@ -12,7 +12,6 @@ interface GridProps extends HTMLAttributes<HTMLElement> {
 }
 
 export const Grid = styled(({element, children, className }) => {
-  console.log('element')
   return React.createElement(
     element,
     { className },

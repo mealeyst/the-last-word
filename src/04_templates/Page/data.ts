@@ -1,6 +1,7 @@
 export const menus = [
   {
     title: 'Food',
+    id: 'food',
     categories: [
       {
         categoryName: 'Ceviche',
@@ -95,6 +96,7 @@ export const menus = [
   },
   {
     title: 'Cocktails',
+    id: 'cocktails',
     categories: [
       {
         categoryName: 'Little Taste of Peru',

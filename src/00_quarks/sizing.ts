@@ -120,7 +120,7 @@ export const sizeValues: SizeInterface  = {
   [SIZES.C_MD]: computeRem(768), //48rem (Used for container sizing)
   [SIZES.C_LG]: computeRem(1024), //64rem (Used for container sizing)
   [SIZES.C_XL]: computeRem(1280), //80rem (Used for container sizing)
-  [SIZES.C_2XL]: computeRem(1536), //96rem (Used for container szing)
+  [SIZES.C_2XL]: computeRem(1536), //96rem (Used for container sizing)
   [SIZES.HALF]: computePercent(1/2),
   [SIZES.THIRD]: computePercent(1/3),
   [SIZES.TWO_THIRDS]: computePercent(2/3),
