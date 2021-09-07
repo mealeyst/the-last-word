@@ -27,7 +27,7 @@ interface Query {
   targets: QueryTarget
 }
 
-const queries:Query = {
+export const queries:Query = {
   sizes: {
     [QUERY_SIZES.XX_SMALL]: '320px',
     [QUERY_SIZES.X_SMALL]: '480px',

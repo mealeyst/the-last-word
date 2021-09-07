@@ -1,4 +1,4 @@
-import React, { useState, ReactNode, MouseEventHandler } from 'react'
+import React, { useState, ReactNode, MouseEventHandler, FunctionComponent } from 'react'
 import styled from 'styled-components'
 
 import MobileNavigationDrawer from './MobileNavigationDrawer';
@@ -6,14 +6,14 @@ import HamburgerButton from './HamburgerButton'
 import { LAYOUT_POSITION, left, position, top } from '../../00_quarks/layout';
 import { SIZES } from '../../00_quarks/sizing';
 
-type MobileNavigationType = {
+export type MobileNavigationProps = {
   className?: string,
   children: ReactNode[],
-  clickHandler: MouseEventHandler<HTMLButtonElement>
+  clickHandler?: MouseEventHandler<HTMLButtonElement>
   open?: boolean
 }
 
-export const MobileNavigation = ({className, children, open: defaultOpen}: MobileNavigationType) => {
+export const MobileNavigation: FunctionComponent<MobileNavigationProps> = ({className, children, open: defaultOpen}) => {
   const [open, setOpen] = useState(defaultOpen)
   const clickHandler = () => { setOpen(!open) }
   return (

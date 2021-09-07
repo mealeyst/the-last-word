@@ -159,56 +159,56 @@ export const menus = [
         ]
       },
       {
-        categoryName: 'FRUITY BUT BALANCED AND PACKS A PUNCH',
+        categoryName: 'Fruity But Balanced And Packs A Punch',
         foodItems: [
           {
-            description: 'GIN, LEMON, FRAISE, MAURIN BIANCO, HONEY',
-            title: 'STRAWBERRY HONEY HIGH',
+            description: 'Gin, Lemon, Fraise, Maurin Bianco, Honey',
+            title: 'Strawberry Honey High',
             price: 14.00
           },
           {
-            description: 'CACHACA, LIME, LEMON, APPLE THYME SHRUB, SALINE',
-            title: 'APPLE THYME SOUR',
+            description: 'Cachaca, Lime, Lemon, Apple Thyme Shrub, Saline',
+            title: 'Apple Thyme Sour',
             price: 14.00
           },
           {
-            description: 'MEZCAL, TEQUILA ANEJO, GUAVA, LIME, ROSEMARY INFUSED AGAVE, DRY CURACAO',
-            title: 'CRUSH ON YOU',
+            description: 'Mezcal, Tequila Anejo, Guava, Lime, Rosemary Infused Agave, Dry Curacao',
+            title: 'Crush On You',
             price: 14.00
           },
           {
-            description: 'GIN, GRAND MARNIER, MANGO, MAURIN BIANCO, LEMON, ANCHO REYES CHILI, COCONUT MILK',
-            title: 'GRAND MANGO',
+            description: 'Gin, Grand Marnier, Mango, Maurin Bianco, Lemon, Ancho Reyes Chili, Coconut Milk',
+            title: 'Grand Mango',
             price: 15.00
           },
           {
-            description: 'TEQUILA BLANCO, LIME, CUMQUAT BLACK PEPPER AGAVE REDUCTION, CUCUMBER, ABSINTHE',
-            title: 'TEQUILA PARADISE',
+            description: 'Tequila Blanco, Lime, Cumquat Black Pepper Agave Reduction, Cucumber, Absinthe',
+            title: 'Tequila Paradise',
             price: 14.00
           },
           {
-            description: 'VODKA, SOJU, LEMON, BOOMSMA, LEMON, WATERMELON REDUCTION',
-            title: 'SUMMER DELIGHT',
+            description: 'Vodka, Soju, Lemon, Boomsma, Lemon, Watermelon Reduction',
+            title: 'Summer Delight',
             price: 15.00
           }
         ]
       },
       {
-        categoryName: 'STIRRED ~ BOOZY SPIRIT FORWARD COCKTAILS',
+        categoryName: 'Stirred ~ Boozy Spirit Forward Cocktails',
         foodItems: [
           {
-            description: 'RYE, MAURIN QUINA, FERNET BRANCA, DEMERARA, ABSINTHE',
-            title: 'WALL STREET STIR',
+            description: 'Rye, Maurin Quina, Fernet Branca, Demerara, Absinthe',
+            title: 'Wall Street Stir',
             price: 14.00
           },
           {
-            description: 'BOURBON, NARDINI AMARO, DEL PROFESSOR DRY VERMOUTH, FIERO, PEYCHAUD BITTERS',
-            title: 'LUCKY 13',
+            description: 'Bourbon, Nardini Amaro, Del Professor Dry Vermouth, Fiera, Peychaud Bitter',
+            title: 'Lucky 13',
             price: 14.00
           },
           {
-            description: 'HAVANNA CLUB WHITE RUM, BOURBON, BANANA CORDIAL, WHITE CACAO, DEL PROFESSOR DRY VERMOUTH, COCONUT WATER, ORANGE BITTERS',
-            title: 'THE MONÈ',
+            description: 'Havanna Club White Rum, Bourbon, Banana Cordial, White Cacao, Del Professor Dry Vermouth, Coconut Water, Orange Bitters',
+            title: 'The Moné',
             price: 14.00
           }
         ]
