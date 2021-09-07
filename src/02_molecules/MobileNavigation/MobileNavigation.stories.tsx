@@ -18,14 +18,13 @@ const DarkLink = (props: LinkProps) => (
 )
 
 const Template = (args: ArgTypes) => {
-  const [open, setClosed] = useState(args.open)
-  const clickHandler = (event: any) => {
-    setClosed(!open)
-    args.onClick(event)
-  }
+  const [open, setOpen] = useState(true)
+  const onCloseClick = () => setOpen(false)
+  const onOpenClick = () => setOpen(true)
+  
   return(
     <Fragment>
-      <MobileNavigation open={open} clickHandler={clickHandler}>
+      <MobileNavigation open={open} onCloseClick={onCloseClick} onOpenClick={onOpenClick}>
         <DarkLink href="#">Home</DarkLink>
         <DarkLink href="#">Menus</DarkLink>
         <DarkLink href="#">Gallery</DarkLink>

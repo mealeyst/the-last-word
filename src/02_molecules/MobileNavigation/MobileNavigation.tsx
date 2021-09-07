@@ -9,17 +9,21 @@ import { SIZES } from '../../00_quarks/sizing';
 export type MobileNavigationProps = {
   className?: string,
   children: ReactNode[],
-  clickHandler?: MouseEventHandler<HTMLButtonElement>
-  open?: boolean
 }
 
-export const MobileNavigation: FunctionComponent<MobileNavigationProps> = ({className, children, open: defaultOpen}) => {
-  const [open, setOpen] = useState(defaultOpen)
-  const clickHandler = () => { setOpen(!open) }
+export type MobileDrawerProps = {
+  open?: boolean,
+  onCloseClick?: MouseEventHandler<HTMLButtonElement>
+  onOpenClick?: MouseEventHandler<HTMLButtonElement>
+}
+
+type MobileProps = MobileNavigationProps & MobileDrawerProps;
+
+export const MobileNavigation: FunctionComponent<MobileProps> = ({className, children, open, onCloseClick, onOpenClick}) => {
   return (
     <header className={className}>
-      <HamburgerButton open={open} onClick={clickHandler} />
-      <MobileNavigationDrawer open={open}>
+      <HamburgerButton onClick={onOpenClick} />
+      <MobileNavigationDrawer open={open} onClose={onCloseClick}>
         {children}
       </MobileNavigationDrawer>
     </header>

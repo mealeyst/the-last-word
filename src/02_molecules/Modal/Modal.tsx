@@ -10,7 +10,7 @@ import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right, top } 
 import { height, SIZES, width } from '../../00_quarks/sizing'
 import { padding } from '../../00_quarks/spacing'
 import Animation, { ANIMATION_NAMES } from '../../01_atoms/Animations/Animation';
-import { Button } from '../../01_atoms/Inputs'
+import Button  from '../../01_atoms/Inputs/Button/Button'
 
 export type ModalProps = {
   className?: string
@@ -21,7 +21,6 @@ export type ModalProps = {
 }
 
 export const Modal: FunctionComponent<ModalProps> = ({ className, children, container, show, onClose: handleClose }) => {
-  console.log(className)
   if(show) {
     document.body.style.overflow = 'hidden';
     return createPortal(

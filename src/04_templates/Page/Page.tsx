@@ -27,6 +27,9 @@ interface RefDictionary {
 }
 
 const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
+  const [open, setOpen] = useState(true)
+  const onCloseClick = () => setOpen(false)
+  const onOpenClick = () => setOpen(true)
   const [logoColor, setLogoColor] = useState({name: COLORS.GREY, shade: 0})
   const setGold = () => setLogoColor({name: COLORS.GOLD, shade:4 })
   const setWhite = () => setLogoColor({name: COLORS.GREY, shade: 0})
@@ -42,6 +45,7 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
       const element = sections.current[id]
       element.scrollIntoView({behavior: "smooth"});
     }
+    onCloseClick();
   }
   const desktopChildren = [
     <Link href="#food" onClick={onClick}>Food</Link>,
@@ -68,7 +72,12 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
   ]
   return (
     <main className={className}>
-      <Navigation desktopChildren={desktopChildren} mobileChildren={mobileChildren} />
+      <Navigation
+        desktopChildren={desktopChildren}
+        mobileChildren={mobileChildren}
+        open={open}
+        onCloseClick={onCloseClick}
+        onOpenClick={onOpenClick} />
       <Grid className='content'>
         <Image src={theLastWordSrc} />
         {menus && menus.map(({title, id, categories}) => {

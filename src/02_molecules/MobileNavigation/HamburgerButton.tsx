@@ -18,17 +18,14 @@ import Fade from '../../01_atoms/Animations/Fade'
 type HamburgerButtonProps = {
   absolute?: boolean,
   className?: string,
-  open?: boolean,
   onClick: MouseEventHandler<HTMLButtonElement>
 }
 
-const HamburgerButton: FunctionComponent<HamburgerButtonProps> = ({className, open, onClick}) => {
-  const srText = `${!open ? 'Open': 'Close'} menu`
+const HamburgerButton: FunctionComponent<HamburgerButtonProps> = ({className, onClick}) => {
   return (
     <button className={className} onClick={onClick}>
-      <ScreenReaderText>{srText}</ScreenReaderText>
-      <Fade show={!open}><FontAwesomeIcon className='menu' icon={faBars} aria-hidden="true" /></Fade>
-      <Fade show={open}><FontAwesomeIcon className='close' icon={faTimes} aria-hidden="true" /></Fade>
+      <ScreenReaderText>Open Menu</ScreenReaderText>
+      <FontAwesomeIcon className='menu' icon={faBars} aria-hidden="true" />
     </button>
   );
 }
@@ -68,8 +65,7 @@ const StyledHamburgerButton: FunctionComponent<HamburgerButtonProps> = styled(Ha
 `
 
 StyledHamburgerButton.defaultProps = {
-  absolute: true,
-  open: true
+  absolute: true
 }
 
 export default StyledHamburgerButton

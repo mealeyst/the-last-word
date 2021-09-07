@@ -1,9 +1,11 @@
 import React, {
   FunctionComponent,
   HTMLAttributes,
+  MouseEventHandler,
   ReactNode,
   useState
 } from 'react'
+import { createPortal } from 'react-dom'
 import styled, { keyframes, css } from 'styled-components'
 
 import { backgroundColor } from '../../00_quarks/background';
@@ -11,15 +13,19 @@ import { alignItem, BOX_ALIGNMENT, justifyContent } from '../../00_quarks/boxali
 import { COLORS } from '../../00_quarks/colors';
 import { flexboxDirection, FLEXBOX_DIRECTION } from '../../00_quarks/flexbox'
 import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right, top } from '../../00_quarks/layout';
-import { height, SIZES, width } from '../../00_quarks/sizing';
 import { margin, padding } from '../../00_quarks/spacing';
+import { height, SIZES, width } from '../../00_quarks/sizing'
 import { listStyle, LIST_STYLE_TYPE } from '../../00_quarks/typography';
+import Animation, { ANIMATION_NAMES } from '../../01_atoms/Animations/Animation';
+import Button  from '../../01_atoms/Inputs/Button/Button'
 import { useThrottledCallback } from '../../utils/hooks/throttled-callback.hook'
 
 interface MobileDrawerProps extends HTMLAttributes<HTMLElement> {
   absolute?: boolean,
   children: ReactNode[],
+  container?: HTMLElement,
   open?: boolean,
+  onClose: MouseEventHandler<HTMLButtonElement>,
   slideOut?: boolean,
   delay?: number
 }
@@ -62,16 +68,28 @@ const slideOut = keyframes`
   }
 `
 
-const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({className, children}) => {
-  return (
-    <nav className={className}>
-      <ul>
-        {children.map((child) => 
-          <li>{child}</li>
-        )}
-      </ul>
-    </nav>
-  )
+const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({ className, children, container, onClose: handleClose, open }) => {
+  if(open) {
+    document.body.style.overflow = 'hidden';
+    return createPortal(
+      <Animation name={ANIMATION_NAMES.FADE} show={open} duration={0.5}>
+        <div className={className}>
+          <main className='dialog'>
+              <Button className='dialog__close' onClick={handleClose}>Close</Button>
+              <nav>
+                <ul>
+                  {children.map((child) => 
+                    <li>{child}</li>
+                  )}
+                </ul>
+              </nav>
+          </main>
+        </div>
+        </Animation>
+      , container)
+  }
+  document.body.style.overflow = 'unset';
+  return null
 }
 
 const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNavigationDrawer)`
@@ -117,6 +135,9 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
     ${height(SIZES.S11)}
     ${padding(SIZES.S0, SIZES.S4)}
   }
+  ${Button} {
+    ${margin(SIZES.S4)}
+  }
 `
 
 const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
@@ -133,6 +154,7 @@ const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
 
 StyledMobileDrawer.defaultProps = {
   absolute: true,
+  container: document.body,
   delay: 1000,
   open: true
 }

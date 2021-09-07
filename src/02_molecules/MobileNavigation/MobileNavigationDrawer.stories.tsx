@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link, { LinkProps } from '../../01_atoms/Link/Link'
 import MobileNavigationDrawer from './MobileNavigationDrawer';
 
@@ -17,8 +17,10 @@ const DarkLink= (props:LinkProps) => (
 )
 
 const Template = (args: ArgTypes) => {
+  const container = document.body
+  const [open, setOpen] = useState(true)
   return(
-    <MobileNavigationDrawer open={args.open} delay={args.delay} absolute={false}>
+    <MobileNavigationDrawer container={container} open={open} delay={args.delay} absolute={false} onClose={() => setOpen(false)}>
       <DarkLink href="#" >Home</DarkLink>
       <DarkLink href="#">Menus</DarkLink>
       <DarkLink href="#">Gallery</DarkLink>
@@ -30,6 +32,5 @@ const Template = (args: ArgTypes) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  open: true,
   delay: 1000
 };
