@@ -27,7 +27,7 @@ export const MobileNavigation: FunctionComponent<MobileNavigationProps> = ({clas
 }
 
 MobileNavigation.defaultProps = {
-  open: true
+  open: false
 }
 
 const StyledMobileNavigation = styled(MobileNavigation)`
