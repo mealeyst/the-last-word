@@ -27,7 +27,7 @@ interface RefDictionary {
 }
 
 const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
-  const [open, setOpen] = useState(true)
+  const [open, setOpen] = useState(false)
   const onCloseClick = () => setOpen(false)
   const onOpenClick = () => setOpen(true)
   const [logoColor, setLogoColor] = useState({name: COLORS.GREY, shade: 0})
