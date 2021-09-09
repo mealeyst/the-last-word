@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/the-last-word/static/js/main.2949e82b.chunk.js",
-    "main.js.map": "/the-last-word/static/js/main.2949e82b.chunk.js.map",
+    "main.js": "/the-last-word/static/js/main.77d3659e.chunk.js",
+    "main.js.map": "/the-last-word/static/js/main.77d3659e.chunk.js.map",
     "runtime-main.js": "/the-last-word/static/js/runtime-main.2e766fee.js",
     "runtime-main.js.map": "/the-last-word/static/js/runtime-main.2e766fee.js.map",
-    "static/js/2.69697f9c.chunk.js": "/the-last-word/static/js/2.69697f9c.chunk.js",
-    "static/js/2.69697f9c.chunk.js.map": "/the-last-word/static/js/2.69697f9c.chunk.js.map",
+    "static/js/2.f14fda64.chunk.js": "/the-last-word/static/js/2.f14fda64.chunk.js",
+    "static/js/2.f14fda64.chunk.js.map": "/the-last-word/static/js/2.f14fda64.chunk.js.map",
     "static/js/3.c8f782de.chunk.js": "/the-last-word/static/js/3.c8f782de.chunk.js",
     "static/js/3.c8f782de.chunk.js.map": "/the-last-word/static/js/3.c8f782de.chunk.js.map",
     "index.html": "/the-last-word/index.html",
-    "static/js/2.69697f9c.chunk.js.LICENSE.txt": "/the-last-word/static/js/2.69697f9c.chunk.js.LICENSE.txt",
+    "static/js/2.f14fda64.chunk.js.LICENSE.txt": "/the-last-word/static/js/2.f14fda64.chunk.js.LICENSE.txt",
     "static/media/the_last_word_render.987cf35d.jpeg": "/the-last-word/static/media/the_last_word_render.987cf35d.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.2e766fee.js",
-    "static/js/2.69697f9c.chunk.js",
-    "static/js/main.2949e82b.chunk.js"
+    "static/js/2.f14fda64.chunk.js",
+    "static/js/main.77d3659e.chunk.js"
   ]
 }
