@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PageView from './04_templates/Page/Page';
+import { ThemeDecorator } from './ThemeWrapper';
 import { menus } from './04_templates/Page/data'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <PageView menus={menus} />
+    <ThemeDecorator>
+      <PageView menus={menus} />
+    </ThemeDecorator>
   </React.StrictMode>,
   document.getElementById('root')
 );
