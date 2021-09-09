@@ -16,6 +16,10 @@ import H3 from '../../01_atoms/Typography/H3';
 import H2 from '../../01_atoms/Typography/H2';
 import P from '../../01_atoms/Typography/P';
 import Navigation from '../../03_organisms/Navigation/Navigation';
+import { mediaQuery, QUERY_SIZES, QUERY_TARGETS } from '../../00_quarks/media-query';
+import Section from '../../02_molecules/Section/Section';
+import Container from '../../01_atoms/Container/Container';
+import { TEXT_TRANSFORM } from '../../00_quarks/typography';
 
 export type PageProps = {
   className: string,
@@ -82,31 +86,31 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
         <Image src={theLastWordSrc} />
         {menus && menus.map(({title, id, categories}) => {
           return (
-            <div id={id} ref={setRef(id)}>
-              <FoodMenu title={title} categories={categories} />
-            </div>
+              <FoodMenu id={id} title={title} categories={categories} ref={setRef(id)} />
           )
         })}
-        <div id="gallery" ref={setRef('gallery')}>
-          <H2>Gallery</H2>
-          <H3>Coming soon...</H3>
-        </div>
-        <div id="contact" ref={setRef('contact')}>
-          <H2>Contact Us</H2>
-            <div>
+        <Section title="Gallery" id="gallery" ref={setRef('gallery')}>
+          <Container>
+            <H3>Coming soon...</H3>
+          </Container>
+        </Section>
+        <Section title="Contact Us" id="contact" ref={setRef('contact')}>
+            <Container>
               <P>The Last Word</P>
               <P>13 Wall Street</P>
               <P>Huntington, New York 11743</P>
-              <P>Phone: (631) 629-4545</P>
-              <P>Email: <Link href="Thelastwordhuntington@gmail.com">thelastwordhuntington@gmail.com</Link></P>
-            </div>
-        </div>
+              <P>Phone: <Link href="tel:6316294545" transform={TEXT_TRANSFORM.NORMAL_CASE}>(631) 629-4545</Link></P>
+              <P>Email: <Link href="Thelastwordhuntington@gmail.com" transform={TEXT_TRANSFORM.NORMAL_CASE}>thelastwordhuntington@gmail.com</Link></P>
+            </Container>
+        </Section>
       </Grid>
     </main>
   )
 }
 
 const PageView: FunctionComponent<PageProps> = styled(Page)`
+background-color: #0B0D0E;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='250' height='30' viewBox='0 0 1000 120'%3E%3Cg fill='none' stroke='%2322262A' stroke-width='10' %3E%3Cpath d='M-500 75c0 0 125-30 250-30S0 75 0 75s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 45c0 0 125-30 250-30S0 45 0 45s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 105c0 0 125-30 250-30S0 105 0 105s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 15c0 0 125-30 250-30S0 15 0 15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500-15c0 0 125-30 250-30S0-15 0-15s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3Cpath d='M-500 135c0 0 125-30 250-30S0 135 0 135s125 30 250 30s250-30 250-30s125-30 250-30s250 30 250 30s125 30 250 30s250-30 250-30'/%3E%3C/g%3E%3C/svg%3E");
   .content {
     ${maxWidth(SIZES.C_XL)}
     ${margin(SIZES.S0, SIZES.AUTO)}

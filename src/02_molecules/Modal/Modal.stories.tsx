@@ -3,7 +3,7 @@ import Modal, { ModalProps } from './Modal';
 import H1 from '../../01_atoms/Typography/H1'
 import Image from '../../01_atoms/Image/Image';
 import { SIZES } from '../../00_quarks/sizing';
-import { Button } from '../../01_atoms/Inputs';
+import { Button } from '../../01_atoms/Inputs/index';
 
 const storyData = {
   title: 'Molecules/Modal',

@@ -11,8 +11,8 @@ import styled, { keyframes, css } from 'styled-components'
 import { backgroundColor } from '../../00_quarks/background';
 import { alignItem, BOX_ALIGNMENT, justifyContent } from '../../00_quarks/boxalignment';
 import { COLORS } from '../../00_quarks/colors';
-import { flexboxDirection, FLEXBOX_DIRECTION } from '../../00_quarks/flexbox'
-import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right, top } from '../../00_quarks/layout';
+import { flexboxDirection, flexboxWrap, FLEXBOX_DIRECTION, FLEXBOX_WRAP } from '../../00_quarks/flexbox'
+import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, left, position, right, top, zIndex } from '../../00_quarks/layout';
 import { margin, padding } from '../../00_quarks/spacing';
 import { height, SIZES, width } from '../../00_quarks/sizing'
 import { listStyle, LIST_STYLE_TYPE } from '../../00_quarks/typography';
@@ -72,20 +72,18 @@ const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({ classNam
   if(open) {
     document.body.style.overflow = 'hidden';
     return createPortal(
-      <Animation name={ANIMATION_NAMES.FADE} show={open} duration={0.5}>
-        <div className={className}>
-          <main className='dialog'>
-              <Button className='dialog__close' onClick={handleClose}>Close</Button>
-              <nav>
-                <ul>
-                  {children.map((child) => 
-                    <li>{child}</li>
-                  )}
-                </ul>
-              </nav>
-          </main>
-        </div>
-        </Animation>
+      <div className={className}>
+        <main className='dialog'>
+            <Button className='dialog__close' onClick={handleClose}>Close</Button>
+            <nav>
+              <ul>
+                {children.map((child) => 
+                  <li>{child}</li>
+                )}
+              </ul>
+            </nav>
+        </main>
+      </div>
       , container)
   }
   document.body.style.overflow = 'unset';
@@ -101,7 +99,7 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
         ${left(SIZES.S0)}
         ${bottom(SIZES.S0)}
         ${right(SIZES.S0)}
-        z-index: 5;
+        ${zIndex(LAYOUT_ZINDEX.Z20)}
       `)
     } else {
       return (`
@@ -111,15 +109,15 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
       `)
     }
   }}
-  ${props => (
-    props.open ? css`animation-name: ${slideIn};` : css`animation-name: ${slideOut};`
-  )}
-  animation-duration: ${props => props.delay}ms;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
   ${display(LAYOUT_DISPLAY.FLEX)}
   ${flexboxDirection(FLEXBOX_DIRECTION.FLEX_COL)}
   ${backgroundColor(COLORS.GREY, 0, 1)}
+  nav {
+    ${display(LAYOUT_DISPLAY.FLEX)}
+    ${flexboxDirection(FLEXBOX_DIRECTION.FLEX_COL)}
+    ${justifyContent(BOX_ALIGNMENT.CENTER)}
+    ${display(LAYOUT_DISPLAY.FLEX)}
+  }
   ul {
     ${listStyle(LIST_STYLE_TYPE.NONE)}
     ${padding(SIZES.S10, SIZES.S0)}

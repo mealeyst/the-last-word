@@ -1,4 +1,5 @@
 import { css } from 'styled-components'
+import { sizeValues, SIZES } from './sizing'
 export enum QUERY_SIZES {
   XX_SMALL,
   X_SMALL,
@@ -29,13 +30,13 @@ interface Query {
 
 export const queries:Query = {
   sizes: {
-    [QUERY_SIZES.XX_SMALL]: '320px',
-    [QUERY_SIZES.X_SMALL]: '480px',
-    [QUERY_SIZES.SMALL]: '600px',
-    [QUERY_SIZES.MEDIUM]: '768px',
-    [QUERY_SIZES.LARGE]: '900px',
-    [QUERY_SIZES.X_LARGE]: '1024px',
-    [QUERY_SIZES.XX_LARGE]:'1200px'
+    [QUERY_SIZES.XX_SMALL]: sizeValues[SIZES.S80],
+    [QUERY_SIZES.X_SMALL]: sizeValues[SIZES.S96],
+    [QUERY_SIZES.SMALL]: sizeValues[SIZES.C_SM],
+    [QUERY_SIZES.MEDIUM]: sizeValues[SIZES.C_MD],
+    [QUERY_SIZES.LARGE]: sizeValues[SIZES.C_LG],
+    [QUERY_SIZES.X_LARGE]: sizeValues[SIZES.C_XL],
+    [QUERY_SIZES.XX_LARGE]:sizeValues[SIZES.C_2XL]
   },
   targets: {
     [QUERY_TARGETS.MAX_WIDTH]: 'max-width',

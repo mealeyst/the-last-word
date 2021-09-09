@@ -7,11 +7,11 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { backgroundColor } from '../../00_quarks/background';
 import { color, COLORS } from '../../00_quarks/colors';
 import { height, SIZES, width } from '../../00_quarks/sizing';
-import { borderWidth } from '../../00_quarks/border';
+import { borderColor, borderStyle, borderWidth, BORDER_RADIUS, BORDER_STYLES, radius } from '../../00_quarks/border';
 import { padding } from '../../00_quarks/spacing';
 import { fontSize, FONT_SIZE } from '../../00_quarks/typography';
 import { ScreenReaderText } from '../../01_atoms/ScreenReaderText';
-import { LAYOUT_POSITION, left, position, top } from '../../00_quarks/layout';
+import { boxSizing, LAYOUT_BOX_SIZING, LAYOUT_POSITION, LAYOUT_ZINDEX, left, position, top, zIndex } from '../../00_quarks/layout';
 
 import Fade from '../../01_atoms/Animations/Fade'
 
@@ -39,7 +39,7 @@ const StyledHamburgerButton: FunctionComponent<HamburgerButtonProps> = styled(Ha
         ${position(LAYOUT_POSITION.ABSOLUTE)}
         ${top(SIZES.S4)}
         ${left(SIZES.S4)}
-        z-index: 10;
+        ${zIndex(LAYOUT_ZINDEX.Z20)}
       `)
     } else {
       return (`
@@ -48,20 +48,27 @@ const StyledHamburgerButton: FunctionComponent<HamburgerButtonProps> = styled(Ha
     }
   }}
   ${backgroundColor(COLORS.TRANSPARENT)}
-  ${width(SIZES.S10)}
-  ${height(SIZES.S10)}
-  ${padding(SIZES.S0)}
-  ${borderWidth(SIZES.S0)}
+  ${width(SIZES.S6)}
+  ${height(SIZES.S6)}
+  ${padding(SIZES.S4)}
+  ${borderWidth(SIZES.S1_5)}
+  ${borderColor(COLORS.GREY, 9)}
+  ${borderStyle(BORDER_STYLES.DOUBLE)}
+  ${boxSizing(LAYOUT_BOX_SIZING.CONTENT_BOX)}
   ${fontSize(FONT_SIZE.XL3)}
+  ${radius(BORDER_RADIUS.ROUNDED_FULL)}
+  ${backgroundColor(COLORS.GREY, 0)}
+  box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, .5);
 
-  .close, .menu {
+  .menu {
     ${position(LAYOUT_POSITION.ABSOLUTE)}
     ${top(SIZES.HALF)}
     ${left(SIZES.HALF)}
     transform: translate(-50%, -50%);
+    path {
+      ${color(COLORS.GREY, 9)}
+    }
   }
-
-  .close path { ${color(COLORS.GREY, 9)}}
 `
 
 StyledHamburgerButton.defaultProps = {

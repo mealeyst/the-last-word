@@ -40,7 +40,7 @@ const StyledDesktopNavigation: FunctionComponent<DesktopNavProps> = styled(Deskt
   ${borderStyle(BORDER_STYLES.DOUBLE)}
   ${padding(SIZES.S2, SIZES.S0, SIZES.S2)}
   ${props => position(props.position)}
-  ${zIndex(LAYOUT_ZINDEX.Z10)}
+  ${zIndex(LAYOUT_ZINDEX.Z20)}
   top: 0;
   box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, .5);
   ul {
