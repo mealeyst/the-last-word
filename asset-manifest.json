@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/thelastwordhunting.com/static/js/main.77d3659e.chunk.js",
-    "main.js.map": "/thelastwordhunting.com/static/js/main.77d3659e.chunk.js.map",
-    "runtime-main.js": "/thelastwordhunting.com/static/js/runtime-main.5182265b.js",
-    "runtime-main.js.map": "/thelastwordhunting.com/static/js/runtime-main.5182265b.js.map",
-    "static/js/2.ff3b38fb.chunk.js": "/thelastwordhunting.com/static/js/2.ff3b38fb.chunk.js",
-    "static/js/2.ff3b38fb.chunk.js.map": "/thelastwordhunting.com/static/js/2.ff3b38fb.chunk.js.map",
-    "static/js/3.c8f782de.chunk.js": "/thelastwordhunting.com/static/js/3.c8f782de.chunk.js",
-    "static/js/3.c8f782de.chunk.js.map": "/thelastwordhunting.com/static/js/3.c8f782de.chunk.js.map",
-    "index.html": "/thelastwordhunting.com/index.html",
-    "static/js/2.ff3b38fb.chunk.js.LICENSE.txt": "/thelastwordhunting.com/static/js/2.ff3b38fb.chunk.js.LICENSE.txt",
-    "static/media/the_last_word_render.987cf35d.jpeg": "/thelastwordhunting.com/static/media/the_last_word_render.987cf35d.jpeg"
+    "main.js": "/https//:thelastwordhunting.com/static/js/main.77d3659e.chunk.js",
+    "main.js.map": "/https//:thelastwordhunting.com/static/js/main.77d3659e.chunk.js.map",
+    "runtime-main.js": "/https//:thelastwordhunting.com/static/js/runtime-main.cbcfed58.js",
+    "runtime-main.js.map": "/https//:thelastwordhunting.com/static/js/runtime-main.cbcfed58.js.map",
+    "static/js/2.6cff1e0a.chunk.js": "/https//:thelastwordhunting.com/static/js/2.6cff1e0a.chunk.js",
+    "static/js/2.6cff1e0a.chunk.js.map": "/https//:thelastwordhunting.com/static/js/2.6cff1e0a.chunk.js.map",
+    "static/js/3.c8f782de.chunk.js": "/https//:thelastwordhunting.com/static/js/3.c8f782de.chunk.js",
+    "static/js/3.c8f782de.chunk.js.map": "/https//:thelastwordhunting.com/static/js/3.c8f782de.chunk.js.map",
+    "index.html": "/https//:thelastwordhunting.com/index.html",
+    "static/js/2.6cff1e0a.chunk.js.LICENSE.txt": "/https//:thelastwordhunting.com/static/js/2.6cff1e0a.chunk.js.LICENSE.txt",
+    "static/media/the_last_word_render.987cf35d.jpeg": "/https//:thelastwordhunting.com/static/media/the_last_word_render.987cf35d.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5182265b.js",
-    "static/js/2.ff3b38fb.chunk.js",
+    "static/js/runtime-main.cbcfed58.js",
+    "static/js/2.6cff1e0a.chunk.js",
     "static/js/main.77d3659e.chunk.js"
   ]
 }
