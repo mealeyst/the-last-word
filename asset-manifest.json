@@ -1,25 +1,20 @@
 {
   "files": {
-    "0.aa4ce263.iframe.bundle.js": "./0.aa4ce263.iframe.bundle.js",
-    "main.js": "./main.d44025cb.iframe.bundle.js",
-    "runtime~main.js": "./runtime~main.e6e968c9.iframe.bundle.js",
-    "vendors~main.js": "./vendors~main.1afc66a0.iframe.bundle.js",
-    "vendors~main.js.map": "./vendors~main.1afc66a0.iframe.bundle.js.map",
-    "4.db365882.iframe.bundle.js": "./4.db365882.iframe.bundle.js",
-    "4.db365882.iframe.bundle.js.map": "./4.db365882.iframe.bundle.js.map",
-    "5.5ac8e6e2.iframe.bundle.js": "./5.5ac8e6e2.iframe.bundle.js",
-    "6.8c6b6e97.iframe.bundle.js": "./6.8c6b6e97.iframe.bundle.js",
-    "6.8c6b6e97.iframe.bundle.js.map": "./6.8c6b6e97.iframe.bundle.js.map",
-    "7.666aa2e1.iframe.bundle.js": "./7.666aa2e1.iframe.bundle.js",
-    "4.db365882.iframe.bundle.js.LICENSE.txt": "./4.db365882.iframe.bundle.js.LICENSE.txt",
-    "6.8c6b6e97.iframe.bundle.js.LICENSE.txt": "./6.8c6b6e97.iframe.bundle.js.LICENSE.txt",
-    "iframe.html": "./iframe.html",
-    "static/media/the_last_word_render.987cf35d.jpeg": "./static/media/the_last_word_render.987cf35d.jpeg",
-    "vendors~main.1afc66a0.iframe.bundle.js.LICENSE.txt": "./vendors~main.1afc66a0.iframe.bundle.js.LICENSE.txt"
+    "main.js": "/the-final-word/static/js/main.4c3e58e3.chunk.js",
+    "main.js.map": "/the-final-word/static/js/main.4c3e58e3.chunk.js.map",
+    "runtime-main.js": "/the-final-word/static/js/runtime-main.e9226fc9.js",
+    "runtime-main.js.map": "/the-final-word/static/js/runtime-main.e9226fc9.js.map",
+    "static/js/2.0e7d890b.chunk.js": "/the-final-word/static/js/2.0e7d890b.chunk.js",
+    "static/js/2.0e7d890b.chunk.js.map": "/the-final-word/static/js/2.0e7d890b.chunk.js.map",
+    "static/js/3.bdd39115.chunk.js": "/the-final-word/static/js/3.bdd39115.chunk.js",
+    "static/js/3.bdd39115.chunk.js.map": "/the-final-word/static/js/3.bdd39115.chunk.js.map",
+    "index.html": "/the-final-word/index.html",
+    "static/js/2.0e7d890b.chunk.js.LICENSE.txt": "/the-final-word/static/js/2.0e7d890b.chunk.js.LICENSE.txt",
+    "static/media/the_last_word_render.987cf35d.jpeg": "/the-final-word/static/media/the_last_word_render.987cf35d.jpeg"
   },
   "entrypoints": [
-    "runtime~main.e6e968c9.iframe.bundle.js",
-    "vendors~main.1afc66a0.iframe.bundle.js",
-    "main.d44025cb.iframe.bundle.js"
+    "static/js/runtime-main.e9226fc9.js",
+    "static/js/2.0e7d890b.chunk.js",
+    "static/js/main.4c3e58e3.chunk.js"
   ]
 }
