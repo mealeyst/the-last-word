@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.js": "/the-final-word/static/js/main.4c3e58e3.chunk.js",
-    "main.js.map": "/the-final-word/static/js/main.4c3e58e3.chunk.js.map",
-    "runtime-main.js": "/the-final-word/static/js/runtime-main.e9226fc9.js",
-    "runtime-main.js.map": "/the-final-word/static/js/runtime-main.e9226fc9.js.map",
-    "static/js/2.0e7d890b.chunk.js": "/the-final-word/static/js/2.0e7d890b.chunk.js",
-    "static/js/2.0e7d890b.chunk.js.map": "/the-final-word/static/js/2.0e7d890b.chunk.js.map",
-    "static/js/3.bdd39115.chunk.js": "/the-final-word/static/js/3.bdd39115.chunk.js",
-    "static/js/3.bdd39115.chunk.js.map": "/the-final-word/static/js/3.bdd39115.chunk.js.map",
-    "index.html": "/the-final-word/index.html",
-    "static/js/2.0e7d890b.chunk.js.LICENSE.txt": "/the-final-word/static/js/2.0e7d890b.chunk.js.LICENSE.txt",
-    "static/media/the_last_word_render.987cf35d.jpeg": "/the-final-word/static/media/the_last_word_render.987cf35d.jpeg"
+    "main.js": "/the-last-word/static/js/main.1cea89bf.chunk.js",
+    "main.js.map": "/the-last-word/static/js/main.1cea89bf.chunk.js.map",
+    "runtime-main.js": "/the-last-word/static/js/runtime-main.2e766fee.js",
+    "runtime-main.js.map": "/the-last-word/static/js/runtime-main.2e766fee.js.map",
+    "static/js/2.69697f9c.chunk.js": "/the-last-word/static/js/2.69697f9c.chunk.js",
+    "static/js/2.69697f9c.chunk.js.map": "/the-last-word/static/js/2.69697f9c.chunk.js.map",
+    "static/js/3.c8f782de.chunk.js": "/the-last-word/static/js/3.c8f782de.chunk.js",
+    "static/js/3.c8f782de.chunk.js.map": "/the-last-word/static/js/3.c8f782de.chunk.js.map",
+    "index.html": "/the-last-word/index.html",
+    "static/js/2.69697f9c.chunk.js.LICENSE.txt": "/the-last-word/static/js/2.69697f9c.chunk.js.LICENSE.txt",
+    "static/media/the_last_word_render.987cf35d.jpeg": "/the-last-word/static/media/the_last_word_render.987cf35d.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.e9226fc9.js",
-    "static/js/2.0e7d890b.chunk.js",
-    "static/js/main.4c3e58e3.chunk.js"
+    "static/js/runtime-main.2e766fee.js",
+    "static/js/2.69697f9c.chunk.js",
+    "static/js/main.1cea89bf.chunk.js"
   ]
 }
