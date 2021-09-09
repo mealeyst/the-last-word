@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/the-last-word/static/js/main.1cea89bf.chunk.js",
-    "main.js.map": "/the-last-word/static/js/main.1cea89bf.chunk.js.map",
+    "main.js": "/the-last-word/static/js/main.2949e82b.chunk.js",
+    "main.js.map": "/the-last-word/static/js/main.2949e82b.chunk.js.map",
     "runtime-main.js": "/the-last-word/static/js/runtime-main.2e766fee.js",
     "runtime-main.js.map": "/the-last-word/static/js/runtime-main.2e766fee.js.map",
     "static/js/2.69697f9c.chunk.js": "/the-last-word/static/js/2.69697f9c.chunk.js",
@@ -15,6 +15,6 @@
   "entrypoints": [
     "static/js/runtime-main.2e766fee.js",
     "static/js/2.69697f9c.chunk.js",
-    "static/js/main.1cea89bf.chunk.js"
+    "static/js/main.2949e82b.chunk.js"
   ]
 }
