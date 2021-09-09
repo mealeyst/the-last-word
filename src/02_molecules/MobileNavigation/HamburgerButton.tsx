@@ -2,23 +2,21 @@ import React, { FunctionComponent, MouseEventHandler } from 'react';
 import styled from 'styled-components'
 // @ts-ignore
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// @ts-ignore
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { backgroundColor } from '../../00_quarks/background';
 import { color, COLORS } from '../../00_quarks/colors';
 import { height, SIZES, width } from '../../00_quarks/sizing';
-import { borderColor, borderStyle, borderWidth, BORDER_RADIUS, BORDER_STYLES, radius } from '../../00_quarks/border';
+import { borderColor, borderStyle, borderWidth, BORDER_STYLES } from '../../00_quarks/border';
 import { padding } from '../../00_quarks/spacing';
 import { fontSize, FONT_SIZE } from '../../00_quarks/typography';
 import { ScreenReaderText } from '../../01_atoms/ScreenReaderText';
 import { boxSizing, LAYOUT_BOX_SIZING, LAYOUT_POSITION, LAYOUT_ZINDEX, left, position, top, zIndex } from '../../00_quarks/layout';
 
-import Fade from '../../01_atoms/Animations/Fade'
 
-type HamburgerButtonProps = {
+export type HamburgerButtonProps = {
   absolute?: boolean,
   className?: string,
-  onClick: MouseEventHandler<HTMLButtonElement>
+  onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 const HamburgerButton: FunctionComponent<HamburgerButtonProps> = ({className, onClick}) => {
@@ -56,7 +54,7 @@ const StyledHamburgerButton: FunctionComponent<HamburgerButtonProps> = styled(Ha
   ${borderStyle(BORDER_STYLES.DOUBLE)}
   ${boxSizing(LAYOUT_BOX_SIZING.CONTENT_BOX)}
   ${fontSize(FONT_SIZE.XL3)}
-  ${radius(BORDER_RADIUS.ROUNDED_FULL)}
+  border-radius: 100%;
   ${backgroundColor(COLORS.GREY, 0)}
   box-shadow: 0px 5px 3px 2px rgba(0, 0, 0, .5);
 

@@ -1,20 +1,11 @@
 import React, { ReactNode } from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import { COLORS } from '../../00_quarks/colors';
 import { FONT_WEIGHT, FONT_SIZE, TEXT_TRANSFORM, FONT_FAMILY } from '../../00_quarks/typography';
 import { convertEnumToObject } from '../../utils/enum';
 
-import Link from './Link';
-
-type ArgsType = {
-  children: ReactNode,
-  colorName: COLORS,
-  href: string,
-  shade: number,
-  size?: FONT_SIZE,
-  transform: TEXT_TRANSFORM,
-  underline?: boolean,
-  weight: FONT_WEIGHT
-}
+import Link, { LinkProps } from './Link';
 
 const storyData = {
   title: 'Atoms/Link',
@@ -59,9 +50,9 @@ const storyData = {
       }
     }
   }
-};
+} as Meta;
 
-const Template = (args: ArgsType) => <Link {...args} />;
+const Template: Story<LinkProps> = (args) => <Link {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

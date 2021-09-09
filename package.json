@@ -4,20 +4,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.35",
-    "@fortawesome/free-brands-svg-icons": "^5.15.3",
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/react-dom": "^17.0.9",
+    "@types/react-fontawesome": "^1.6.5",
     "@types/react-responsive": "^8.0.3",
-    "google-map-react": "^2.1.10",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-ig-feed": "^1.0.4",
     "react-responsive": "^9.0.0-beta.4",
     "react-scripts": "4.0.2",
     "styled-components": "^5.2.1",
@@ -32,8 +31,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +39,14 @@
       "react-app/jest"
     ],
     "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      },
       {
         "files": [
           "**/*.stories.*"
@@ -64,16 +70,13 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "^6.3.5",
-    "@storybook/addon-actions": "^6.3.5",
-    "@storybook/addon-essentials": "^6.3.5",
-    "@storybook/addon-links": "^6.3.5",
-    "@storybook/node-logger": "^6.3.5",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/node-logger": "^6.3.8",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.5",
-    "@types/react-fontawesome": "^1.6.4",
+    "@storybook/react": "^6.3.8",
     "@types/styled-components": "^5.1.7",
-    "babel-loader": "^8.1.0",
     "gh-pages": "^3.1.0",
     "rimraf": "^3.0.2"
   }

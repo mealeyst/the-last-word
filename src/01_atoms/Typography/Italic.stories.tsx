@@ -1,4 +1,5 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../00_quarks/colors'
 import { FONT_SIZE } from '../../00_quarks/typography'
@@ -27,9 +28,9 @@ const storyData =  {
       }
     }
   }
-};
+} as Meta;
 
-const Template = (args: Typography) => {
+const Template: Story<Typography> = (args) => {
   return (
       <P>This is an example where we would like to <Italic {...args}>italicize</Italic> an element</P>
   );

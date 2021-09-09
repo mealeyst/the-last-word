@@ -7,7 +7,7 @@ import DesktopNavigation from "../../02_molecules/DesktopNavigation/DesktopNavig
 import MobileNavigation, { MobileDrawerProps} from "../../02_molecules/MobileNavigation/MobileNavigation";
 
 
-type NavigationProps = {
+export type NavigationProps = {
   mobileChildren: ReactNode[],
   desktopChildren: ReactNode[],
 }

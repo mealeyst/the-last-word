@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../00_quarks/colors';
 import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from '../../00_quarks/typography';
@@ -38,10 +39,10 @@ const storyData = {
       }
     }
   },
-};
+} as Meta;
 
-const Template = (args: Heading) => {
-  return <H5 {...args} />;
+const Template: Story<Heading> = (args) => {
+  return (<H5 {...args} />);
 }
 
 export const Default = Template.bind({});

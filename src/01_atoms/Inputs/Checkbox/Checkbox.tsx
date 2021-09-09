@@ -15,15 +15,15 @@ import {
 import { margin } from '../../../00_quarks/spacing'
 import { SIZES, height, width } from '../../../00_quarks/sizing'
 
-interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
-  colorName?: COLORS
+export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
+  colorName: COLORS
   name: string
-  shade?: number
-  size?: SIZES
+  shade: number
+  size: SIZES
   value: string
 }
 
-const Checkbox:FunctionComponent = ({className, ...props}: CheckboxProps) => {
+const Checkbox:FunctionComponent<CheckboxProps> = ({className, ...props}) => {
   return (
     <Fragment>
       <div className={className}>

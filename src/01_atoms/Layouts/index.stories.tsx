@@ -1,6 +1,8 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import { SIZES } from '../../00_quarks/sizing';
-import { Grid as GridComponent } from './Grid';
+import { Grid as GridComponent, GridProps } from './Grid';
 
 export default {
   title: 'Atoms/Layouts/Grid',
@@ -14,10 +16,14 @@ export default {
       }
     }
   }
-};
+} as Meta;
+
+type StoryProps = {
+  childrenCount: number
+}
 
 
-const Template = (args: any) => {
+const Template: Story<GridProps & StoryProps> = (args) => {
   const children = []
   for(let i = 0; i < args.childrenCount; i++){
     children.push(<div>Child {i}</div>);

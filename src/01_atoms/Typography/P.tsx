@@ -11,16 +11,9 @@ import { Typography } from './typeography'
 
 
 export const P = styled.p<Typography>`
-  ${props => color(props.colorName, props.shade)}
-  ${props => fontFamily(props.font)}
-  ${props => fontSize(props.size)}
+  ${({shade = 0, colorName = COLORS.GREY})=> color(colorName, shade)}
+  ${({font = FONT_FAMILY.BODY}) => fontFamily(font)}
+  ${({size = FONT_SIZE.BASE}) => fontSize(size)}
 `
-
-P.defaultProps = {
-  colorName: COLORS.GREY,
-  font: FONT_FAMILY.BODY,
-  shade: 0,
-  size: FONT_SIZE.BASE
-}
 
 export default P

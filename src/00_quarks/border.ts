@@ -145,17 +145,6 @@ const borderStyles: BORDER_STYLE = {
 
 export const borderColor = buildColorStyle('border-color')
 
-export const radius = (borderType: BORDER_RADIUS): string => {
-  const borderRegex = /([1-3A-Z]+)/g
-  const name = BORDER_RADIUS[borderType]
-  const results = name.match(borderRegex)
-  const sizeFound = radiusSizes[Object.keys(radiusSizes).find(size => results.includes(size))]
-  const sizeValue = sizeFound ? sizeFound : radiusSizes.DEFAULT
-  const size = computeRem(sizeValue)
-  const locationFound = radiusLocations[Object.keys(radiusLocations).find(location => results.includes(location))]
-  const locationValue = locationFound ? locationFound : radiusLocations.DEFAULT
-  return locationValue(size)
-}
 
 const getStyle = (style: BORDER_STYLES): string => borderStyles[style]
 

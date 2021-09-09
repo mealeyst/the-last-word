@@ -1,22 +1,20 @@
 import React, { useState } from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import Link, { LinkProps } from '../../01_atoms/Link/Link'
-import MobileNavigationDrawer from './MobileNavigationDrawer';
+import MobileNavigationDrawer, { MobileDrawerProps} from './MobileNavigationDrawer';
 
 export default {
   title: 'Molecules/MobileNavigationDrawer',
   component: MobileNavigationDrawer
-};
+} as Meta;
 
-type ArgTypes = {
-  open: boolean,
-  delay: number
-}
 
 const DarkLink= (props:LinkProps) => (
   <Link {...props} shade={10} />
 )
 
-const Template = (args: ArgTypes) => {
+const Template: Story<MobileDrawerProps> = (args) => {
   const container = document.body
   const [open, setOpen] = useState(true)
   return(

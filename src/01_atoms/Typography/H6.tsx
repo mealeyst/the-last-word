@@ -12,10 +12,10 @@ import {
 import { Heading } from './typeography'
 
 export const H6 = styled.h6<Heading>`
-  ${props => color(props.colorName, props.shade)}
-  ${props => fontFamily(props.font)}
-  ${props => fontWeight(props.weight)}
-  ${props => fontSize(props.size)}
+  ${({colorName = COLORS.GREY, shade = 0}) => color(colorName, shade)}
+  ${({font = FONT_FAMILY.HEADER}) => fontFamily(font)}
+  ${({weight = FONT_WEIGHT.BOLD}) => fontWeight(weight)}
+  ${({size = FONT_SIZE.XS}) => fontSize(size)}
 `
 
 H6.defaultProps = {

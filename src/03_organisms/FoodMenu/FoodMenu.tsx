@@ -10,7 +10,6 @@ import { display, LAYOUT_DISPLAY } from '../../00_quarks/layout'
 import { mediaQuery, QUERY_SIZES, QUERY_TARGETS } from '../../00_quarks/media-query'
 import { SIZES } from '../../00_quarks/sizing'
 import { margin, padding } from '../../00_quarks/spacing'
-import H3 from '../../01_atoms/Typography/H3'
 import Section from '../../02_molecules/Section/Section'
 
 import FoodCategory, { FoodCategoryProps } from './FoodCategory'
@@ -18,8 +17,8 @@ import FoodCategory, { FoodCategoryProps } from './FoodCategory'
 export type FoodMenuProps = {
     className?: string,
     categories: FoodCategoryProps[],
-    id?: string,
-    title?: string
+    id: string,
+    title: string
 }
 
 export const FoodMenu = forwardRef<HTMLElement, FoodMenuProps>(({

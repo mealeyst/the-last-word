@@ -1,4 +1,6 @@
-import React, { Fragment, useState, MouseEventHandler, FunctionComponent } from 'react';
+import React from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import Page, { PageProps } from './Page';
 
 import { menus } from './data'
@@ -6,10 +8,10 @@ import { menus } from './data'
 export default {
   title: 'Templates/Page',
   component: Page
-};
+} as Meta;
 
 
-const Template: FunctionComponent<PageProps> = (args) => {
+const Template: Story<PageProps> = (args) => {
   return(
     <Page {...args} />
   )
@@ -17,6 +19,5 @@ const Template: FunctionComponent<PageProps> = (args) => {
 
 export const Primary = Template.bind({});
 Primary.args = {
-  open: true,
   menus
 };

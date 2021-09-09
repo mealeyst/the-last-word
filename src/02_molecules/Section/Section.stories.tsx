@@ -1,13 +1,15 @@
 import React from 'react'
+import {Meta, Story} from "@storybook/react";
+
 
 import Section, { SectionProps } from './Section'
 
 const storyData = {
   title: 'Molecules/Section',
   component: Section
-};
+} as Meta;
 
-const Template = (args: SectionProps) => {
+const Template: Story<SectionProps> = (args) => {
   const { children, ...props} = args
   return (
     <Section {...props}>

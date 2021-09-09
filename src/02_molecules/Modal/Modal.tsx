@@ -9,22 +9,26 @@ import { flexboxDirection, flexboxFlex, flexboxWrap, FLEXBOX_DIRECTION, FLEXBOX_
 import { display, LAYOUT_DISPLAY, LAYOUT_POSITION, left, position, right, top } from '../../00_quarks/layout'
 import { height, SIZES, width } from '../../00_quarks/sizing'
 import { padding } from '../../00_quarks/spacing'
-import Animation, { ANIMATION_NAMES } from '../../01_atoms/Animations/Animation';
 import Button  from '../../01_atoms/Inputs/Button/Button'
 
 export type ModalProps = {
   className?: string
   children: ReactNode,
   container: HTMLElement,
-  show: boolean
+  open: boolean
   onClose: MouseEventHandler<HTMLButtonElement>
 }
 
-export const Modal: FunctionComponent<ModalProps> = ({ className, children, container, show, onClose: handleClose }) => {
-  if(show) {
+export const Modal: FunctionComponent<ModalProps> = ({
+  className,
+  children,
+  container = document.body,
+  open = true,
+  onClose: handleClose
+}) => {
+  if(open) {
     document.body.style.overflow = 'hidden';
     return createPortal(
-      <Animation name={ANIMATION_NAMES.FADE} show={show} duration={0.5}>
         <div className={className}>
           <main className='dialog'>
               <Button className='dialog__close' onClick={handleClose}>Close</Button>
@@ -33,7 +37,6 @@ export const Modal: FunctionComponent<ModalProps> = ({ className, children, cont
               </section>
           </main>
         </div>
-        </Animation>
       , container)
   }
   document.body.style.overflow = 'unset';
@@ -71,15 +74,6 @@ const StyledModal = styled(Modal)`
       ${top(SIZES.S4, true)}
       ${right(SIZES.S4, true)}
     }
-
-    // > header {
-    //   ${flexboxFlex(FLEXBOX_FLEX.NONE)}
-    //   ${width(SIZES.FULL)}
-    //   ${display(LAYOUT_DISPLAY.FLEX)}
-    //   ${flexboxDirection(FLEXBOX_DIRECTION.FLEX_ROW_REVERSE)}
-    //   ${alignItem(BOX_ALIGNMENT.CENTER)}
-    //   ${padding(SIZES.S4)}
-    // }
     > section {
       ${display(LAYOUT_DISPLAY.FLEX)}
       ${alignItem(BOX_ALIGNMENT.FLEX_START)}

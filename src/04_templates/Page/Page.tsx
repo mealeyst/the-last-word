@@ -1,25 +1,26 @@
 import React, { useState, FunctionComponent, MouseEventHandler, useRef } from 'react'
 import styled from 'styled-components'
-import InstagramFeed  from 'react-ig-feed'
-import GoogleMapReact from 'google-map-react';
 
 import { COLORS } from '../../00_quarks/colors';
-import Grid from '../../01_atoms/Layouts/Grid';
-import Link from '../../01_atoms/Link/Link';
-import { Image } from '../../01_atoms/Image/Image';
-import theLastWordSrc from '../../assets/the_last_word_render.jpeg';
-import TextLogo from '../../01_atoms/TextLogo/TextLogo';
-import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu/FoodMenu';
-import { maxWidth, SIZES } from '../../00_quarks/sizing';
 import { margin } from '../../00_quarks/spacing';
-import H3 from '../../01_atoms/Typography/H3';
-import H2 from '../../01_atoms/Typography/H2';
-import P from '../../01_atoms/Typography/P';
-import Navigation from '../../03_organisms/Navigation/Navigation';
-import { mediaQuery, QUERY_SIZES, QUERY_TARGETS } from '../../00_quarks/media-query';
-import Section from '../../02_molecules/Section/Section';
-import Container from '../../01_atoms/Container/Container';
+import { maxWidth, SIZES } from '../../00_quarks/sizing';
 import { TEXT_TRANSFORM } from '../../00_quarks/typography';
+
+import { Image } from '../../01_atoms/Image/Image';
+import Container from '../../01_atoms/Container/Container';
+import Grid from '../../01_atoms/Layouts/Grid';
+import H3 from '../../01_atoms/Typography/H3';
+import Link from '../../01_atoms/Link/Link';
+import P from '../../01_atoms/Typography/P';
+import TextLogo from '../../01_atoms/TextLogo/TextLogo';
+
+import Section from '../../02_molecules/Section/Section';
+
+import FoodMenu, {FoodMenuProps } from '../../03_organisms/FoodMenu/FoodMenu';
+import Navigation from '../../03_organisms/Navigation/Navigation';
+
+
+import theLastWordSrc from '../../assets/the_last_word_render.jpeg';
 
 export type PageProps = {
   className: string,
@@ -44,7 +45,7 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
   const onClick: MouseEventHandler = (e) => {
     e.preventDefault()
     const target = e.target as Element;
-    const id = target.getAttribute("href").substring(1)
+    const id = target.getAttribute("href")!.substring(1)
     if(sections.current && sections.current.hasOwnProperty(id)) {
       const element = sections.current[id]
       element.scrollIntoView({behavior: "smooth"});

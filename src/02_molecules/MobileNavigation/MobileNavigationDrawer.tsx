@@ -1,4 +1,5 @@
 import React, {
+  DependencyList,
   FunctionComponent,
   HTMLAttributes,
   MouseEventHandler,
@@ -16,16 +17,15 @@ import { bottom, display, LAYOUT_DISPLAY, LAYOUT_POSITION, LAYOUT_ZINDEX, left, 
 import { margin, padding } from '../../00_quarks/spacing';
 import { height, SIZES, width } from '../../00_quarks/sizing'
 import { listStyle, LIST_STYLE_TYPE } from '../../00_quarks/typography';
-import Animation, { ANIMATION_NAMES } from '../../01_atoms/Animations/Animation';
 import Button  from '../../01_atoms/Inputs/Button/Button'
 import { useThrottledCallback } from '../../utils/hooks/throttled-callback.hook'
 
-interface MobileDrawerProps extends HTMLAttributes<HTMLElement> {
+export interface MobileDrawerProps extends HTMLAttributes<HTMLElement> {
   absolute?: boolean,
   children: ReactNode[],
   container?: HTMLElement,
   open?: boolean,
-  onClose: MouseEventHandler<HTMLButtonElement>,
+  onClose?: MouseEventHandler<HTMLButtonElement>,
   slideOut?: boolean,
   delay?: number
 }
@@ -68,7 +68,13 @@ const slideOut = keyframes`
   }
 `
 
-const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({ className, children, container, onClose: handleClose, open }) => {
+const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({
+  className,
+  children,
+  container = document.body,
+  open = true,
+  onClose: handleClose
+}) => {
   if(open) {
     document.body.style.overflow = 'hidden';
     return createPortal(
@@ -91,8 +97,8 @@ const MobileNavigationDrawer: FunctionComponent<MobileDrawerProps> = ({ classNam
 }
 
 const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNavigationDrawer)`
-  ${props => {
-    if(props.absolute){
+  ${({ absolute = true}) => {
+    if(absolute){
       return (`
         ${position(LAYOUT_POSITION.FIXED)}
         ${top(SIZES.S0)}
@@ -138,10 +144,9 @@ const StyledMobileDrawer: FunctionComponent<MobileDrawerProps> = styled(MobileNa
   }
 `
 
-const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
-  const { delay } = props
+const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = ({delay = 1000, ...props}) => {
   const [isUnmounted, setIsUnmounted] = useState(false);
-  useThrottledCallback(() => setIsUnmounted(true), delay)
+  useThrottledCallback(() => setIsUnmounted(true), delay, [])
   if(isUnmounted) {
     console.log('Unmounted')
     return null
@@ -150,11 +155,5 @@ const MobileDrawerWrapper: FunctionComponent<MobileDrawerProps> = (props) => {
   }
 }
 
-StyledMobileDrawer.defaultProps = {
-  absolute: true,
-  container: document.body,
-  delay: 1000,
-  open: true
-}
 
 export default MobileDrawerWrapper

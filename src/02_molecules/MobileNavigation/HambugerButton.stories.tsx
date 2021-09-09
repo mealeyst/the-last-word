@@ -1,30 +1,19 @@
-import React, { FunctionComponent, MouseEventHandler, useState } from 'react';
-import HamburgerButton from './HamburgerButton';
+import React from 'react';
+import {Meta, Story} from "@storybook/react";
+
+import HamburgerButton, { HamburgerButtonProps } from './HamburgerButton';
 
 export default {
   title: 'Molecules/HamburgerButton',
   component: HamburgerButton,
   argTypes: { onClick: { action: 'clicked' } },
-};
+} as Meta;
 
 
-type ArgTypes = {
-  open: boolean,
-  onClick: MouseEventHandler<HTMLButtonElement>
-}
-
-const Template = (args: ArgTypes) => {
-  const [open, setClosed] = useState(args.open)
-  const handleClick = (event: any) => {
-    setClosed(!open)
-    args.onClick(event)
-  }
+const Template: Story<HamburgerButtonProps>  = (args) => {
   return(
-    <HamburgerButton open={open} onClick={handleClick} absolute={false} />
+    <HamburgerButton {...args} absolute={false} />
   )
 }
 
 export const Primary = Template.bind({});
-Primary.args = {
-  open: true
-};

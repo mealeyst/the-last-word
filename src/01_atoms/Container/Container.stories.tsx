@@ -1,13 +1,14 @@
 import React from 'react'
+import {Meta, Story} from "@storybook/react";
 
 import Container, { ContainerProps } from './Container'
 
 const storyData = {
   title: 'Atoms/Container',
   component: Container
-};
+} as Meta;
 
-const Template = (args: ContainerProps) => {
+const Template: Story<ContainerProps> = (args) => {
   const { children, ...props} = args
   return (
     <Container {...props}>

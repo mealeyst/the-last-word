@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import { COLORS } from '../../00_quarks/colors';
 import Link from '../../01_atoms/Link/Link'
 import TextLogo from '../../01_atoms/TextLogo/TextLogo'
@@ -7,9 +9,9 @@ import DesktopNavigation from './DesktopNavigation';
 export default {
   title: 'Molecules/DesktopNavigation',
   component: DesktopNavigation
-};
+} as Meta;
 
-const Template = () => {
+const Template: Story = () => {
   const [logoColor, setLogoColor] = useState({name: COLORS.GREY, shade: 0})
   const setGold = () => setLogoColor({name: COLORS.GOLD, shade:4 })
   const setWhite = () => setLogoColor({name: COLORS.GREY, shade: 0})

@@ -27,18 +27,18 @@ const animateUnderline = css`
 }
 `
 const Link = styled('a')<LinkProps>`
-  ${props => color(props.colorName, props.shade)}
-  ${props => textTransform(props.transform)}
-  ${props => fontWeight(props.weight)}
-  ${props => fontSize(props.size)}
-  ${props => fontFamily(props.font)}
+  ${({colorName = COLORS.GREY, shade = 0}) => color(colorName, shade)}
+  ${({transform = TEXT_TRANSFORM.UPPERCASE}) => textTransform(transform)}
+  ${({weight = FONT_WEIGHT.NORMAL}) => fontWeight(weight)}
+  ${({size = FONT_SIZE.BASE}) => fontSize(size)}
+  ${({font = FONT_FAMILY.HEADER}) => fontFamily(font)}
   ${position(LAYOUT_POSITION.RELATIVE)}
   ${textDecoration(TEXT_DECORATION.NO_UNDERLINE)}
   ${padding(SIZES.S1)}
   &:before, &:after {
     ${position(LAYOUT_POSITION.ABSOLUTE)}
     ${display(LAYOUT_DISPLAY.BLOCK)}
-    ${props => backgroundColor(props.colorName, props.shade)}
+    ${({colorName = COLORS.GREY, shade = 0}) => backgroundColor(colorName, shade)}
     content: '';
     ${height(SIZES.S0_1)}
     ${width(SIZES.HALF)}
@@ -58,17 +58,7 @@ const Link = styled('a')<LinkProps>`
   &:focus {
     outline: none;
   }
-  ${props => props.underline && animateUnderline}
+  ${({underline = true}) => underline && animateUnderline}
 `
-
-Link.defaultProps = {
-  colorName: COLORS.GREY,
-  font: FONT_FAMILY.HEADER,
-  shade: 0,
-  size: FONT_SIZE.BASE,
-  transform: TEXT_TRANSFORM.UPPERCASE,
-  underline: true,
-  weight: FONT_WEIGHT.NORMAL
-}
 
 export default Link

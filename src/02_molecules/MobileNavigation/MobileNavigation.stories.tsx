@@ -1,23 +1,20 @@
-import React, { Fragment, useState, MouseEventHandler } from 'react';
+import React, { Fragment, useState } from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import Link, { LinkProps } from '../../01_atoms/Link/Link'
-import MobileNavigation from './MobileNavigation';
+import MobileNavigation, { MobileNavigationProps, MobileDrawerProps} from './MobileNavigation';
 
 export default {
   title: 'Molecules/MobileNavigation',
   component: MobileNavigation,
   argTypes: { onClick: { action: 'Toggled Menu' } },
-};
-
-type ArgTypes = {
-  open: boolean,
-  onClick: MouseEventHandler<HTMLButtonElement>
-}
+} as Meta;
 
 const DarkLink = (props: LinkProps) => (
   <Link {...props} shade={10} />
 )
 
-const Template = (args: ArgTypes) => {
+const Template: Story<MobileNavigationProps & MobileDrawerProps> = (args) => {
   const [open, setOpen] = useState(true)
   const onCloseClick = () => setOpen(false)
   const onOpenClick = () => setOpen(true)

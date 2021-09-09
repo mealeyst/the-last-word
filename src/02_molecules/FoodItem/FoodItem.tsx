@@ -12,7 +12,7 @@ import { FONT_FAMILY } from '../../00_quarks/typography'
 import P from '../../01_atoms/Typography/P'
 
 export type FoodItemProps = {
-  className: string,
+  className?: string,
   description?: string,
   price?: number,
   title: string

@@ -4,7 +4,7 @@ import { FONT_FAMILY, FONT_SIZE, FONT_WEIGHT } from '../../00_quarks/typography'
 import { COLORS } from '../../00_quarks/colors'
 
 export interface Typography {
-  children?: ReactNode
+  children: ReactNode
   className?: string
   colorName?: COLORS
   font?: FONT_FAMILY

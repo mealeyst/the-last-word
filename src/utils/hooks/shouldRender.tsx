@@ -9,7 +9,7 @@ export function useDelayUnmount(isMounted: boolean, delayTime: number) {
           setShouldRender(true);
       }
       else if(!isMounted && shouldRender) {
-          timeoutId = setTimeout(
+          timeoutId = window.setTimeout(
               () => setShouldRender(false), 
               delayTime
           );

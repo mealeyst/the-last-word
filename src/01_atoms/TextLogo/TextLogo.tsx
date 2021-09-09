@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { buildColorStyle, COLORS } from '../../00_quarks/colors'
-import { minHeight, minWidth, SIZES } from '../../00_quarks/sizing'
+import { minHeight, SIZES } from '../../00_quarks/sizing'
 
-type TextLogoProps = {
+export type TextLogoProps = {
   className?: string,
   fill?: COLORS,
   shade?: number,
@@ -20,23 +20,17 @@ const TextLogo: FunctionComponent<TextLogoProps> = ({ className }) => (
 )
 
 const StyledTextLogo: FunctionComponent<TextLogoProps> = styled(TextLogo)`
-  ${props => minHeight(props.minHeight)}
+${({minHeight: minHeightProp = SIZES.S14}) => `${minHeight(minHeightProp)}`}
   .text{
-    ${props => `${buildColorStyle('fill')(props.fill, props.shade)}`}
+    ${({fill = COLORS.GREY, shade = 0}) => `${buildColorStyle('fill')(fill, shade)}`}
     transition: fill 0.2s ease-in;
   }
   .border {
     fill: none;
-    ${props => `${buildColorStyle('stroke')(props.fill, props.shade)}`}
+    ${({fill = COLORS.GREY, shade = 0}) => `${buildColorStyle('stroke')(fill, shade)}`}
     transition: stroke 0.2s ease-in;
     stroke-width: 18;
   }
 `
-
-StyledTextLogo.defaultProps = {
-  fill: COLORS.GREY,
-  shade: 0,
-  minHeight: SIZES.S14
-}
 
 export default StyledTextLogo

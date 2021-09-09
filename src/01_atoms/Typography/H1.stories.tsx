@@ -1,4 +1,5 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../00_quarks/colors';
 import { FONT_SIZE, FONT_WEIGHT } from '../../00_quarks/typography';
@@ -33,10 +34,10 @@ const storyData = {
       }
     }
   },
-};
+} as Meta;
 
-const Template = (args: Heading) => {
-  return <H1 {...args} colorName={args.colorName} weight={args.weight} shade={args.shade} />;
+const Template: Story<Heading> = (args) => {
+  return (<H1 {...args} />)
 }
 
 export const Default = Template.bind({});

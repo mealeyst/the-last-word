@@ -13,7 +13,7 @@ import P from '../../01_atoms/Typography/P'
 import FoodItem, { FoodItemProps } from '../../02_molecules/FoodItem/FoodItem'
 
 export type FoodCategoryProps = {
-  className: string,
+  className?: string,
   categoryName: string,
   categoryDetails?: string,
   foodItems: FoodItemProps[],

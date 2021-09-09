@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FunctionComponent, ReactNode } from 'react'
 import { ThemeProvider } from 'styled-components'; 
 
 import { color, SiteBackground } from './00_quarks/colors'
@@ -10,7 +10,11 @@ const theme = {
   color
 }
 
-export const ThemeDecorator = ({children}) => {
+type ThemeDecoratorProps = {
+  children: ReactNode
+}
+
+export const ThemeDecorator: FunctionComponent<ThemeDecoratorProps> = ({children}) => {
   return (
     <ThemeProvider theme={theme}>
       <SiteBackground />

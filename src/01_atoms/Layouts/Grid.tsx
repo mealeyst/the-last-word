@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 import { display, LAYOUT_DISPLAY } from '../../00_quarks/layout';
 import { SIZES, getSize } from '../../00_quarks/sizing';
 
-interface GridProps extends HTMLAttributes<HTMLElement> {
+export interface GridProps extends HTMLAttributes<HTMLElement> {
   element?: string
   gap?: SIZES
   templateAreas?: string
@@ -19,10 +19,10 @@ export const Grid = styled(({element, children, className }) => {
   )
 })<GridProps>`
   ${display(LAYOUT_DISPLAY.GRID)}
-  ${props => css`gap: ${getSize(props.gap)};`}
-  ${props => props.templateAreas && css`grid-template-areas: ${props.templateAreas};`}
-  ${props => props.templateColumns && css`grid-template-columns: ${props.templateColumns};`}
-  ${props => props.templateRows && css`grid-template-rows: ${props.templateRows};`}
+  ${({gap = SIZES.S3}) => css`gap: ${getSize(gap)};`}
+  ${({ templateAreas = "'header''main''footer'"}) => templateAreas && css`grid-template-areas: ${templateAreas};`}
+  ${({templateColumns = '1fr'}) => templateColumns && css`grid-template-columns: ${templateColumns};`}
+  ${({ templateRows = 'auto 1fr auto'}) => templateRows && css`grid-template-rows: ${templateRows};`}
 `
 
 Grid.defaultProps = {

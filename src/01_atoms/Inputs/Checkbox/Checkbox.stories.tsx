@@ -1,9 +1,10 @@
 import React, { Fragment, FunctionComponent } from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../../00_quarks/colors'
 import { SIZES } from '../../../00_quarks/sizing';
 import { convertEnumToObject } from '../../../utils/enum'
-import Checkbox from './Checkbox';
+import Checkbox, { CheckboxProps } from './Checkbox';
 
 const storyData = {
   title: 'Atoms/Inputs/Checkbox',
@@ -25,20 +26,14 @@ const storyData = {
       }
     }
   }
-};
+} as Meta;
 
-type ArgsType = {
-  colorName: COLORS,
-  shade: number,
-  size: SIZES
-}
-
-const Template = (args: ArgsType) => {
+const Template: Story<CheckboxProps> = (args) => {
   return (
     <Fragment>
-      <Checkbox name="example" value="1" {...args} />
-      <Checkbox name="example" value="2" {...args} />
-      <Checkbox name="example" value="3" {...args} />
+      <Checkbox {...args} name="example" value="1"  />
+      <Checkbox {...args} name="example" value="2"  />
+      <Checkbox {...args} name="example" value="3"  />
     </Fragment>
   )
 }

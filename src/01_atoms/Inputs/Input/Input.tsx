@@ -31,10 +31,10 @@ import {
 } from '../../../00_quarks/sizing'
 import { padding } from '../../../00_quarks/spacing';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
-  colorName?: COLORS
-  fontSize?: FONT_SIZE
-  shade?: number
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement>{
+  colorName: COLORS
+  fontSize: FONT_SIZE
+  shade: number
 }
 
 export const Input = styled.input.attrs(props => ({type: 'text'}))<InputProps>`

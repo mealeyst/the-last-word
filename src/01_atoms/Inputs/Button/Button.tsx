@@ -32,73 +32,44 @@ import {
   TEXT_TRANSFORM
 } from '../../../00_quarks/typography'
 
-type HSLColorProps = {
-  name: {
-    default: COLORS,
-    hover: COLORS
-  },
-  shade: {
-    default: number,
-    hover: number
-  }
-}
-
-type HSLAColorProps = {
-  color: {
-    name: {
-      default: COLORS,
-      hover: COLORS
-    },
-    shade: {
-      default: number,
-      hover: number
-    },
-    alpha: {
-      default: number,
-      hover: number
-    }
-  }
-}
-
-type BorderProps = {
-  color: HSLColorProps,
-  width: {
-    default: SIZES,
-    hover: SIZES
-  }
-}
-
-type FontProps = {
-  color: HSLColorProps,
-  family: FONT_FAMILY
-}
-
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  background?: HSLAColorProps
-  border?: BorderProps,
-  font?: FontProps
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  backgroundColorDefault?: COLORS,
+  backgroundColorHover?: COLORS,
+  backgroundShadeDefault?: number,
+  backgroundShadeHover?: number,
+  borderColorDefault?: COLORS,
+  borderColorHover?: COLORS,
+  borderWidth?: SIZES,
+  borderShadeDefault?: number,
+  borderShadeHover?: number,
+  borderWidthHover?: SIZES,
+  fontColorDefault?: COLORS,
+  fontColorHover?: COLORS,
+  fontFamily?: FONT_FAMILY,
+  fontShadeDefault?: number,
+  fontShadeHover?: number,
 }
 
 /**
  * Primary UI component for user interaction
  */
 export const Button = styled.button<ButtonProps>`
-  ${props => backgroundColor(
-    props.background.color.name.default,
-    props.background.color.shade.default
-  )}
+  ${({
+    backgroundColorDefault: color = COLORS.GREY,
+    backgroundShadeDefault: shade = 10
+  }) => backgroundColor(color, shade)}
   ${borderColor(COLORS.GREY,0)}
-  ${borderWidth(SIZES.S1)}
-  ${props => borderColor(
-    props.border.color.name.default,
-    props.border.color.shade.default
-  )}
+  ${({borderWidth:  borderWidthProp = SIZES.S1}) => borderWidth(borderWidthProp)}
+  ${({
+    borderColorDefault: color = COLORS.GREY,
+    borderShadeDefault: shade = 0
+  }) => borderColor(color, shade)}
   ${borderStyle(BORDER_STYLES.DOUBLE)}
-  ${props => color(
-    props.font.color.name.default,
-    props.font.color.shade.default
-  )}
-  ${props => fontFamily(props.font.family)}
+  ${({
+    fontColorDefault: fontColor = COLORS.GREY,
+    fontShadeDefault: shade = 0
+  }) => color(fontColor, shade)}
+  ${({fontFamily: fontFamilyProp = FONT_FAMILY.HEADER}) => fontFamily(fontFamilyProp)}
   ${height(SIZES.S10)}
   ${padding(SIZES.S0, SIZES.S6)}
   ${position(LAYOUT_POSITION.RELATIVE)}
@@ -106,66 +77,19 @@ export const Button = styled.button<ButtonProps>`
   transition: all 0.3s;
   ${letterSpacing(LETTER_SPACING.WIDE)}
   &:hover, &:focus{
-    ${props => backgroundColor(
-      props.background.color.name.hover,
-      props.background.color.shade.hover
-    )}
-    ${props => color(
-      props.font.color.name.hover,
-      props.font.color.shade.hover
-    )}
+    ${({
+      backgroundColorHover: color = COLORS.GREY,
+      backgroundShadeHover: shade = 0
+    }) => backgroundColor(color, shade)}
+    ${({
+      fontColorHover: fontColor = COLORS.GREY,
+      fontShadeHover: shade = 10
+    }) => color(fontColor, shade)}
   }
   &:focus {
     outline: none;
   }
 `
 
-Button.defaultProps = {
-  background: {
-    color: {
-      name: {
-        default: COLORS.GREY,
-        hover: COLORS.GREY
-      },
-      shade: {
-        default: 10,
-        hover: 0
-      },
-      alpha: {
-        default: 0,
-        hover: 1
-      }
-    }
-  },
-  border: {
-    color: {
-      name: {
-        default: COLORS.GREY,
-        hover: COLORS.GREY
-      },
-      shade: {
-        default: 0,
-        hover: 0
-      }
-    },
-    width: {
-      default: SIZES.S1,
-      hover: SIZES.S1
-    }
-  },
-  font: {
-    color: {
-      name: {
-        default: COLORS.GREY,
-        hover: COLORS.GREY
-      },
-      shade: {
-        default: 0,
-        hover: 10
-      }
-    },
-    family: FONT_FAMILY.HEADER
-  }
-}
 export default Button
 

@@ -12,16 +12,10 @@ import {
 import { Typography } from './typeography'
 
 export const Italic = styled.span<Typography>`
-  ${props => color(props.colorName, props.shade)}
+  ${({colorName = COLORS.GREY, shade = 0}) => color(colorName, shade)}
   ${fontFamily(FONT_FAMILY.BODY)}
-  ${props => fontSize(props.size)}
-  ${props => fontStyle(FONT_STYLE.ITALIC)}
+  ${({size = FONT_SIZE.BASE}) => fontSize(size)}
+  ${fontStyle(FONT_STYLE.ITALIC)}
 `
-
-Italic.defaultProps = {
-  colorName: COLORS.GREY,
-  shade: 0,
-  size: FONT_SIZE.BASE
-}
 
 export default Italic

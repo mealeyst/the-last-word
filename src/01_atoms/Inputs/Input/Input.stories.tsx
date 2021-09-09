@@ -1,10 +1,11 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../../00_quarks/colors'
 import { SIZES } from '../../../00_quarks/sizing';
 import { convertEnumToObject } from '../../../utils/enum'
 import { FONT_SIZE  } from '../../../00_quarks/typography'
-import Input from './Input';
+import Input, { InputProps } from './Input';
 
 const storyData = {
   title: 'Atoms/Inputs/Input',
@@ -26,17 +27,12 @@ const storyData = {
       }
     }
   }
-};
+} as Meta;
 
-type ArgsType = {
-  colorName: COLORS,
-  shade: number,
-  size: SIZES
-}
-
-const Template = (args: ArgsType) => {
+const Template: Story<InputProps> = (args) => {
   return (
-    <Input name="example" {...args} />
+    // @ts-ignore
+    <Input {...args} name="example" />
   )
 }
 

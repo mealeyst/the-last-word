@@ -1,10 +1,11 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../../00_quarks/colors'
 import { SIZES } from '../../../00_quarks/sizing';
 import { convertEnumToObject } from '../../../utils/enum'
 import { FONT_SIZE  } from '../../../00_quarks/typography'
-import Select from './Select';
+import Select, { SelectProps } from './Select';
 
 const storyData = {
   title: 'Atoms/Inputs/Select',
@@ -26,15 +27,10 @@ const storyData = {
       }
     }
   }
-};
+} as Meta;
 
-type ArgsType = {
-  colorName: COLORS,
-  shade: number,
-  size: SIZES
-}
 
-const Template = (args: ArgsType) => {
+const Template: Story<SelectProps> = (args) => {
   return (
     <Select name="example" {...args}>
       <option value="">--Please choose an option--</option>

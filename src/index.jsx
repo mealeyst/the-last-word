@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import PageView from './04_templates/Page/Page';
+import { menus } from './04_templates/Page/data'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <PageView menus={menus} />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
+import {Meta, Story} from "@storybook/react";
 
 import { COLORS } from '../../../00_quarks/colors'
 import { SIZES } from '../../../00_quarks/sizing';
 import { convertEnumToObject } from '../../../utils/enum'
-import Radio from './Radio';
+import Radio, { RadioProps } from './Radio';
 
 const storyData = {
   title: 'Atoms/Inputs/Radio',
@@ -25,20 +26,15 @@ const storyData = {
       }
     }
   }
-};
+} as Meta;
 
-type ArgsType = {
-  colorName: COLORS,
-  shade: number,
-  size: SIZES
-}
 
-const Template = (args: ArgsType) => {
+const Template: Story<RadioProps> = (args) => {
   return (
     <Fragment>
-      <Radio name="example" value="1" {...args} />
-      <Radio name="example" value="2" {...args} />
-      <Radio name="example" value="3" {...args} />
+      <Radio {...args} name="example" value="1"  />
+      <Radio {...args} name="example" value="2" />
+      <Radio {...args} name="example" value="3" />
     </Fragment>
   )
 }

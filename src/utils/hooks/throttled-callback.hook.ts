@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { DependencyList, useCallback, useEffect, useRef } from 'react';
 //From: https://gist.github.com/Danziger/336e75b6675223ad805a88c2dfdcfd4a
 export function useThrottledCallback<A extends any[]>(
   callback: (...args: A) => void,
   delay: number,
-  deps?: readonly any[],
+  deps: DependencyList,
 ): (...args: A) => void {
   const timeoutRef = useRef<number>();
   const callbackRef = useRef(callback);

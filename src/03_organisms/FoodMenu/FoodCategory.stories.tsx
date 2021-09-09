@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import FoodCategory, { FoodCategoryProps } from './FoodCategory';
 
 export default {
   title: 'Organisms/FoodCategory',
   component: FoodCategory
-};
+} as Meta;
 
-const Template = (args: FoodCategoryProps) => {
+const Template: Story<FoodCategoryProps> = (args) => {
   return(
     <FoodCategory  {...args} />
   )

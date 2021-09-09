@@ -15,7 +15,7 @@ import {
 import { margin } from '../../../00_quarks/spacing'
 import { SIZES, height, width } from '../../../00_quarks/sizing'
 
-interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   colorName?: COLORS
   name: string
   shade?: number
@@ -23,7 +23,7 @@ interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string
 }
 
-const Radio:FunctionComponent = ({className, ...props}: RadioProps) => {
+const Radio:FunctionComponent<RadioProps> = ({className, ...props}) => {
   return (
     <Fragment>
       <div className={className}>
@@ -41,14 +41,14 @@ const Radio:FunctionComponent = ({className, ...props}: RadioProps) => {
 export const StyledRadio = styled(Radio)<RadioProps>`
   ${display(LAYOUT_DISPLAY.INLINE_BLOCK)}
   ${position(LAYOUT_POSITION.RELATIVE)}
-  ${props => height(props.size)}
-  ${props => width(props.size)}
+  ${({size = SIZES.S6}) => height(size)}
+  ${({size = SIZES.S6}) => width(size)}
   input, svg {
     ${top(SIZES.S0)}
     ${left(SIZES.S0)}
     ${position(LAYOUT_POSITION.ABSOLUTE)}
-    ${props => height(props.size)}
-    ${props => width(props.size)}
+    ${({size = SIZES.S6}) => height(size)}
+    ${({size = SIZES.S6}) => width(size)}
   }
   input {
     ${margin(SIZES.S0)}
@@ -59,12 +59,12 @@ export const StyledRadio = styled(Radio)<RadioProps>`
     ${zIndex(LAYOUT_ZINDEX.Z0)}
     .ring{
       ${buildColorStyle('fill')(COLORS.TRANSPARENT)}
-      ${props => buildColorStyle('stroke')(props.colorName, props.shade)}
+      ${({colorName =  COLORS.GREY, shade = 0}) => buildColorStyle('stroke')(colorName, shade)}
       stroke-miterlimit:10;
       stroke-width: 1px;
     }
     .fill{
-      ${props => buildColorStyle('fill')(props.colorName, props.shade)}
+      ${({colorName =  COLORS.GREY, shade = 0}) => buildColorStyle('fill')(colorName, shade)}
       transform: scale(0);
       transform-origin: 50% 50%;
       transition: transform 0.25s ease-in-out;
@@ -77,11 +77,5 @@ export const StyledRadio = styled(Radio)<RadioProps>`
     stroke-width: 3px;
   }
 `
-
-StyledRadio.defaultProps = {
-  colorName: COLORS.GREY,
-  shade: 0,
-  size: SIZES.S6
-}
 
 export default StyledRadio

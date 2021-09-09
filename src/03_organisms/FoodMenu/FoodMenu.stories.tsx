@@ -1,12 +1,14 @@
 import React from 'react';
+import {Meta, Story} from "@storybook/react";
+
 import FoodMenu, { FoodMenuProps } from './FoodMenu';
 
 export default {
   title: 'Organisms/FoodMenu',
   component: FoodMenu
-};
+} as Meta;
 
-const Template = (args: FoodMenuProps) => {
+const Template: Story<FoodMenuProps> = (args) => {
   return(
     <FoodMenu  {...args} />
   )

@@ -32,10 +32,10 @@ import {
 import { padding } from '../../../00_quarks/spacing';
 
 
-interface SelectProps extends InputHTMLAttributes<HTMLSelectElement>{
-  colorName?: COLORS
-  fontSize?: FONT_SIZE
-  shade?: number
+export interface SelectProps extends InputHTMLAttributes<HTMLSelectElement>{
+  colorName: COLORS
+  fontSize: FONT_SIZE
+  shade: number
 }
 
 export const Select = styled.select<SelectProps>`
