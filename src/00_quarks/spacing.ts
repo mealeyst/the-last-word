@@ -19,5 +19,6 @@ export const marginTop = (size: SIZES) => `margin-top: ${getSize(size)};`
 export const BodySpacing = createGlobalStyle`
   body {
     ${padding(SIZES.S0)}
+    ${margin(SIZES.S0)}
   }
 `
