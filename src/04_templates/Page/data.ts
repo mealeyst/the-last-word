@@ -9,13 +9,16 @@ export const menus = [
         foodItems: [
           {
             description: 'Cured in fresh lime juice mixed with red onion, limo pepper, celery, and cilantro ceviche.',
-            title: 'Ceviche ~ Fresh Catch of the Day* '
+            title: 'Ceviche ~ Fresh Catch of the Day* ',
+            price: 19,
           },
           {
-            title: 'De Camaron (Shrimp)'
+            title: 'De Camaron (Shrimp)',
+            price: 19,
           },
           {
-            title: 'Ceviche Mixto (Mixed Seafood Shrimp and Fish)*'
+            title: 'Ceviche Mixto (Mixed Seafood Shrimp and Fish)*',
+            price: 20,
           }
         ],
         warning: '*This item can be cooked to your liking. Consuming raw or undercooked meats, fish, shellfish, or fresh shell eggs may increase your risk of food-borne illness, especially if you have certain medical conditions.'
@@ -25,22 +28,27 @@ export const menus = [
         foodItems: [
           {
             description: 'Beef steak tomato, cucumber and red onion marinated in a red wine vinaigrette.',
-            title: 'Tomato Salad'
+            title: 'Tomato Salad',
+            price: 12,
           },
           {
             description: 'Mussels marinated in fresh lime juice tossed with peruvian white corn, shallot, limo pepper, jalapeño. Topped with cilantro.',
-            title: 'Choros A La Chalaca (Mussels)'
+            title: 'Choros A La Chalaca (Mussels)',
+            price: 16,
           },
           {
             description: 'Boiled potato (served cold) sliced and topped with huancaina, hard boiled egg, kalamata olives and cilantro.',
-            title: 'Papa A La Huancaina (Potatoes)'
+            title: 'Papa A La Huancaina (Potatoes)',
+            price: 12,
           },
           {
             description: 'Shredded chicken with peas, yucca, and potato topped with huancaina, avocado, red onion, cilantro and kalamata olive puree.',
-            title: 'Causa De Pollo (Chicken)'
+            title: 'Causa De Pollo (Chicken)',
+            price: 17,
           },
           {
-            title: 'Causa De Camaron (Shrimp)'
+            title: 'Causa De Camaron (Shrimp)',
+            price: 19,
           }
         ]
       },
@@ -49,11 +57,13 @@ export const menus = [
         foodItems: [
           {
             description: 'Red quinoa topped with marinated naval orange, roasted chick pea, sweet potato, and avocado-jalapaño-lime sauce.',
-            title: 'Red Quinoa Bowl'
+            title: 'Red Quinoa Bowl',
+            price: 15,
           },
           {
             description: 'Red quinoa stuffed in a yucca-potato ball served with red onion and avocado-jalapaño-lime sauce.',
-            title: 'Papa Rellena De Quinoa'
+            title: 'Papa Rellena De Quinoa',
+            price: 14,
           }
         ]
       },
@@ -62,15 +72,18 @@ export const menus = [
         foodItems: [
           {
             description: 'Ground Beef and egg stuffed in yucca-potato ball served with aji verde, red onion, cilantro leaf.',
-            title: 'Papa Rellena (Fried Potato Balls)'
+            title: 'Papa Rellena (Fried Potato Balls)',
+            price: 16,
           },
           {
             description: 'Mixed seafood platter (cod, calamari, mussels, shrimp) deep fried over yucca fries. Served with aji verde and huancaina.',
-            title: 'Jalea (Fried Seafood Plater)'
+            title: 'Jalea (Fried Seafood Plater)',
+            price: 25,
           },
           {
             description: 'Skirt steak sautéed with red onion and tomato, served in a toasted bread bowl topped with cilantro',
-            title: 'Lomito Saltado (Stir Fry Skirt Steak)*'
+            title: 'Lomito Saltado (Stir Fry Skirt Steak)*',
+            price: 25,
           }
         ]
       },
@@ -79,17 +92,30 @@ export const menus = [
         foodItems: [
           {
             description: 'Old bay shrimp with lime slaw, avocado, pickled red onion in a corn tortilla side avocado-jalapano-lime sauce.',
-            title: 'Old Bay Shrimp Tacos'
+            title: 'Old Bay Shrimp Tacos',
+            price: 13,
           },
           {
-            title: 'Old Bay Cod Fish Tacos'
+            title: 'Old Bay Cod Fish Tacos',
+            price: 13,
           }
         ]
       },
       {
         categoryName: 'Sides',
         foodItems: [
-          { title: 'Yucca Fries' }, { title: 'Truffel Fries' }, { title: 'Regular French Fries' }
+          { 
+            title: 'Yucca Fries',
+            price: 8, 
+          }, 
+          {
+            title: 'Truffel Fries',
+            price: 12, 
+          }, 
+          {
+            title: 'Regular French Fries',
+            price: 8, 
+          }
         ]
       }
     ]
@@ -152,9 +178,9 @@ export const menus = [
             price: 14.00
           },
           {
-            description: 'Tigre Martini',
-            title: 'Wodka, Leche De Tigre',
-            price: 15.00
+            description: 'Wodka, Leche De Tigre',
+            price: 15.00,
+            title: 'Tigre Martini',
           }
         ]
       },
@@ -180,11 +206,6 @@ export const menus = [
             description: 'Gin, Grand Marnier, Mango, Maurin Bianco, Lemon, Ancho Reyes Chili, Coconut Milk',
             title: 'Grand Mango',
             price: 15.00
-          },
-          {
-            description: 'Tequila Blanco, Lime, Cumquat Black Pepper Agave Reduction, Cucumber, Absinthe',
-            title: 'Tequila Paradise',
-            price: 14.00
           },
           {
             description: 'Vodka, Soju, Lemon, Boomsma, Lemon, Watermelon Reduction',

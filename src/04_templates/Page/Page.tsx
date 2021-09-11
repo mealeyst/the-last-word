@@ -21,6 +21,7 @@ import Navigation from '../../03_organisms/Navigation/Navigation';
 
 
 import theLastWordSrc from '../../assets/the_last_word_render.jpeg';
+import Footer from '../../02_molecules/Footer/Footer';
 
 export type PageProps = {
   className: string,
@@ -52,6 +53,17 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
     }
     onCloseClick();
   }
+  const meta = {
+    title: 'The Last Word - Huntington',
+    description: 'Craft cocktails and the taste of Peru',
+    canonical: 'http://example.com/path/to/page',
+    meta: {
+      charset: 'utf-8',
+      name: {
+        keywords: 'react,meta,document,html,tags'
+      }
+    }
+  };
   const desktopChildren = [
     <Link href="#food" onClick={onClick}>Food</Link>,
     <Link href="#cocktails" onClick={onClick}>Cocktails</Link>,
@@ -105,6 +117,7 @@ const Page: FunctionComponent<PageProps>  = ({ className, menus }) => {
             </Container>
         </Section>
       </Grid>
+      <Footer />
     </main>
   )
 }
